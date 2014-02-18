@@ -9,33 +9,34 @@
 	</head>
 	<body>
 		<script>
-		(function(i, s, o, g, r, a, m) {
-		i['GoogleAnalyticsObject'] = r;
-		i[r] = i[r] ||
-		function() {
-		(i[r].q = i[r].q || []).push(arguments)
-		}, i[r].l = 1 * new Date();
-		a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-		a.async = 1;
-		a.src = g;
-		m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-		ga('create', 'UA-42687248-1', 'jian-yin.com');
-		ga('send', 'pageview');
+			ga('create', 'UA-42687248-1', 'jian-yin.com');
+			ga('send', 'pageview');
 
 		</script>
-
 
 		<?php
 		$this->load->view('head_view');
 		?>
-		
+
 		<div id="container">
 			<h1 id="title">个人说明</h1>
 			<h2>特怕无聊，总想找点儿好玩儿的东西~</h2>
+			<br/>
 			<h1 id="title">个人作品</h1>
-			<h2><a href='/linking'>HTML5连连看</a></h2>
+			<h2><a href='/linking' target="_BLANK">HTML5连连看</a></h2>
+			<h3><a href='https://chrome.google.com/webstore/detail/%E7%AB%9E%E6%8A%80%E8%BF%9E%E8%BF%9E%E7%9C%8B/ecnhkgaandclbpelapofmglaecpdpami?utm_source=chrome-ntp-icon' target="_BLANK">Chrome App 离线版本</a></h3>
 		</div>
 	</body>
 </html>
