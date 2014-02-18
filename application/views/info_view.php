@@ -32,14 +32,14 @@
 
 		<div id="container">
 			<h1 id="title">个人说明</h1>
-			<h2>特怕无聊，总要找点儿好玩儿的东西~</h2>
+			<h2>特怕无聊，总要找点儿好玩儿的东西~;崇尚自由;</h2>
 			<br/>
 			<h1 id="title">个人作品</h1>
-			<h2>HTML5 连连看</h2>
-			<h3><a href='/linking' target="_BLANK">在线版</a></h3>
-			<h3><a href='https://chrome.google.com/webstore/detail/%E7%AB%9E%E6%8A%80%E8%BF%9E%E8%BF%9E%E7%9C%8B/ecnhkgaandclbpelapofmglaecpdpami?utm_source=chrome-ntp-icon' target="_BLANK">Chrome App 离线版本</a></h3>
-			<h2>天下无双 手游</h2>
-			<h3><a href='http://zhushou.360.cn/detail/index/soft_id/859261?recrefer=SE_D_%E5%A4%A9%E4%B8%8B%E6%97%A0%E5%8F%8C' target="_BLANK">360上线版本</a></h3>
+			<h2>1.HTML5 连连看</h2>
+			<h3>&bull;<a href='/linking' target="_BLANK">在线版</a></h3>
+			<h3>&bull;<a href='https://chrome.google.com/webstore/detail/%E7%AB%9E%E6%8A%80%E8%BF%9E%E8%BF%9E%E7%9C%8B/ecnhkgaandclbpelapofmglaecpdpami?utm_source=chrome-ntp-icon' target="_BLANK">Chrome App 离线版本</a></h3>
+			<h2>2.天下无双 手游</h2>
+			<h3>&bull;<a href='http://zhushou.360.cn/detail/index/soft_id/859261?recrefer=SE_D_%E5%A4%A9%E4%B8%8B%E6%97%A0%E5%8F%8C' target="_BLANK">360上线版本</a></h3>
 		</div>
 	</body>
 </html>
