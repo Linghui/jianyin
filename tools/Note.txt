@@ -1,0 +1,3 @@
+请求方式：get
+请求URL：https://api.weibo.com/2/short_url/shorten.json
+请求参数：url_long=http%3A%2F%2Fopen.weibo.com%2Fqa&access_token=2.00Ksxj4B0zUw4O2840ebcee2hefroC

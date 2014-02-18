@@ -1,0 +1,14 @@
+.blue_button{
+	
+	background-color: #4d90fe;
+	background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+	border: 1px solid #3079ed;
+	color: #fff;
+	min-width: 74px;
+	font-size: 20px;
+}
+
+.border_less{
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #c0c0c0;
+}

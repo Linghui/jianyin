@@ -1,0 +1,22 @@
+.input_text {
+	height : 24px;
+	width: 200px;
+}
+
+
+#addNew {
+	position: relative;
+	left: 20px;
+	top: 2px;
+}
+
+#message {
+	position: relative;
+	left: -50px;
+}
+
+#rmb {
+	position: relative;
+	left: 20px;
+	top: 5px;
+}

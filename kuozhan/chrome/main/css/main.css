@@ -1,0 +1,65 @@
+
+#title {
+	position: relative;
+	left:10px;
+}
+
+textarea:focus {
+	border: 1px solid #4d90fe;
+}
+
+#t1 {
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #c0c0c0;
+	width:300px;
+}
+
+#t2 {
+	width:300px;
+	position: relative;
+	top: 10px;
+	border: 1px solid whitesmoke;
+	background: whitesmoke;
+}
+
+#btnLine1 {
+	width:45%;
+	float:left;
+}
+
+#btnLine2 {
+	width:45%;
+	float:left;
+}
+
+#btn {
+	
+	background-color: #4d90fe;
+	background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+	border: 1px solid #3079ed;
+	color: #fff;
+	min-width: 74px;
+	position: relative;
+	top:20px;
+	left:10px;
+}
+
+#trans {
+	display:none;
+	position: relative;
+	top:25px;
+	left:0px;
+}
+
+
+#loading {
+	position: relative;
+	left: 20px;
+	top: 24px;
+	display: none;
+}
+
+#share {
+	text-decoration:none;
+}
+
