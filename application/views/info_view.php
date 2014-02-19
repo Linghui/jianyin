@@ -34,7 +34,7 @@
 			<h1 id="title">个人说明</h1>
 			<h2>特怕无聊，总要找点儿好玩儿的东西~;崇尚自由;</h2>
 			<h1 id="title">个人宠物</h1>
-			<img src='/img/when_its_little_2.jpg'/>
+			<img src='/img/when_its_little_2.jpg' width="30%" height="30%"/>
 			<br/>
 			<h1 id="title">个人作品</h1>
 			<h2>1.HTML5 连连看</h2>
