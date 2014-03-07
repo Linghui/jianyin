@@ -2,7 +2,6 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-
 class Test_for_temp extends CI_Controller {
 
 	/**
@@ -21,11 +20,11 @@ class Test_for_temp extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
-		
-		$protocol = array('p' => '1', 'c' => '0', 'message from server');
+
+		$protocol = array('p' => '1', 'c' => '0', 't' => 'message from server');
 		$message = array();
 		array_push($message, $protocol);
-		
+
 		echo json_encode($message);
 
 	}
