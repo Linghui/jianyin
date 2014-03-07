@@ -21,7 +21,11 @@ class Test_for_temp extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
-		echo "hello";
+		
+		$protocol = array('p' => '1', 'c' => '0', 'message from server');
+		array_push($proto_queue, $protocol);
+		
+		echo json_encode($proto_queue);
 
 	}
 
