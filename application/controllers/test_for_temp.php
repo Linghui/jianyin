@@ -23,7 +23,7 @@ class Test_for_temp extends CI_Controller {
 		
 		$rand_messages = array('rand message' , 'ok', 'not ok', 'cool');
 		
-		$index = rand(0, count($rand_messages));
+		$index = rand(0, count($rand_messages) - 1);
 		
 
 		$protocol = array('p' => '1', 'c' => '0', 't' => $rand_messages[$index]);
