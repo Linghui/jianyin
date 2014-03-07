@@ -23,9 +23,10 @@ class Test_for_temp extends CI_Controller {
 	public function index() {
 		
 		$protocol = array('p' => '1', 'c' => '0', 'message from server');
-		array_push($proto_queue, $protocol);
+		$message = array();
+		array_push($message, $protocol);
 		
-		echo json_encode($proto_queue);
+		echo json_encode($message);
 
 	}
 
