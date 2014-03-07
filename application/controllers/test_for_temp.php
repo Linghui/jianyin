@@ -20,8 +20,13 @@ class Test_for_temp extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
+		
+		$rand_messages = array('rand message' , 'ok', 'not ok', 'cool');
+		
+		$index = rand(0, count($rand_messages));
+		
 
-		$protocol = array('p' => '1', 'c' => '0', 't' => 'message from server');
+		$protocol = array('p' => '1', 'c' => '0', 't' => $rand_messages[$index]);
 		$message = array();
 		array_push($message, $protocol);
 
