@@ -43,6 +43,7 @@
 			<br/>
 			<h1 id="title">个人宠物</h1>
 			<img src='/img/when_its_little_2.jpg' width="30%" height="30%"/>
+			<img src='http://www.gameui.cn/wp-content/themes/gameui3.0/images/gameui30/inggao/ggao3.jpg' width="30%" height="30%"/>
 		</div>
 	</body>
 </html>
