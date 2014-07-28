@@ -78,10 +78,14 @@
 			<h1>Welcome to CodeIgniter!</h1>
 
 			<div id="body">
-
+				test
 			</div>
-			<div id ="body1"></div>
-
+			<div id ="body1">
+				test1
+			</div>
+			<div id ="body2">
+				test2
+			</div>
 			<p class="footer">
 				Page rendered in <strong>{elapsed_time}</strong> seconds
 			</p>
