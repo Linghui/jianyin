@@ -10,7 +10,7 @@ class Call extends MY_Controller {
 		if(!$key){
 			echo "error";
 		}
-		$this -> call_model ->save($key, $p);
+		// $this -> call_model ->save($key, $p);
 		
 		echo "ok";
 	}
