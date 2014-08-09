@@ -8,7 +8,7 @@
 
 	</head>
 	<body>
-		<script>
+		<!-- <script>
 			(function(i, s, o, g, r, a, m) {
 				i['GoogleAnalyticsObject'] = r;
 				i[r] = i[r] ||
@@ -24,7 +24,7 @@
 			ga('create', 'UA-42687248-1', 'jian-yin.com');
 			ga('send', 'pageview');
 
-		</script>
+		</script> -->
 
 		<!-- <div id="header">
 		<a href="/">HOME</a>
@@ -35,7 +35,7 @@
 		</div>
 		-->
 		<?php
-		$this->load->view('head_view');
+		$this -> load -> view('head_view');
 		?>
 		<div id="container">
 			<h1 id="title">API 说明文档</h1>
