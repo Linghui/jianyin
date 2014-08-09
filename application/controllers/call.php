@@ -9,8 +9,9 @@ class Call extends CI_Controller {
 		$p = $this -> input -> get('p');
 		if(!$key){
 			echo "error";
+			return;
 		}
-		// $this -> call_model ->save($key, $p);
+		$this -> call_model ->save($key, $p);
 		
 		echo "ok";
 	}
