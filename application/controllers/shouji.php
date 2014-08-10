@@ -47,7 +47,7 @@ class Shouji extends CI_Controller {
 		} else {
 			echo "error";
 		}
-		echo "total: " . $total . " from " . $count . " users average:" + ($total/$count);
+		echo "total: " . $total . " from " . $count . " users average:". ($total/$count);
 		echo "<br/>";
 		echo $output;
 	}
