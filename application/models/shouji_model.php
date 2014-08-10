@@ -30,7 +30,7 @@ class Shouji_model extends CI_Model {
 	}
 	
 	public function gameTimes(){
-		$sql = "select count(ip) as ip from shouji group by ip order by ip desc";
+		$sql = "select count(ip) as ip from shouji where api ='one_game' group by ip order by ip desc";
 		$query = $this -> db -> query($sql, array());
 		if ($query -> num_rows() > 0) {
 			return $query -> result();
