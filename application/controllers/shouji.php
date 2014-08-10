@@ -33,10 +33,10 @@ class Shouji extends CI_Controller {
 	}
 
 	public function watch() {
-		$res = $this -> shouji_model -> top50();
+		$res = $this -> shouji_model -> gameTimes();
 		if ($res) {
 			foreach ($res as $row) {
-				echo $row->ip;
+				echo $row -> ip;
 				echo "<br/>";
 			}
 		} else {
