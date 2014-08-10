@@ -12,7 +12,7 @@
 		foreach ($todo_list as $item) {
 
 			$pos = strpos($item -> spend_time, '.');
-			$timestr = substr($item -> spend_time, 0, $pos + 1);
+			$timestr = substr($item -> spend_time, 0, $pos + 2);
 
 			echo "$index. " . $item -> click_times . "次 耗时" . $timestr . "秒<br/>";
 			$index++;
