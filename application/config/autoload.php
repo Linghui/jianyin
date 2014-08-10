@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('pinyin_db_model', 'words_model', 'call_model', 'bang_model');
+$autoload['model'] = array('pinyin_db_model', 'words_model', 'call_model', 'bang_model','shouji_model');
 
 
 /* End of file autoload.php */
