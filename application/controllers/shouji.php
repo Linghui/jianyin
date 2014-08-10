@@ -16,4 +16,20 @@ class Shouji extends CI_Controller {
 		
 		echo "ok";
 	}
+	
+	public function top50(){
+		$res = $this -> shouji_model ->top50();
+		if(!$res){
+			$index = 1;
+			$output = "";
+			foreach ($res as $row) {
+				$output .= "$index. " . $row -> click_times."次 耗时". $row ->spend_time . "秒";
+				$index++;
+			}
+			echo $output;
+		} else {
+			echo "error";
+		}
+		
+	}
 }
