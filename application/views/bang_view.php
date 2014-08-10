@@ -2,10 +2,15 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>榜单</title>
+		<title>状元榜</title>
 
 	</head>
 	<body>
+		<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F27db24f232381606515635a17fe28cd2' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
 		<div align="center">
 		<h1>状元榜</h1>
 		</div>
