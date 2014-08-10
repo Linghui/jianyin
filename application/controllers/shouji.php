@@ -28,7 +28,7 @@ class Shouji extends CI_Controller {
 			// }
 			// echo $output;
 			$data['todo_list']  = $res;
-			$this->load->view('bang_view', $res);
+			$this->load->view('bang_view', $data);
 		} else {
 			echo "error";
 		}
