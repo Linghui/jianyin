@@ -35,17 +35,19 @@ class Shouji extends CI_Controller {
 	public function watch() {
 		$total = 0;
 		$output = "";
+		$count = 0;
 		$res = $this -> shouji_model -> gameTimes();
 		if ($res) {
 			foreach ($res as $row) {
 				$output .= $row -> ip;
 				$output.= "<br/>";
 				$total += $row -> ip;
+				$count++;
 			}
 		} else {
 			echo "error";
 		}
-		echo "total: " . $total;
+		echo "total: " . $total . " from " . $count . " users";
 		echo "<br/>";
 		echo $output;
 	}
