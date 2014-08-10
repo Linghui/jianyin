@@ -19,7 +19,7 @@ class Shouji extends CI_Controller {
 	
 	public function top50(){
 		$res = $this -> shouji_model ->top50();
-		if(!$res){
+		if($res){
 			$index = 1;
 			$output = "";
 			foreach ($res as $row) {
