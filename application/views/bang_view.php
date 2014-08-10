@@ -19,7 +19,7 @@
 				$pos = strpos($item -> spend_time, '.');
 				$timestr = substr($item -> spend_time, 0, $pos + 2);
 
-				echo "<h2>$index. " . $item -> click_times . "次 耗时" . $timestr . "秒<br/></h2>";
+				echo "<h1>$index. " . $item -> click_times . "次 耗时" . $timestr . "秒<br/></h1>";
 				$index++;
 			}
 			?>
