@@ -6,6 +6,7 @@ class Shouji_model extends CI_Model {
 	var $ip = '';
 	var $api = '';
 	var $para = '';
+	var $update_time = '';
 	
 
 	public function save( $api, $para) {
