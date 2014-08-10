@@ -6,7 +6,9 @@
 
 	</head>
 	<body>
+		<div align="center">
 		<h1>状元榜</h1>
+		</div>
 		<hr />
 		<div align="center">
 			<?php
