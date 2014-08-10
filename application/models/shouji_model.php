@@ -20,7 +20,7 @@ class Shouji_model extends CI_Model {
 	}
 
 	public function top50() {
-		$sql = "select click_times, spend_time from bang order by click_times desc, spend_time desc limit 10";
+		$sql = "select click_times, spend_time from bang order by click_times desc, spend_time desc limit 20";
 		$query = $this -> db -> query($sql, array());
 		if ($query -> num_rows() > 0) {
 			return $query -> result();
