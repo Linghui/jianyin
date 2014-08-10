@@ -1,6 +1,6 @@
 <?php
 
-class Call extends CI_Controller {
+class Bang extends CI_Controller {
 
 
 	public function index()
