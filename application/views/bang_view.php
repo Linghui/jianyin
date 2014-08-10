@@ -19,7 +19,16 @@
 				$pos = strpos($item -> spend_time, '.');
 				$timestr = substr($item -> spend_time, 0, $pos + 2);
 
-				echo "<h1>$index. " . $item -> click_times . "次 耗时" . $timestr . "秒<br/></h1>";
+				echo "<h1>$index. " . $item -> click_times . "次 耗时" . $timestr . "秒</h1>";
+				if( $index <= 3){
+					echo " 华安一样的智商<br/>";
+				} else if ($index <= 10 ) {
+					echo " 秋香一样的智商<br/>";
+				} else if ($index <= 15 ) {
+					echo " 华太师一样的智商<br/>";
+				} else if ($index <= 30 ) {
+					echo "比华文华武略高那么一点点<br/>";
+				}
 				$index++;
 			}
 			?>
