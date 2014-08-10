@@ -14,6 +14,7 @@ class Shouji_model extends CI_Model {
 		$this -> ip = $this -> input -> ip_address();
 		$this -> api = $api;
 		$this -> para= $para;
+		$this -> update_time = new DateTime;
 		
 		$this -> db -> insert('shouji', $this);
 		return;
