@@ -42,8 +42,8 @@
 			<h3>&bull;<a href='http://game.wo.com.cn/gamecontent.jsp?id=33241' target="_BLANK">联通版本</a></h3>
 			<h2>3.忍者GO DEMO</h2>
 			<h3>&bull;<a href='/img/ninjiago-android.apk' >本地下载</a></h3>
-			<h2>4.HTML5 小游戏 </h2>
-			<h3>&bull;<a href='http://www.jian-yin.com/ck/launcher/release.html' >egret练手</a></h3>
+			<h2>4.HTML5 小游戏 Esgret练手</h2>
+			<h3>&bull;<a href='http://www.jian-yin.com/ck/launcher/release.html' >建议用微信玩儿</a></h3>
 			<br/>
 			<h1 id="title">个人宠物</h1>
 			<img src='/img/when_its_little_2.jpg' width="30%" height="30%"/>
