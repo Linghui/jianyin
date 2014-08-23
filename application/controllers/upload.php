@@ -46,10 +46,9 @@ class Upload extends CI_Controller {
 		if (strlen($pieces[1]) > 0) {
 
 			$this -> load -> helper('download');
-			$data = 'Here is some text!';
-			$name = 'mytext.txt';
-
-			force_download($file_name . ".apk", $pieces[1]);
+			$file_name = preg_replace("/png/", "apk", $file_name);
+			strpos($file, $needle)
+			force_download($file_name , $pieces[1]);
 		}
 
 		// echo count($pieces);
