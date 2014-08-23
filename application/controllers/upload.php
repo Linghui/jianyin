@@ -21,7 +21,7 @@ class Upload extends CI_Controller {
 
 		if (!$this -> upload -> do_upload()) {
 			$error = array('error' => $this -> upload -> display_errors());
-			echo "$error";
+			echo json_encode($error);
 
 		} else {
 
