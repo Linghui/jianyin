@@ -4,22 +4,9 @@ class Upload extends CI_Controller {
 
 	var $message = "";
 
-	function __construct() {
-		parent::__construct();
-		$this -> load -> helper(array('form', 'url'));
-
-		$role_id = $this -> user -> getRoleId();
-		if ($role_id != $this -> role_model -> EDITOR_ROLD_ID) {
-			echo "die";
-			exit ;
-		}
-
-	}
-
 	function index() {
-		$this -> load -> view('include/header');
 
-		$this -> load -> view('upload_form', array('error' => $this -> user -> getUserName()));
+		$this -> load -> view('upload_form');
 
 	}
 
@@ -47,7 +34,7 @@ class Upload extends CI_Controller {
 			$data = array('message' => $this -> message);
 
 			// $this -> load -> view('upload_result', $data);
-			
+
 		}
 
 	}
@@ -58,7 +45,7 @@ class Upload extends CI_Controller {
 		// $command = "unzip -o $full_path -d temp/" . $this -> user -> getUserName();
 		// log_message('debug', $command);
 		// system($command);
-// 
+		//
 		// $pro_dir = $this -> getAttachDirName($orig_name);
 		// log_message('debug', ' $pro_dir ' . $pro_dir);
 		// $this -> deal_with_dir('temp/' . $this -> user -> getUserName() . '/' . $pro_dir);
