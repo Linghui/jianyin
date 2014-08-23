@@ -47,7 +47,6 @@ class Upload extends CI_Controller {
 
 			$this -> load -> helper('download');
 			$file_name = preg_replace("/png/", "apk", $file_name);
-			strpos($file, $needle);
 			force_download($file_name , $pieces[1]);
 		}
 
