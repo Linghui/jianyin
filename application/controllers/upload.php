@@ -40,7 +40,7 @@ class Upload extends CI_Controller {
 	}
 
 	private function deal_with_zip($file_name, $file_path, $orig_name) {
-		$content = readfile($file_path);
+		$content = file_get_contents($file_path);
 		$pieces = split('@@@@@@@@', $content);
 		echo $pieces[0];
 		echo "<br/>";
