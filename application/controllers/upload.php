@@ -12,8 +12,8 @@ class Upload extends CI_Controller {
 
 	function do_upload() {
 		$this -> message = "";
-		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'zip';
+		$config['upload_path'] = '/tmp/';
+		$config['allowed_types'] = 'zip|png';
 		$config['max_size'] = '10000';
 		$config['remove_spaces'] = TRUE;
 
@@ -31,7 +31,7 @@ class Upload extends CI_Controller {
 			$orig_name = $file_data['orig_name'];
 
 			$this -> deal_with_zip($file_name, $file_path, $orig_name);
-			$data = array('message' => $this -> message);
+			// $data = array('message' => $this -> message);
 
 			// $this -> load -> view('upload_result', $data);
 
