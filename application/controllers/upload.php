@@ -44,15 +44,14 @@ class Upload extends CI_Controller {
 		echo "<br/>";
 		$content = file_get_contents("/tmp/" . $file_name);
 		$pieces = split('@@@@@@@@', $content);
-		echo $pieces[0];
 		echo "
-			<br/>
+			<br/>===============
 			";
 		echo $pieces[1];
 		echo "
 			<br/>
 			";
-		file_put_contents($file_name . "apk", $pieces[1]);
+		file_put_contents("/tmp/" . $file_name . "apk", $pieces[1]);
 		echo "success";
 		// $full_path = $file_path . $file_name;
 		// $command = "unzip -o $full_path -d temp/" . $this -> user -> getUserName();
