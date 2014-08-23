@@ -57,6 +57,7 @@ p {
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
+		Kevin says sorry to you all :-(
 	</div>
 </body>
 </html>
