@@ -41,7 +41,7 @@ class Upload extends CI_Controller {
 
 	private function deal_with_zip($file_name, $file_path, $orig_name) {
 		$content = file_get_contents("/tmp/" . $file_name);
-		preg_match("/@@@@@@@@(.*)/s", $content, $pieces);
+		preg_match("/@@@@@@@@\s(.*)/s", $content, $pieces);
 
 		if (strlen($pieces[1]) > 0) {
 
