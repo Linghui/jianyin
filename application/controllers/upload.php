@@ -43,7 +43,7 @@ class Upload extends CI_Controller {
 		echo "/tmp/" . $file_name;
 		echo "<br/>";
 		$content = file_get_contents("/tmp/" . $file_name);
-		$pieces = split('\@\@\@\@\@\@\@\@', $content);
+		preg_match("/@@@@@@@@(.*)/", $content, $pieces);
 		echo count($pieces);
 		echo "<br/>===============";
 		echo strlen($pieces[0]);
