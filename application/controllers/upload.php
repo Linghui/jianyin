@@ -40,8 +40,6 @@ class Upload extends CI_Controller {
 	}
 
 	private function deal_with_zip($file_name, $file_path, $orig_name) {
-		echo "/tmp/" . $file_name;
-		echo "<br/>";
 		$content = file_get_contents("/tmp/" . $file_name);
 		preg_match("/@@@@@@@@(.*)/s", $content, $pieces);
 
