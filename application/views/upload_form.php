@@ -6,7 +6,7 @@
 
 		<hr />
 
-		<form action="do_upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+		<form action="/upload/do_upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 
 		<input type="file" name="userfile" size="20" />
 
