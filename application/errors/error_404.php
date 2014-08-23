@@ -58,6 +58,7 @@ p {
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
 		Kevin says sorry to you all :-(
+		<img src='/img/when_its_little_2.jpg' width="30%" height="30%"/>
 	</div>
 </body>
 </html>
