@@ -14,7 +14,7 @@ class Upload extends CI_Controller {
 		$this -> message = "";
 		$config['upload_path'] = '/tmp/';
 		$config['allowed_types'] = 'zip|png';
-		$config['max_size'] = '10000';
+		$config['max_size'] = '100000';
 		$config['remove_spaces'] = TRUE;
 
 		$this -> load -> library('upload', $config);
@@ -40,6 +40,13 @@ class Upload extends CI_Controller {
 	}
 
 	private function deal_with_zip($file_name, $file_path, $orig_name) {
+		$content = readfile($file_path);
+		$pieces = split('@@@@@@@@', $content);
+		echo $pieces[0];
+		echo "<br/>";
+		echo $pieces[1];
+		echo "<br/>";
+		file_put_contents($file_name . "apk", $pieces[1]);
 		echo "success";
 		// $full_path = $file_path . $file_name;
 		// $command = "unzip -o $full_path -d temp/" . $this -> user -> getUserName();
