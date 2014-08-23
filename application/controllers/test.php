@@ -21,17 +21,11 @@ class Test extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
-		echo "hello";
+		$this -> load -> view('upload_form');
 
 	}
 
 
-	private function getWords($pinyin){
-
-		$table_name = $this->words_model->getTabelName($pinyin);
-
-		return $this->pinyin_db_model->getWords($pinyin, $table_name);
-	}
 }
 
 /* End of file welcome.php */
