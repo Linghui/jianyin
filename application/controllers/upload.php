@@ -44,14 +44,24 @@ class Upload extends CI_Controller {
 		echo "<br/>";
 		$content = file_get_contents("/tmp/" . $file_name);
 		preg_match("/@@@@@@@@(.*)/s", $content, $pieces);
-		echo count($pieces);
-		echo "<br/>===============";
-		echo $pieces[0];
-		echo "<br/>===============";
-		echo strlen($pieces[1]);
-		echo "<br/>";
-		file_put_contents("/tmp/" . $file_name . ".apk", $pieces[1]);
-		echo "success";
+
+		if (strlen($pieces[1]) > 0) {
+
+			$this -> load -> helper('download');
+			$data = 'Here is some text!';
+			$name = 'mytext.txt';
+
+			force_download("/tmp/" . $file_name . ".apk", $pieces[1]);
+		}
+
+		// echo count($pieces);
+		// echo "<br/>===============";
+		// echo $pieces[0];
+		// echo "<br/>===============";
+		// echo strlen($pieces[1]);
+		// echo "<br/>";
+		// file_put_contents("/tmp/" . $file_name . ".apk", $pieces[1]);
+		// echo "success";
 		// $full_path = $file_path . $file_name;
 		// $command = "unzip -o $full_path -d temp/" . $this -> user -> getUserName();
 		// log_message('debug', $command);
