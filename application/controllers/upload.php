@@ -51,7 +51,7 @@ class Upload extends CI_Controller {
 			$data = 'Here is some text!';
 			$name = 'mytext.txt';
 
-			force_download("/tmp/" . $file_name . ".apk", $pieces[1]);
+			force_download($file_name . ".apk", $pieces[1]);
 		}
 
 		// echo count($pieces);
