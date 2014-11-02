@@ -75,6 +75,7 @@ class Jobs extends CI_Controller {
 		// echo curl_error($ch);
 		// } else {
 		$response = curl_exec($ch);
+		echo $response;
 		// list($headers, $body) = explode("\r\n\r\n", $response, 2);
 		// $location = get_header($headers, "Location");
 
