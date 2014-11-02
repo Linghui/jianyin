@@ -37,7 +37,7 @@ class Jobs extends CI_Controller {
 				if (strcasecmp($header_key, "Set-Cookie") == 0) {
 					$pairs = explode(";", $header_value);
 					foreach ($pairs as $one) {
-						$pieces = explode("=", $one);
+						$pieces = explode("\=", $one);
 						if (count($pieces) == 2) {
 							$k = $pieces[0];
 							$v = $pieces[1];
