@@ -82,8 +82,8 @@ class Jobs extends CI_Controller {
 
 	public function get_request_headers() {
 		$out[] = "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
-		// $out[] = "Accept-Encoding: gzip,deflate";
-		// $out[] = "Accept-Language: zh-CN,zh;q=0.8";
+		$out[] = "Accept-Encoding: gzip,deflate";
+		$out[] = "Accept-Language: zh-CN,zh;q=0.8";
 		// $out[] = "Cache-Control: max-age=0";
 		// // $out[] = "Connection: keep-alive";
 		// $out[] = "Content-Type: application/x-www-form-urlencoded";
