@@ -21,10 +21,11 @@ class Jobs extends CI_Controller {
 
 		list($header, $body) = explode("\r\n\r\n", $response);
 
-		echo $header;
-		echo "<br/>";
-
 		foreach (explode("\r\n", $header) as $header) {
+
+			echo $header;
+
+			echo "<br/>";
 
 			$header_chunks = explode(":", $header, 2);
 
