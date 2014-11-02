@@ -54,7 +54,7 @@ class Jobs extends CI_Controller {
 			}
 		}
 
-		
+		echo $body;
 		$html = str_get_html($body);
 		$ret = $html->find('input[type=hidden]');
 		echo json_encode($ret);
