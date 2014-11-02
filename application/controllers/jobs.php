@@ -1,6 +1,6 @@
 <?php
 
-class Jobs extends MY_Controller {
+class Jobs extends CI_Controller {
 
 
 	public function index()
