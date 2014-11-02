@@ -21,11 +21,11 @@ class Jobs extends CI_Controller {
 		// $httpCode = curl_getinfo($ch, CURLINFO_HE);
 		curl_close($ch);
 
-		list($header, $body) = explode("\r\n\r\n", $response);
+		list($headers, $body) = explode("\r\n\r\n", $response);
 
 		$access_key = 'not found';
 
-		foreach (explode("\r\n", $header) as $header) {
+		foreach (explode("\r\n", $headers) as $header) {
 
 			$header_chunks = explode(":", $header, 2);
 
@@ -60,7 +60,7 @@ class Jobs extends CI_Controller {
 		// $ret = $html->find('input[type=hidden]');
 		// echo json_encode($ret);
 		// echo $response;
-		echo $header;
+		echo $headers;
 		echo $body;
 		
 
