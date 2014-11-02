@@ -51,7 +51,7 @@ class Jobs extends CI_Controller {
 				}
 			}
 		}
-		echo json_encode(get_request_headers());
+		echo json_encode($this -> get_request_headers());
 		// echo "found : " . $access_key;
 
 		// $url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
@@ -75,7 +75,7 @@ class Jobs extends CI_Controller {
 		// echo $response;
 	}
 
-	function get_request_headers() {
+	public function get_request_headers() {
 		foreach ($_SERVER as $key => $value) {
 			if (substr($key, 0, 5) == "HTTP_") {
 				$key = str_replace(" ", "-", ucwords(strtolower("_", " ", substr($key, 5))));
