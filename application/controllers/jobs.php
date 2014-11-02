@@ -16,7 +16,7 @@ class Jobs extends CI_Controller {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
-		// curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
 
 		$response = curl_exec($ch);
 		// $httpCode = curl_getinfo($ch, CURLINFO_HE);
@@ -60,25 +60,25 @@ class Jobs extends CI_Controller {
 
 		// $html = str_get_html($body);
 		// $ret = $html -> find('input[type=hidden]');
-// 
+		//
 		// $hidAccessKey = "";
 		// $fksc = "";
 		// $hidEhireGuid = "";
-// 
+		//
 		// foreach ($ret as $hidden) {
-			// echo $hidden -> value . "<br/>";
-			// if ($hidden -> id == "hidAccessKey") {
-				// $hidAccessKey = $hidden -> value;
-				// echo "111 $hidAccessKey<br/>";
-			// }
-			// if ($hidden -> id == "fksc") {
-				// $fksc = $hidden -> value;
-				// echo "222 $fksc<br/>";
-			// }
-			// if ($hidden -> id == "hidEhireGuid") {
-				// $hidEhireGuid = $hidden -> value;
-				// echo "333 $hidden<br/>";
-			// }
+		// echo $hidden -> value . "<br/>";
+		// if ($hidden -> id == "hidAccessKey") {
+		// $hidAccessKey = $hidden -> value;
+		// echo "111 $hidAccessKey<br/>";
+		// }
+		// if ($hidden -> id == "fksc") {
+		// $fksc = $hidden -> value;
+		// echo "222 $fksc<br/>";
+		// }
+		// if ($hidden -> id == "hidEhireGuid") {
+		// $hidEhireGuid = $hidden -> value;
+		// echo "333 $hidden<br/>";
+		// }
 		// }
 		// echo $headers;
 		// echo "\r\n\r\n";
@@ -89,19 +89,19 @@ class Jobs extends CI_Controller {
 		// echo $response;
 		// $url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
 		// $ch = curl_init();
-// 
+		//
 		// curl_setopt($ch, CURLOPT_URL, $url);
 		// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		// curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-// 
+		//
 		// $POST_DATA = array("ctmName" => urlencode("中广互联"), "userName" => "zghl863", "password" => "cnjobs2014", "checkCode" => "", "oldAccessKey" => $hidAccessKey, "langtype" => "Lang=&Flag=1", "isRememberMe" => "false", "sc" => $fksc, "ec" => $hidEhireGuid);
-// 
+		//
 		// $postfields = http_build_query($POST_DATA);
 		// curl_setopt($ch, CURLOPT_PORT, 1);
 		// curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
-// 
+		//
 		// curl_setopt($ch, CURLOPT_HTTPHEADER, $this -> get_request_headers());
-// 
+		//
 		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		// curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		// curl_setopt($ch, CURLOPT_HEADER, 1);
@@ -109,12 +109,12 @@ class Jobs extends CI_Controller {
 		// // curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
 		// $rrr = curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
 		// if (!$rrr) {
-			// echo curl_error($ch);
+		// echo curl_error($ch);
 		// } else {
-			// // $response = curl_exec($ch);
-			// // echo $response;
+		// // $response = curl_exec($ch);
+		// // echo $response;
 		// }
-// 
+		//
 		// curl_close($ch);
 
 	}
