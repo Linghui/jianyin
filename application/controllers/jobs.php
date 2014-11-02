@@ -48,7 +48,8 @@ class Jobs extends CI_Controller {
 		// echo "222 $fksc<br/>";
 		// echo "333 $hidEhireGuid<br/>";
 
-		$url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
+		// $url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
+		$url = "http://www.jian-yin.com/test";
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -71,13 +72,13 @@ class Jobs extends CI_Controller {
 
 		// $rrr = curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
 		// if (!$rrr) {
-			// echo curl_error($ch);
+		// echo curl_error($ch);
 		// } else {
-			$response = curl_exec($ch);
-			// list($headers, $body) = explode("\r\n\r\n", $response, 2);
-			// $location = get_header($headers, "Location");
+		$response = curl_exec($ch);
+		// list($headers, $body) = explode("\r\n\r\n", $response, 2);
+		// $location = get_header($headers, "Location");
 
-			// echo "Location " . $location;
+		// echo "Location " . $location;
 		// }
 
 		curl_close($ch);
