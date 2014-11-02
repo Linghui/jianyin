@@ -45,6 +45,7 @@ class Jobs extends CI_Controller {
 							if (strcasecmp($k, "AccessKey")) {
 								echo "KEY: " . $k;
 								echo " ====== ";
+								echo $v;
 								$access_key = $v;
 								echo "<br/>";
 							}
