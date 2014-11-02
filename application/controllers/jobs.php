@@ -34,7 +34,7 @@ class Jobs extends CI_Controller {
 				$header_key = $header_chunks[0];
 				$header_value = $header_chunks[1];
 
-				if (strcasecmp($header_key, "Cookie") == 0) {
+				if (strcasecmp($header_key, "Set-Cookie") == 0) {
 					$pairs = explode(";", $header_value);
 					foreach ($pairs as $one) {
 						list($k, $v) = explode("=", $one);
@@ -47,7 +47,7 @@ class Jobs extends CI_Controller {
 				}
 			}
 		}
-		echo $v;
+		echo "found : " . $access_key;
 	}
 
 }
