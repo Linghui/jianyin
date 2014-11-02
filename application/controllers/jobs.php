@@ -85,7 +85,7 @@ class Jobs extends CI_Controller {
 		$out[] = "Accept-Encoding: gzip,deflate";
 		$out[] = "Accept-Language: zh-CN,zh;q=0.8";
 		$out[] = "Cache-Control: max-age=0";
-		$out[] = "Connection: keep-alive";
+		// $out[] = "Connection: keep-alive";
 		$out[] = "Content-Type: application/x-www-form-urlencoded";
 		$out[] = "Host: ehirelogin.51job.com";
 		// $out[] = "Origin: ehirelogin.51job.com";
