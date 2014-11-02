@@ -57,7 +57,7 @@ class Jobs extends CI_Controller {
 		$html = str_get_html($body);
 		$ret = $html -> find('input[type=hidden]');
 
-		foreach ($res as $hidden) {
+		foreach ($ret as $hidden) {
 			if ($hidden -> id == "fksc") {
 				echo "fksc " . $hidden -> value;
 			}
