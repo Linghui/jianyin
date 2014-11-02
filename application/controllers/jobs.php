@@ -1,6 +1,6 @@
 <?php
 
-include_once('simple_html_dom.php'); 
+include_once ('simple_html_dom.php');
 
 class Jobs extends CI_Controller {
 
@@ -21,7 +21,7 @@ class Jobs extends CI_Controller {
 		// $httpCode = curl_getinfo($ch, CURLINFO_HE);
 		curl_close($ch);
 
-		list($headers, $body) = explode("\r\n\r\n", $response);
+		list($headers, $body) = explode("\r\n\r\n", $response, 2);
 
 		$access_key = 'not found';
 
@@ -64,7 +64,6 @@ class Jobs extends CI_Controller {
 		// echo $headers;
 		// echo "\r\n\r\n";
 		// echo $body;
-		
 
 		// echo json_encode($this -> get_request_headers());
 		// echo "found : " . $access_key;
