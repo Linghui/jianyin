@@ -52,7 +52,7 @@ class Jobs extends CI_Controller {
 			}
 		}
 
-		if (preg_match_all("/<input type=\"hidden\" name=\"fksc\" id=\"fksc\" value=\"(.*)\">/i", $body, $arr1)) {
+		if (preg_match_all("/<input type=\"hidden\" \"(.*)\">/i", $body, $arr1)) {
 			echo json_encode($arr1);
 		}
 
