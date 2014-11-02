@@ -5,7 +5,7 @@ class Searchjobs extends CI_Controller {
 	public function index() {
 		$cookie_file = tempnam("tmp", "cookie.txt");
 
-		$url = "http://ehire.51job.com/MainLogin.aspx";
+		$url = "http://ehire.51job.com/Candidate/SearchResume.aspx";
 		$ch = curl_init($url);
 
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -22,9 +22,7 @@ class Searchjobs extends CI_Controller {
 		if (empty($info['http_code'])) {
 			echo "empty?";
 		} else {
-			if($info['http_code'] == 200 ){
-				echo $response;
-			}
+			echo $info['http_code'] . "  ok";
 		}
 
 	}
