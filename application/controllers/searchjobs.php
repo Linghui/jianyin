@@ -22,8 +22,9 @@ class Searchjobs extends CI_Controller {
 		if (empty($info['http_code'])) {
 			echo "empty?";
 		} else {
-			echo $info['http_code'];
-			echo " ok";
+			if($info['http_code'] == 200 ){
+				echo $response;
+			}
 		}
 
 	}
