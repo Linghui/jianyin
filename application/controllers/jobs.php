@@ -55,12 +55,15 @@ class Jobs extends CI_Controller {
 		// }
 		// }
 
+		echo $body;
+
 		$html = str_get_html($body);
 		$ret = $html -> find('input[type=hidden]');
 
 		$hidAccessKey = "";
 		$fksc = "";
 		$hidEhireGuid = "";
+
 		foreach ($ret as $hidden) {
 			echo $hidden -> value . "<br/>";
 			if ($hidden -> id == "hidAccessKey") {
