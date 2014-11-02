@@ -69,13 +69,16 @@ class Jobs extends CI_Controller {
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
 		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
-		curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
-
-		$response = curl_exec($ch);
+		$rrr = curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
+		if (!$rrr) {
+			echo curl_error($ch);
+		} else {
+			$response = curl_exec($ch);
+			echo $response;
+		}
 
 		curl_close($ch);
 
-		echo $response;
 	}
 
 	public function get_request_headers() {
