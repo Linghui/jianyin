@@ -70,15 +70,15 @@ class Jobs extends CI_Controller {
 		// curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
 
 		// $rrr = curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
-		if (!$rrr) {
-			echo curl_error($ch);
-		} else {
+		// if (!$rrr) {
+			// echo curl_error($ch);
+		// } else {
 			$response = curl_exec($ch);
 			// list($headers, $body) = explode("\r\n\r\n", $response, 2);
 			// $location = get_header($headers, "Location");
 
 			// echo "Location " . $location;
-		}
+		// }
 
 		curl_close($ch);
 
