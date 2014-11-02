@@ -67,7 +67,8 @@ class Jobs extends CI_Controller {
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
 		$cookie_file = tempnam("tmp", "cookie.txt");
-		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+		// curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+
 		$rrr = curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
 		if (!$rrr) {
 			echo curl_error($ch);
