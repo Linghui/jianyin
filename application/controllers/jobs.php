@@ -53,14 +53,12 @@ class Jobs extends CI_Controller {
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
 		$POST_DATA = array("ctmName" => urlencode("中广互联"), "userName" => "zghl863", "password" => "cnjobs2014", "checkCode" => "", "oldAccessKey" => $hidAccessKey, "langtype" => "Lang=&Flag=1", "isRememberMe" => "false", "sc" => $fksc, "ec" => $hidEhireGuid);
 
 		$postfields = http_build_query($POST_DATA);
-		curl_setopt($ch, CURLOPT_PORT, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
+		// curl_setopt($ch, CURLOPT_PORT, 1);
+		// curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $this -> get_request_headers());
 
