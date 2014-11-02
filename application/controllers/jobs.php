@@ -5,6 +5,6 @@ class Jobs extends MY_Controller {
 
 	public function index()
 	{
-		echo "jobs";
+		echo phpinfo();
 	}
 }
