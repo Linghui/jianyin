@@ -16,7 +16,7 @@ class Jobs extends CI_Controller {
 		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
 
 		$response = curl_exec($ch);
-		$httpCode = curl_getinfo($ch, CURLINFO_HE);
+		// $httpCode = curl_getinfo($ch, CURLINFO_HE);
 		curl_close($ch);
 
 		list($header, $body) = explode("\r\n\r\n", $response);
