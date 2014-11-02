@@ -44,9 +44,9 @@ class Jobs extends CI_Controller {
 
 			}
 		}
-		// echo "111 $hidAccessKey<br/>";
-		// echo "222 $fksc<br/>";
-		// echo "333 $hidEhireGuid<br/>";
+		echo "111 $hidAccessKey<br/>";
+		echo "222 $fksc<br/>";
+		echo "333 $hidEhireGuid<br/>";
 
 		// $url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
 		$url = "http://www.jian-yin.com/test";
