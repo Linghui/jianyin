@@ -1,5 +1,7 @@
 <?php
 
+include_once('simple_html_dom.php'); 
+
 class Jobs extends CI_Controller {
 
 	public function index() {
