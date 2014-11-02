@@ -51,27 +51,86 @@ class Jobs extends CI_Controller {
 				}
 			}
 		}
+		echo json_encode(get_request_headers());
 		// echo "found : " . $access_key;
 
-		$url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
-		$ch = curl_init($url);
+		// $url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
+		// $ch = curl_init($url);
+		//
+		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		// curl_setopt($ch, CURLOPT_VERBOSE, 1);
+		// curl_setopt($ch, CURLOPT_HEADER, 1);
+		// curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+		//
+		// $POST_DATA = array(ctmName => urlencode("中广互联"), userName => "zghl863", password => "cnjobs2014", checkCode => "", oldAccessKey => $access_key, langtype => "Lang=&Flag=1", isRememberMe => "false", sc => "07e6a30d0c0dd9c6", ec => "687dc60d8ca8492f880d64999dc9218c");
+		//
+		// $postfields = http_build_query($POST_DATA);
+		// curl_setopt($ch, CURLOPT_PORT, 1);
+		// curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
+		//
+		// $response = curl_exec($ch);
+		//
+		// curl_close($ch);
+		//
+		// echo $response;
+	}
 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_VERBOSE, 1);
-		curl_setopt($ch, CURLOPT_HEADER, 1);
-		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+	function get_request_headers() {
+		foreach ($_SERVER as $key => $value) {
+			if (substr($key, 0, 5) == "HTTP_") {
+				$key = str_replace(" ", "-", ucwords(strtolower("_", " ", substr($key, 5))));
+				if (strcasecmp($key, "Accept-Encoding") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Age") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Cache-Control") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Connection") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Content-Length") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "ETag") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Expires") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Host") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Keep-Alive") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Last-Modified") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Pragma") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Transfer-Encoding") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "X-Cache") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Vary") == 0) {
+					continue;
+				}
+				if (strcasecmp($key, "Via") == 0) {
+					continue;
+				}
+				$out[] = "$key: $value";
+			}
+		}
 
-		$POST_DATA = array(ctmName => urlencode("中广互联"), userName => "zghl863", password => "cnjobs2014", checkCode => "", oldAccessKey => $access_key, langtype => "Lang=&Flag=1", isRememberMe => "false", sc => "07e6a30d0c0dd9c6", ec => "687dc60d8ca8492f880d64999dc9218c");
+		$out[] = "Accept-Encoding";
 
-		$postfields = http_build_query($POST_DATA);
-		curl_setopt($ch, CURLOPT_PORT, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
-
-		$response = curl_exec($ch);
-		
-		curl_close($ch);
-		
-		echo $response;
+		return $out;
 	}
 
 }
