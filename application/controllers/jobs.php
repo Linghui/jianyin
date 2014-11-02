@@ -33,17 +33,20 @@ class Jobs extends CI_Controller {
 		foreach ($ret as $hidden) {
 			if ($hidden -> id == "hidAccessKey") {
 				$hidAccessKey = $hidden -> value;
-				echo "111 $hidAccessKey<br/>";
+
 			}
 			if ($hidden -> id == "fksc") {
 				$fksc = $hidden -> value;
-				echo "222 $fksc<br/>";
+
 			}
 			if ($hidden -> id == "hidEhireGuid") {
 				$hidEhireGuid = $hidden -> value;
-				echo "333 $hidEhireGuid<br/>";
+
 			}
 		}
+		// echo "111 $hidAccessKey<br/>";
+		// echo "222 $fksc<br/>";
+		// echo "333 $hidEhireGuid<br/>";
 
 		$url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
 		$ch = curl_init();
