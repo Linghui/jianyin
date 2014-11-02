@@ -62,17 +62,18 @@ class Jobs extends CI_Controller {
 		$fksc = "";
 		$hidEhireGuid = "";
 		foreach ($ret as $hidden) {
+			echo $hidden -> value . "<br/>";
 			if ($hidden -> id == "hidAccessKey") {
 				$hidAccessKey = $hidden -> value;
-				echo "$hidAccessKey<br/>";
+				echo "111 $hidAccessKey<br/>";
 			}
 			if ($hidden -> id == "fksc") {
 				$fksc = $hidden -> value;
-				echo "$fksc<br/>";
+				echo "222 $fksc<br/>";
 			}
 			if ($hidden -> id == "hidEhireGuid") {
 				$hidEhireGuid = $hidden -> value;
-				echo "$hidden<br/>";
+				echo "333 $hidden<br/>";
 			}
 		}
 		// echo $headers;
