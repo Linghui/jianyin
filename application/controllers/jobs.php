@@ -50,9 +50,7 @@ class Jobs extends CI_Controller {
 
 		// $url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
 		$url = "http://www.jian-yin.com/test";
-		$ch = curl_init();
-
-		curl_setopt($ch, CURLOPT_URL, $url);
+		$ch = curl_init($url);
 
 		$POST_DATA = array("ctmName" => urlencode("中广互联"), "userName" => "zghl863", "password" => "cnjobs2014", "checkCode" => "", "oldAccessKey" => $hidAccessKey, "langtype" => "Lang=&Flag=1", "isRememberMe" => "false", "sc" => $fksc, "ec" => $hidEhireGuid);
 
