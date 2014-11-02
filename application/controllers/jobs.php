@@ -4,7 +4,8 @@ class Jobs extends CI_Controller {
 
 	public function index() {
 		
-		$cookie_file = dirname(__FILE__).'/cookie.txt'; 
+		// $cookie_file = dirname(__FILE__).'/cookie.txt'; 
+		$cookie_file = tempnam("tmp","cookie.txt");
 		
 		$url = "http://ehire.51job.com/MainLogin.aspx";
 		$ch = curl_init($url);
