@@ -55,31 +55,31 @@ class Jobs extends CI_Controller {
 		// }
 		// }
 
-		echo $response;
+		// echo $response;
 		// echo $body;
 
-		// $html = str_get_html($body);
-		// $ret = $html -> find('input[type=hidden]');
-		//
-		// $hidAccessKey = "";
-		// $fksc = "";
-		// $hidEhireGuid = "";
-		//
-		// foreach ($ret as $hidden) {
-		// echo $hidden -> value . "<br/>";
-		// if ($hidden -> id == "hidAccessKey") {
-		// $hidAccessKey = $hidden -> value;
-		// echo "111 $hidAccessKey<br/>";
-		// }
-		// if ($hidden -> id == "fksc") {
-		// $fksc = $hidden -> value;
-		// echo "222 $fksc<br/>";
-		// }
-		// if ($hidden -> id == "hidEhireGuid") {
-		// $hidEhireGuid = $hidden -> value;
-		// echo "333 $hidden<br/>";
-		// }
-		// }
+		$html = str_get_html($body);
+		$ret = $html -> find('input[type=hidden]');
+
+		$hidAccessKey = "";
+		$fksc = "";
+		$hidEhireGuid = "";
+
+		foreach ($ret as $hidden) {
+			echo $hidden -> value . "<br/>";
+			if ($hidden -> id == "hidAccessKey") {
+				$hidAccessKey = $hidden -> value;
+				echo "111 $hidAccessKey<br/>";
+			}
+			if ($hidden -> id == "fksc") {
+				$fksc = $hidden -> value;
+				echo "222 $fksc<br/>";
+			}
+			if ($hidden -> id == "hidEhireGuid") {
+				$hidEhireGuid = $hidden -> value;
+				echo "333 $hidden<br/>";
+			}
+		}
 		// echo $headers;
 		// echo "\r\n\r\n";
 		// echo $body;
