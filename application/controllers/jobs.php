@@ -48,6 +48,8 @@ class Jobs extends CI_Controller {
 								echo $v;
 								$access_key = $v;
 								echo "<br/>";
+
+								break;
 							}
 						}
 
