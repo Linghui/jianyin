@@ -90,7 +90,7 @@ class Jobs extends CI_Controller {
 		$out[] = "Host: ehirelogin.51job.com";
 		// $out[] = "Origin: ehirelogin.51job.com";
 		// $out[] = "Referer: http://ehire.51job.com/MainLogin.aspx";
-		// $out[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
+		$out[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
 
 		return $out;
 	}
