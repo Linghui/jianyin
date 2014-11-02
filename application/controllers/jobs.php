@@ -54,12 +54,13 @@ class Jobs extends CI_Controller {
 			}
 		}
 
-		// echo "1111<br/>";
-		// echo $body;
-		// $html = str_get_html($body);
-		// $ret = $html->find('input[type=hidden]');
-		// echo json_encode($ret);
+		echo "1111
+	<br/>
+	";
 		echo $body;
+		$html = str_get_html($body);
+		$ret = $html -> find('input[type=hidden]');
+		echo json_encode($ret);
 		// echo $headers;
 		// echo "\r\n\r\n";
 		// echo $body;
