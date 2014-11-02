@@ -78,7 +78,7 @@ class Jobs extends CI_Controller {
 	public function get_request_headers() {
 		foreach ($_SERVER as $key => $value) {
 			if (substr($key, 0, 5) == "HTTP_") {
-				$key = str_replace(" ", "-", ucwords(strtolower("_", " ", substr($key, 5))));
+				$key = str_replace(" ", "-", ucwords(strtolower(str_replace("_", " ", substr($key, 5)))));
 				if (strcasecmp($key, "Accept-Encoding") == 0) {
 					continue;
 				}
