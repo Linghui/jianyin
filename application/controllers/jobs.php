@@ -77,59 +77,16 @@ class Jobs extends CI_Controller {
 	}
 
 	public function get_request_headers() {
-		foreach ($_SERVER as $key => $value) {
-			if (substr($key, 0, 5) == "HTTP_") {
-				$key = str_replace(" ", "-", ucwords(strtolower(str_replace("_", " ", substr($key, 5)))));
-				if (strcasecmp($key, "Accept-Encoding") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Age") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Cache-Control") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Connection") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Content-Length") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "ETag") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Expires") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Host") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Keep-Alive") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Last-Modified") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Pragma") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Transfer-Encoding") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "X-Cache") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Vary") == 0) {
-					continue;
-				}
-				if (strcasecmp($key, "Via") == 0) {
-					continue;
-				}
-				$out[] = "$key: $value";
-			}
-		}
-
-		$out[] = "Accept-Encoding";
+		$out[] = "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
+		$out[] = "Accept-Encoding: gzip,deflate";
+		$out[] = "Accept-Language: zh-CN,zh;q=0.8";
+		$out[] = "Cache-Control: max-age=0";
+		$out[] = "Connection: keep-alive";
+		$out[] = "Content-Type: application/x-www-form-urlencoded";
+		$out[] = "Host: ehirelogin.51job.com";
+		$out[] = "Origin: ehirelogin.51job.com";
+		$out[] = "Referer: http://ehire.51job.com/MainLogin.aspx";
+		$out[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
 
 		return $out;
 	}
