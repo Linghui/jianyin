@@ -45,7 +45,7 @@ class Jobs extends CI_Controller {
 							echo "1111 = =$k<br/>";
 							$v = $pieces[1];
 
-							if (strcasecmp($k, "accesskey") == 0) {
+							if ($k == "AccessKey") {
 								echo "KEY: " . $k;
 								echo " ====== ";
 								echo $v;
