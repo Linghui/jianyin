@@ -53,7 +53,7 @@ class Jobs extends CI_Controller {
 		}
 
 		if (preg_match_all("/<input type=\"hidden\" name=\"fksc\" id=\"fksc\" value=\"(.*)\">/i", $body, $arr1)) {
-			print json_encode($arr1);
+			echo json_encode($arr1);
 		}
 
 		// echo json_encode($this -> get_request_headers());
