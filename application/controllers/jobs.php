@@ -6,7 +6,6 @@ class Jobs extends CI_Controller {
 
 	public function index() {
 
-		// $cookie_file = dirname(__FILE__).'/cookie.txt';
 		$cookie_file = tempnam("tmp", "cookie.txt");
 
 		$url = "http://ehire.51job.com/MainLogin.aspx";
@@ -16,47 +15,13 @@ class Jobs extends CI_Controller {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
-		// curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
 
 		$response = curl_exec($ch);
 		// $httpCode = curl_getinfo($ch, CURLINFO_HE);
 		curl_close($ch);
 
 		list($headers, $body) = explode("\r\n\r\n", $response, 2);
-
-		// $access_key = 'not found';
-		//
-		// foreach (explode("\r\n", $headers) as $header) {
-		//
-		// $header_chunks = explode(":", $header, 2);
-		//
-		// if (count($header_chunks) == 2) {
-		//
-		// $header_key = $header_chunks[0];
-		// $header_value = $header_chunks[1];
-		//
-		// if (strcasecmp($header_key, "Set-Cookie") == 0) {
-		// $pairs = explode(";", $header_value);
-		// foreach ($pairs as $one) {
-		// $pieces = explode("=", $one);
-		// if (count($pieces) == 2) {
-		// $k = trim($pieces[0]);
-		//
-		// $v = $pieces[1];
-		//
-		// if (strcasecmp($k, "AccessKey") == 0) {
-		// $access_key = $v;
-		// break;
-		// }
-		// }
-		//
-		// }
-		// }
-		// }
-		// }
-
-		// echo $response;
-		// echo $body;
 
 		$html = str_get_html($body);
 		$ret = $html -> find('input[type=hidden]');
@@ -79,9 +44,7 @@ class Jobs extends CI_Controller {
 				echo "333 $hidEhireGuid<br/>";
 			}
 		}
-		// echo $headers;
-		// echo "\r\n\r\n";
-		// echo $body;
+		
 		$url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
 		$ch = curl_init();
 
@@ -101,12 +64,12 @@ class Jobs extends CI_Controller {
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
 		$cookie_file = tempnam("tmp", "cookie.txt");
-		// curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
 		$rrr = curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
 		if (!$rrr) {
 			echo curl_error($ch);
 		} else {
-			$response = curl_exec($ch);
+			// $response = curl_exec($ch);
 			list($headers, $body) = explode("\r\n\r\n", $response, 2);
 			$location = get_header($headers, "Location");
 
