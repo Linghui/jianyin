@@ -44,7 +44,7 @@ class Jobs extends CI_Controller {
 				echo "333 $hidEhireGuid<br/>";
 			}
 		}
-		
+
 		$url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
 		$ch = curl_init();
 
@@ -70,10 +70,10 @@ class Jobs extends CI_Controller {
 			echo curl_error($ch);
 		} else {
 			// $response = curl_exec($ch);
-			list($headers, $body) = explode("\r\n\r\n", $response, 2);
-			$location = get_header($headers, "Location");
+			// list($headers, $body) = explode("\r\n\r\n", $response, 2);
+			// $location = get_header($headers, "Location");
 
-			echo "Location " . $location;
+			// echo "Location " . $location;
 		}
 
 		curl_close($ch);
