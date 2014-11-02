@@ -82,9 +82,6 @@ class Jobs extends CI_Controller {
 		// echo $headers;
 		// echo "\r\n\r\n";
 		// echo $body;
-		echo json_encode($this -> get_request_headers());
-		echo "found : " . $access_key;
-		echo $response;
 		$url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
 		$ch = curl_init();
 
@@ -110,7 +107,10 @@ class Jobs extends CI_Controller {
 			echo curl_error($ch);
 		} else {
 			$response = curl_exec($ch);
-			echo $response;
+			list($headers, $body) = explode("\r\n\r\n", $response, 2);
+			$location = get_header($headers, "Location");
+
+			echo "Location " . $location;
 		}
 
 		curl_close($ch);
@@ -130,6 +130,38 @@ class Jobs extends CI_Controller {
 		// $out[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
 
 		return $out;
+	}
+
+	public function get_header($headers, $key) {
+		$ret_v;
+		foreach (explode("\r\n" , $headers) as $header) {
+			$header_chunks = explode(":", $header, 2);
+
+			if (count($header_chunks) == 2) {
+
+				$header_key = $header_chunks[0];
+				$header_value = $header_chunks[1];
+
+				if (strcasecmp($header_key, "Set-Cookie") == 0) {
+					$pairs = explode(";", $header_value);
+					foreach ($pairs as $one) {
+						$pieces = explode("=", $one);
+						if (count($pieces) == 2) {
+							$k = trim($pieces[0]);
+
+							$v = $pieces[1];
+
+							if (strcasecmp($k, $key) == 0) {
+								$ret_v = $v;
+								break;
+							}
+						}
+					}
+
+				}
+			}
+		}
+		return $ret_v;
 	}
 
 }
