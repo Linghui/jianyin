@@ -12,6 +12,7 @@ class Jobs extends CI_Controller {
 		$url = "http://ehire.51job.com/MainLogin.aspx";
 		$ch = curl_init($url);
 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $this -> get_request_headers());
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
@@ -63,12 +64,15 @@ class Jobs extends CI_Controller {
 		foreach ($ret as $hidden) {
 			if ($hidden -> id == "hidAccessKey") {
 				$hidAccessKey = $hidden -> value;
+				echo "$hidAccessKey<br/>";
 			}
 			if ($hidden -> id == "fksc") {
 				$fksc = $hidden -> value;
+				echo "$fksc<br/>";
 			}
 			if ($hidden -> id == "hidEhireGuid") {
 				$hidEhireGuid = $hidden -> value;
+				echo "$hidden<br/>";
 			}
 		}
 		// echo $headers;
@@ -102,8 +106,8 @@ class Jobs extends CI_Controller {
 		if (!$rrr) {
 			echo curl_error($ch);
 		} else {
-			$response = curl_exec($ch);
-			echo $response;
+			// $response = curl_exec($ch);
+			// echo $response;
 		}
 
 		curl_close($ch);
