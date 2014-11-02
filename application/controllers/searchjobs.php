@@ -22,7 +22,12 @@ class Searchjobs extends CI_Controller {
 		if (empty($info['http_code'])) {
 			echo "empty?";
 		} else {
-			echo $info['http_code'] . "  ok";
+			if ($info['http_code'] == 302) {
+				echo "登陆未成功";
+			} else {
+				echo $response;
+			}
+
 		}
 
 	}
