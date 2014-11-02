@@ -58,28 +58,28 @@ class Jobs extends CI_Controller {
 		echo $response;
 		// echo $body;
 
-		$html = str_get_html($body);
-		$ret = $html -> find('input[type=hidden]');
-
-		$hidAccessKey = "";
-		$fksc = "";
-		$hidEhireGuid = "";
-
-		foreach ($ret as $hidden) {
-			echo $hidden -> value . "<br/>";
-			if ($hidden -> id == "hidAccessKey") {
-				$hidAccessKey = $hidden -> value;
-				echo "111 $hidAccessKey<br/>";
-			}
-			if ($hidden -> id == "fksc") {
-				$fksc = $hidden -> value;
-				echo "222 $fksc<br/>";
-			}
-			if ($hidden -> id == "hidEhireGuid") {
-				$hidEhireGuid = $hidden -> value;
-				echo "333 $hidden<br/>";
-			}
-		}
+		// $html = str_get_html($body);
+		// $ret = $html -> find('input[type=hidden]');
+// 
+		// $hidAccessKey = "";
+		// $fksc = "";
+		// $hidEhireGuid = "";
+// 
+		// foreach ($ret as $hidden) {
+			// echo $hidden -> value . "<br/>";
+			// if ($hidden -> id == "hidAccessKey") {
+				// $hidAccessKey = $hidden -> value;
+				// echo "111 $hidAccessKey<br/>";
+			// }
+			// if ($hidden -> id == "fksc") {
+				// $fksc = $hidden -> value;
+				// echo "222 $fksc<br/>";
+			// }
+			// if ($hidden -> id == "hidEhireGuid") {
+				// $hidEhireGuid = $hidden -> value;
+				// echo "333 $hidden<br/>";
+			// }
+		// }
 		// echo $headers;
 		// echo "\r\n\r\n";
 		// echo $body;
@@ -127,9 +127,9 @@ class Jobs extends CI_Controller {
 		$out[] = "Connection: keep-alive";
 		$out[] = "Content-Type: application/x-www-form-urlencoded";
 		$out[] = "Host: ehirelogin.51job.com";
-		$out[] = "Origin: ehirelogin.51job.com";
-		$out[] = "Referer: http://ehire.51job.com/MainLogin.aspx";
-		$out[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
+		// $out[] = "Origin: ehirelogin.51job.com";
+		// $out[] = "Referer: http://ehire.51job.com/MainLogin.aspx";
+		// $out[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
 
 		return $out;
 	}
