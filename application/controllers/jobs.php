@@ -21,6 +21,8 @@ class Jobs extends CI_Controller {
 
 		list($header, $body) = explode("\r\n\r\n", $response);
 
+		$access_key = 'not found';
+
 		foreach (explode("\r\n", $header) as $header) {
 
 			echo "HEADER: " . $header;
@@ -47,7 +49,7 @@ class Jobs extends CI_Controller {
 								echo " ====== ";
 								echo $v;
 								$access_key = $v;
-								echo "<br/>";
+								echo " **** found<br/>";
 
 								break;
 							}
