@@ -20,17 +20,22 @@ class Jobs extends CI_Controller {
 		curl_close($ch);
 
 		list($header, $body) = explode("\r\n\r\n", $response);
+
+		echo $header;
+		echo "<br/>";
+
 		foreach (explode("\r\n", $header) as $header) {
-			$header_chunks = explode(":", $header,2);
-			
+
+			$header_chunks = explode(":", $header, 2);
+
 			$header_key = $header_chunks[0];
 			$header_value = $header_chunks[1];
-			
-			if(strcasecmp($header_key, "Cookie")){
+
+			if (strcasecmp($header_key, "Cookie")) {
 				$pairs = explode(";", $header_value);
-				foreach($pairs as $one){
+				foreach ($pairs as $one) {
 					list($k, $v) = explode("=", $one);
-					if(strcasecmp($k, "AccessKey")){
+					if (strcasecmp($k, "AccessKey")) {
 						echo $one;
 						echo " ";
 						$access_key = $v;
