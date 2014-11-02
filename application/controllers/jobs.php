@@ -41,11 +41,12 @@ class Jobs extends CI_Controller {
 					foreach ($pairs as $one) {
 						$pieces = explode("=", $one);
 						if (count($pieces) == 2) {
-							$k = $pieces[0];
-							echo "1111 = =$k " . strlen($string)($k) . "<br/>";
+							$k = trim($pieces[0]);
+
+							echo "1111 = =$k " . strlen($k) . "<br/>";
 							$v = $pieces[1];
 
-							if (strcmp($k, " AccessKey") == 0) {
+							if (strcasecmp($k, " AccessKey") == 0) {
 								echo "KEY: " . $k;
 								echo " ====== ";
 								echo $v;
