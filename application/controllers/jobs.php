@@ -29,7 +29,7 @@ class Jobs extends CI_Controller {
 
 			$header_chunks = explode(":", $header, 2);
 
-			if (count($header_chunks)) {
+			if (count($header_chunks) == 2) {
 
 				$header_key = $header_chunks[0];
 				$header_value = $header_chunks[1];
