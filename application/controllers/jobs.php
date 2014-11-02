@@ -81,16 +81,16 @@ class Jobs extends CI_Controller {
 	}
 
 	public function get_request_headers() {
-		$out[] = "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
-		$out[] = "Accept-Encoding: gzip,deflate";
-		$out[] = "Accept-Language: zh-CN,zh;q=0.8";
-		$out[] = "Cache-Control: max-age=0";
-		// $out[] = "Connection: keep-alive";
-		$out[] = "Content-Type: application/x-www-form-urlencoded";
-		$out[] = "Host: ehirelogin.51job.com";
-		// $out[] = "Origin: ehirelogin.51job.com";
-		// $out[] = "Referer: http://ehire.51job.com/MainLogin.aspx";
-		$out[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
+		// $out[] = "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
+		// $out[] = "Accept-Encoding: gzip,deflate";
+		// $out[] = "Accept-Language: zh-CN,zh;q=0.8";
+		// $out[] = "Cache-Control: max-age=0";
+		// // $out[] = "Connection: keep-alive";
+		// $out[] = "Content-Type: application/x-www-form-urlencoded";
+		// $out[] = "Host: ehirelogin.51job.com";
+		// // $out[] = "Origin: ehirelogin.51job.com";
+		// // $out[] = "Referer: http://ehire.51job.com/MainLogin.aspx";
+		// $out[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36";
 
 		return $out;
 	}
