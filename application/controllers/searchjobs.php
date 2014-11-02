@@ -23,7 +23,7 @@ class Searchjobs extends CI_Controller {
 			echo "empty?";
 		} else {
 			if ($info['http_code'] == 302) {
-				echo "登陆未成功";
+				echo "login first please";
 			} else {
 				echo $response;
 			}
