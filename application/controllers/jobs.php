@@ -42,10 +42,10 @@ class Jobs extends CI_Controller {
 						$pieces = explode("=", $one);
 						if (count($pieces) == 2) {
 							$k = $pieces[0];
-							echo "1111 = =$k " . strlen($k) . "<br/>";
+							echo "1111 = =$k " . strlen($string)($k) . "<br/>";
 							$v = $pieces[1];
 
-							if (strcmp(substr($k, 0, strlen($k) - 1), "AccessKey") == 0) {
+							if (strcmp($k, " AccessKey") == 0) {
 								echo "KEY: " . $k;
 								echo " ====== ";
 								echo $v;
