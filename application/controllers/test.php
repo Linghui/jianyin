@@ -21,7 +21,7 @@ class Test extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
-		echo phpinfo();
+		echo json_encode($_SERVER);
 
 	}
 
