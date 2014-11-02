@@ -29,17 +29,20 @@ class Jobs extends CI_Controller {
 
 			$header_chunks = explode(":", $header, 2);
 
-			$header_key = $header_chunks[0];
-			$header_value = $header_chunks[1];
+			if (count($header_chunks)) {
 
-			if (strcasecmp($header_key, "Cookie")) {
-				$pairs = explode(";", $header_value);
-				foreach ($pairs as $one) {
-					list($k, $v) = explode("=", $one);
-					if (strcasecmp($k, "AccessKey")) {
-						echo $one;
-						echo " ";
-						$access_key = $v;
+				$header_key = $header_chunks[0];
+				$header_value = $header_chunks[1];
+
+				if (strcasecmp($header_key, "Cookie")) {
+					$pairs = explode(";", $header_value);
+					foreach ($pairs as $one) {
+						list($k, $v) = explode("=", $one);
+						if (strcasecmp($k, "AccessKey")) {
+							echo $one;
+							echo " ";
+							$access_key = $v;
+						}
 					}
 				}
 			}
