@@ -23,7 +23,7 @@ class Jobs extends CI_Controller {
 
 		foreach (explode("\r\n", $header) as $header) {
 
-			echo $header;
+			echo "HEADER: " . $header;
 
 			echo "<br/>";
 
@@ -43,9 +43,10 @@ class Jobs extends CI_Controller {
 							$v = $pieces[1];
 
 							if (strcasecmp($k, "AccessKey")) {
-								echo $one;
-								echo " ";
+								echo "KEY: " . $one;
+								echo " ====== ";
 								$access_key = $v;
+								echo "<br/>";
 							}
 						}
 
