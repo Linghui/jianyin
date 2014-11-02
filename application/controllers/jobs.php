@@ -11,7 +11,7 @@ class Jobs extends CI_Controller {
 		$url = "http://ehire.51job.com/MainLogin.aspx";
 		$ch = curl_init($url);
 
-		// curl_setopt($ch, CURLOPT_HTTPHEADER, $this -> get_request_headers());
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $this -> get_request_headers());
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
