@@ -51,28 +51,29 @@ class Jobs extends CI_Controller {
 				}
 			}
 		}
-		echo json_encode($this -> get_request_headers());
+		// echo json_encode($this -> get_request_headers());
 		// echo "found : " . $access_key;
 
-		// $url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
-		// $ch = curl_init($url);
-		//
-		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		// curl_setopt($ch, CURLOPT_VERBOSE, 1);
-		// curl_setopt($ch, CURLOPT_HEADER, 1);
-		// curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
-		//
-		// $POST_DATA = array(ctmName => urlencode("中广互联"), userName => "zghl863", password => "cnjobs2014", checkCode => "", oldAccessKey => $access_key, langtype => "Lang=&Flag=1", isRememberMe => "false", sc => "07e6a30d0c0dd9c6", ec => "687dc60d8ca8492f880d64999dc9218c");
-		//
-		// $postfields = http_build_query($POST_DATA);
-		// curl_setopt($ch, CURLOPT_PORT, 1);
-		// curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
-		//
-		// $response = curl_exec($ch);
-		//
-		// curl_close($ch);
-		//
-		// echo $response;
+		$url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
+		$ch = curl_init($url);
+
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $this -> get_request_headers());
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_VERBOSE, 1);
+		curl_setopt($ch, CURLOPT_HEADER, 1);
+		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+
+		$POST_DATA = array(ctmName => urlencode("中广互联"), userName => "zghl863", password => "cnjobs2014", checkCode => "", oldAccessKey => $access_key, langtype => "Lang=&Flag=1", isRememberMe => "false", sc => "07e6a30d0c0dd9c6", ec => "687dc60d8ca8492f880d64999dc9218c");
+
+		$postfields = http_build_query($POST_DATA);
+		curl_setopt($ch, CURLOPT_PORT, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
+
+		$response = curl_exec($ch);
+
+		curl_close($ch);
+
+		echo $response;
 	}
 
 	public function get_request_headers() {
