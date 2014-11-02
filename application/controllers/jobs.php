@@ -61,7 +61,7 @@ class Jobs extends CI_Controller {
 		// echo json_encode($ret);
 		// echo $response;
 		echo $header;
-		echo $boday;
+		echo $body;
 		
 
 		// echo json_encode($this -> get_request_headers());
