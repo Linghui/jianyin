@@ -21,10 +21,7 @@ class Test extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
-		foreach ($_SERVER as $key => $value) {
-			echo "$key :: $value <br/>";
-		}
-
+		echo phpinfo();
 	}
 
 
