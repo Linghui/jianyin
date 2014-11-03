@@ -1,15 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * CodeIgniter MongoDB Active Record Library
+ * CodeIgniter MongoDB Library - MongoClient PHP Driver
  *
  * @category  Library
  * @package   CodeIgniter
- * @author    Alex Bilbie <alex@alexbilbie.com>
- * @copyright 2012 Alex Bilbie.
+ * @author    Lucas Cabrera <lucasecabrera@gmail.com>
+ * @copyright 2014 Lucas Cabrera.
  * @license   MIT License http://www.opensource.org/licenses/mit-license.php
- * @version   Release: 2.0
- * @link      https://github.com/alexbilbie/codeigniter-mongodb-library
+ * @version   Release: 1.0
  */
+
 class Mongo_db
 {
 	
@@ -189,23 +189,23 @@ class Mongo_db
 	/**
 	 * Constructor
 	 * 
-	 * Automatically check if the Mongo PECL extension has been installed/enabled.
-	 *
 	 * @access public
 	 * @return void
-	 */	
+	 */
+
 	public function __construct()
-	{
-		if ( ! class_exists('Mongo'))
+	{	
+		$class = 'MongoClient';
+
+		if(!class_exists($class))
 		{
-			$this->_show_error('The MongoDB PECL extension has not been installed or enabled', 500);
+			$this->_show_error('MongoClient class not found', 500);
 		}
 		
-		if (function_exists('get_instance'))
-		{
+		if(function_exists('get_instance'))
+		{	
 			$this->_ci = get_instance();
 		}
-		
 		else
 		{
 			$this->_ci = NULL;
@@ -226,22 +226,19 @@ class Mongo_db
 	 */	
 	public function load($config = 'default')
 	{
-		// Try and load a config file if CodeIgniter
-		if ($this->_ci)
-		{
+		if($this->_ci)
+		{	
 			$this->_config_data = $this->_ci->config->load($this->_config_file);
 		}
-		
-		if (is_array($config))
+
+		if(is_array($config))
 		{
 			$this->_config_data = $config;
 		}
-		
 		elseif (is_string($config) && $this->_ci)
 		{
 			$this->_config_data = $this->_ci->config->item($config);
 		}
-		
 		else
 		{
 			$this->_show_error('No config name passed or config variables', 500);
@@ -249,7 +246,7 @@ class Mongo_db
 		
 		$this->_connection_string();
 		$this->_connect();
-	}	
+	}
 
 	/**
 	 * Switch database.
@@ -263,9 +260,10 @@ class Mongo_db
 	 * @access public
 	 * @return boolean
 	 */
+
 	public function switch_db($database = '')
 	{
-		if (empty($database))
+		if(empty($database))
 		{
 			$this->_show_error('To switch MongoDB databases, a new database name must be specified', 500);
 		}
@@ -379,17 +377,17 @@ class Mongo_db
 	 */
 	public function select($includes = array(), $excludes = array())
 	{
-		if ( ! is_array($includes))
+		if(!is_array($includes))
 		{
 			$includes = array();
 		}
 	
-		if ( ! is_array($excludes))
+		if(!is_array($excludes))
 		{
 			$excludes = array();
 		}
 		
-		if ( ! empty($includes))
+		if(!empty($includes))
 		{
 			foreach ($includes as $include)
 			{
@@ -409,7 +407,7 @@ class Mongo_db
 	}
 	
 	/**
-	 * Set where paramaters
+	 * Set where parameters
 	 *
 	 * Get the documents based on these search parameters.  The $wheres array should 
 	 * be an associative array with the field as the key and the value as the search
@@ -983,7 +981,7 @@ class Mongo_db
 	 */
 	public function insert($collection = '', $insert = array(), $options = array())
 	{
-		if (empty($collection))
+		if(empty($collection))
 		{
 			$this->_show_error('No Mongo collection selected to insert into', 500);
 		}
@@ -1001,16 +999,22 @@ class Mongo_db
 				);
 		
 		try
-		{
+		{	
+			// Error acá función safe deprecada usar w 
 			$this->_dbhandle
-				->{$collection}
-				->insert($insert, $options);
+				 ->{$collection}
+				 ->insert($insert, $options);
 			
-			if (isset($insert['_id']))
+			/*
+			$this->_dbhandle
+				 ->{$collection}
+				 ->insert($insert);
+				 */
+
+			if(isset($insert['_id']))
 			{
 				return $insert['_id'];
 			}
-			
 			else
 			{
 				return FALSE;
@@ -1222,14 +1226,14 @@ class Mongo_db
 		
 		if (is_string($fields))
 		{
-			$this->updates['$inc'][$fields] = $value;
+			$this->updates['$inc'][$fields] = -$value;
 		}
 		
 		elseif (is_array($fields))
 		{
 			foreach ($fields as $field => $value)
 			{
-				$this->updates['$inc'][$field] = $value;
+				$this->updates['$inc'][$field] = -$value;
 			}
 		}
 		
@@ -1821,14 +1825,16 @@ class Mongo_db
 		
 		try
 		{
-			$this->_connection = new Mongo($this->_connection_string, $options);
+			//$this->_connection = new Mongo($this->_connection_string, $options);
+			$this->_connection = new MongoClient();
 			$this->_dbhandle = $this->_connection->{$this->_dbname};
 			return $this;	
 		} 
 		catch (MongoConnectionException $exception)
 		{
-			if($this->_ci && $this->_ci->config->item('mongo_suppress_connect_error'))
-			{
+			if($this->_config_data['mongo_suppress_connect_error'])
+			{	
+				// Acá falla
 				$this->_show_error('Unable to connect to MongoDB', 500);
 			}
 			else
