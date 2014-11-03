@@ -11,6 +11,6 @@ class Redis_test extends CI_Controller {
 	}
 	
 	public function get(){
-		$this->redis->get("test");
+		echo $this->redis->get("test");
 	}
 }
