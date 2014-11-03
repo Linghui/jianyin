@@ -1,6 +1,6 @@
 <?php
 
-class Template extends CI_Controller {
+class Mongo_test extends CI_Controller {
 
 
 	public function index()
