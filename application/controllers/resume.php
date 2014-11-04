@@ -25,7 +25,14 @@ class Resume extends CI_Controller {
 		//
 
 		$resume_series_key = $this -> caiku_redis_model -> get_resume_series_key($name, $sex, $birth, $card_id, $phone, $email);
-		echo $resume_series_key;
+
+		if ($resume_series_key > 0) {
+			$this -> load -> library('resume_model');
+
+		} else {
+			$resume_id = $this -> resume_model -> add($name, $sex, $birth, $card_id, $phone, $email);
+			echo "resume_id $resume_id";
+		}
 
 	}
 
