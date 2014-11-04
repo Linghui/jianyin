@@ -14,7 +14,7 @@ class Resume extends CI_Controller {
 		$card_id = $this -> getp("card_id");
 
 		$email = $this -> getp("email");
-
+		
 		$location = $this -> getp("location");
 
 		$education = $this -> getp("education");
