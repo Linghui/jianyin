@@ -39,9 +39,9 @@ class Resume extends CI_Controller {
 
 			// the first one is root one, and always will be the latest merged one.
 			$resume_series_id = $this -> resume_model -> add_very_new($name, $sex, $birth, $card_id, $phone, $email);
-			echo "resume_series_id : $resume_series_id ";
+			echo "1 resume_series_id : $resume_series_id ";
 
-			if ($resume_series_id != 0) {
+			if ($resume_series_id) {
 
 				// save again for back up
 				$resume_id = $this -> resume_model -> add_by_series($resume_series_id, $name, $sex, $birth, $card_id, $phone, $email);
