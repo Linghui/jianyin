@@ -8,7 +8,7 @@ class Resume extends CI_Controller {
 		echo $name;
 		$sex = $this -> getp("sex");
 
-		echo $age;
+		echo sex;
 		$age = $this -> getp("age");
 
 		echo $age;
@@ -29,7 +29,7 @@ class Resume extends CI_Controller {
 	private function getp($p_name) {
 
 		$p = $this -> input -> get_post($p_name);
-		if (!isset($p)) {
+		if ($p) {
 			echo "$p_name not valid";
 			exit ;
 		}
