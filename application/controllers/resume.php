@@ -5,16 +5,19 @@ class Resume extends CI_Controller {
 	public function add() {
 		$name = $this -> getp("name");
 
+		echo $name;
 		$sex = $this -> getp("sex");
 
+		echo $age;
 		$age = $this -> getp("age");
 
+		echo $age;
 		$phone = $this -> getp("phone");
 
 		$card_id = $this -> getp("card_id");
 
 		$email = $this -> getp("email");
-		
+
 		$location = $this -> getp("location");
 
 		$education = $this -> getp("education");
