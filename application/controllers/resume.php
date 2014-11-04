@@ -15,6 +15,7 @@ class Resume extends CI_Controller {
 		$p = $this -> input -> get_post($p_name);
 		if (!isset($p)) {
 			echo "$p_name not valid";
+			exit ;
 		}
 
 		return $p;
