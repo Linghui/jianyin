@@ -8,7 +8,7 @@ class Resume extends CI_Controller {
 		echo $name;
 		$sex = $this -> getp("sex");
 
-		echo sex;
+		echo $sex;
 		$age = $this -> getp("age");
 
 		echo $age;
