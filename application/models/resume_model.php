@@ -38,7 +38,6 @@ class Resume_model extends CI_Model {
 
 	//
 	private function add($resume_id, $resume_series_id, $name, $sex, $birth, $card_id, $phone, $email) {
-		$this -> load -> library('mongo_db');
 
 		$resume = array('name' => $name, 'sex' => $sex, 'birth' => $birth, 'card_id' => $card_id, 'phone' => $phone, 'email' => $email);
 
