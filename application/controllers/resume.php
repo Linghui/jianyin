@@ -29,7 +29,7 @@ class Resume extends CI_Controller {
 	private function getp($p_name) {
 
 		$p = $this -> input -> get_post($p_name);
-		if ($p) {
+		if (!$p) {
 			echo "$p_name not valid";
 			exit ;
 		}
