@@ -7,6 +7,8 @@ class Resume extends CI_Controller {
 
 		$sex = $this -> getp("sex");
 
+		$birth = $this -> getp("birth");
+
 		$card_id = $this -> getp("card_id");
 
 		$phone = $this -> getp("phone");
@@ -21,7 +23,9 @@ class Resume extends CI_Controller {
 		//
 		// $job_history = $this -> getp("job_history");
 		//
-		$this -> caiku_redis_model -> save($name, $sex, $card_id, $phone, $email);
+
+		$resume_series_key = $this -> caiku_redis_model -> get_resume_series_key($name, $sex, $birth, $card_id, $phone, $email);
+		echo $resume_series_key;
 
 	}
 
