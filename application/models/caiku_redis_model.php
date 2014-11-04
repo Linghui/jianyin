@@ -10,15 +10,15 @@ class Caiku_redis_model extends CI_Model {
 		$level_one_key = $this -> gen_key($name, $sex, $birth);
 
 		if ($card_id) {
-			$this -> redis -> hset($level_one_key, array($card_id_pre . $card_id => $resume_series_id));
+			$this -> redis -> hset($level_one_key, array($this -> card_id_pre . $card_id => $resume_series_id));
 		}
 
 		if ($phone) {
-			$this -> redis -> hset($level_one_key, array($phone_pre . $phone => $resume_series_id));
+			$this -> redis -> hset($level_one_key, array($this -> phone_pre . $phone => $resume_series_id));
 		}
 
 		if ($email) {
-			$this -> redis -> hset($level_one_key, array($email_pre . $email => $resume_series_id));
+			$this -> redis -> hset($level_one_key, array($this -> email_pre . $email => $resume_series_id));
 		}
 	}
 
@@ -30,16 +30,16 @@ class Caiku_redis_model extends CI_Model {
 			return 0;
 		}
 
-		if ($this -> redis -> hexists($level_one_key, $card_id_pre . $card_id) != 0) {
-			return $this -> redis -> hget($level_one_key, $card_id_pre . $card_id);
+		if ($this -> redis -> hexists($level_one_key, $this -> card_id_pre . $card_id) != 0) {
+			return $this -> redis -> hget($level_one_key, $this -> card_id_pre . $card_id);
 		}
 
-		if ($this -> redis -> hexists($level_one_key, $phone_pre . $phone) != 0) {
-			return $this -> redis -> hget($level_one_key, $phone_pre . $phone);
+		if ($this -> redis -> hexists($level_one_key, $this -> phone_pre . $phone) != 0) {
+			return $this -> redis -> hget($level_one_key, $this -> phone_pre . $phone);
 		}
 
-		if ($this -> redis -> hexists($level_one_key, $email_pre . $email) != 0) {
-			return $this -> redis -> hget($level_one_key, $email_pre . $email);
+		if ($this -> redis -> hexists($level_one_key, $this -> email_pre . $email) != 0) {
+			return $this -> redis -> hget($level_one_key, $this -> email_pre . $email);
 		}
 
 		return -1;
