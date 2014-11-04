@@ -31,7 +31,7 @@ class Resume extends CI_Controller {
 
 		// found means there is resume(s) added to database before
 		if ($resume_series_id) {
-			$resume_id = $this -> resume_model -> add_by_series($resume_series_id, $name, $sex, $birth, $card_id, $phone, $email);
+			$resume_id = $this -> resume_model -> add_by_series_check($resume_series_id, $name, $sex, $birth, $card_id, $phone, $email);
 			echo "1 resume_id : $resume_id";
 		}
 		//
@@ -44,10 +44,10 @@ class Resume extends CI_Controller {
 			if ($resume_series_id) {
 
 				// save again for back up
-				$resume_id = $this -> resume_model -> add_by_series($resume_series_id, $name, $sex, $birth, $card_id, $phone, $email);
+				$resume_id = $this -> resume_model -> add_by_series_no_check($resume_series_id, $name, $sex, $birth, $card_id, $phone, $email);
 				echo "2 resume_id : $resume_id";
 
-				$this -> caiku_redis_model -> add_resume_series_id($name, $sex, $birth, $card_id, $phone, $email, $resume_id);
+				$this -> caiku_redis_model -> add_resume_series_id($name, $sex, $birth, $card_id, $phone, $email, $resume_series_id);
 			}
 		}
 
