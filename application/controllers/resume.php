@@ -5,24 +5,25 @@ class Resume extends CI_Controller {
 	public function add() {
 		$name = $this -> getp("name");
 
-		echo $name;
 		$sex = $this -> getp("sex");
-
-		echo $sex;
-		$age = $this -> getp("age");
-
-		echo $age;
-		$phone = $this -> getp("phone");
 
 		$card_id = $this -> getp("card_id");
 
+		$phone = $this -> getp("phone");
+
 		$email = $this -> getp("email");
 
-		$location = $this -> getp("location");
+		$age = $this -> getp("age");
 
-		$education = $this -> getp("education");
+		// $location = $this -> getp("location");
+		//
+		// $education = $this -> getp("education");
+		//
+		// $job_history = $this -> getp("job_history");
+		//
+		// $this -> load -> model('caiku_redis_model');
 
-		$job_history = $this -> getp("job_history");
+		$this -> caiku_redis_model -> save($name, $sex, $card_id, $phone, $email);
 
 	}
 
