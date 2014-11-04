@@ -24,15 +24,31 @@ class Resume extends CI_Controller {
 		// $job_history = $this -> getp("job_history");
 		//
 
-		$resume_series_key = $this -> caiku_redis_model -> get_resume_series_key($name, $sex, $birth, $card_id, $phone, $email);
+		// get resume series unique id
+		$resume_series_id = $this -> caiku_redis_model -> get_resume_series_key($name, $sex, $birth, $card_id, $phone, $email);
+
 		$this -> load -> model('resume_model');
 
-		if ($resume_series_key > 0) {
+		// found means there is resume(s) added to database before
+		if ($resume_series_id > 0) {
+			$resume_id = $this -> resume_model -> add_by_series($resume_series_id, $name, $sex, $birth, $card_id, $phone, $email);
+			echo "1 resume_id : $resume_id";
+		}
+		//
+		else {
 
-		} else {
+			// the first one is root one, and always will be the latest merged one.
+			$resume_series_id = $this -> resume_model -> add_very_new($name, $sex, $birth, $card_id, $phone, $email);
+			echo "resume_series_id : $resume_series_id ";
 
-			$resume_id = $this -> resume_model -> add($name, $sex, $birth, $card_id, $phone, $email);
-			echo "resume_id $resume_id";
+			if ($resume_series_id != 0) {
+
+				// save again for back up
+				$resume_id = $this -> resume_model -> add_by_series($resume_series_id, $name, $sex, $birth, $card_id, $phone, $email);
+				echo "2 resume_id : $resume_id";
+
+				$this -> caiku_redis_model -> add_resume_series_id($name, $sex, $birth, $card_id, $phone, $email, $resume_id);
+			}
 		}
 
 	}

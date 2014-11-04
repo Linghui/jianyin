@@ -6,7 +6,23 @@ class Caiku_redis_model extends CI_Model {
 	var $phone_pre = "phone_";
 	var $email_pre = "email_";
 
-	public function get_resume_series_key($name, $sex, $birth, $card_id, $phone, $email) {
+	public function add_resume_series_id($name, $sex, $birth, $card_id, $phone, $email, $resume_series_id) {
+		$level_one_key = $this -> gen_key($name, $sex, $birth);
+
+		if ($card_id) {
+			$this -> redis -> hset($level_one_key, array($card_id_pre . $card_id => $resume_series_id));
+		}
+
+		if ($phone) {
+			$this -> redis -> hset($level_one_key, array($phone_pre . $phone => $resume_series_id));
+		}
+
+		if ($email) {
+			$this -> redis -> hset($level_one_key, array($email_pre . $email => $resume_series_id));
+		}
+	}
+
+	public function get_resume_series_id($name, $sex, $birth, $card_id, $phone, $email) {
 
 		$level_one_key = $this -> gen_key($name, $sex, $birth);
 
