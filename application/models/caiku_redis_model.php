@@ -6,7 +6,7 @@ class Caiku_redis_model extends CI_Model {
 
 		if (!$this -> redis -> hget("resume_id")) {
 			echo "new";
-			$this -> redis -> hmset("resume_id", "test");
+			$this -> redis -> hmset("resume_id", array());
 		}
 		echo "over";
 
