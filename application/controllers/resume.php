@@ -21,8 +21,6 @@ class Resume extends CI_Controller {
 		//
 		// $job_history = $this -> getp("job_history");
 		//
-		$this -> load -> model('caiku_redis_model');
-
 		$this -> caiku_redis_model -> save($name, $sex, $card_id, $phone, $email);
 
 	}
