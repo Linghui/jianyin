@@ -30,7 +30,7 @@ class Resume extends CI_Controller {
 		$this -> load -> model('resume_model');
 
 		// found means there is resume(s) added to database before
-		if ($resume_series_id > 0) {
+		if ($resume_series_id) {
 			$resume_id = $this -> resume_model -> add_by_series($resume_series_id, $name, $sex, $birth, $card_id, $phone, $email);
 			echo "1 resume_id : $resume_id";
 		}
