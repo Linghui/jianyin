@@ -10,17 +10,22 @@ class Resume_search extends CI_Controller {
 		$word = $this -> input -> get("w");
 
 		if ($word) {
+			$response = array();
 			$this -> load -> model('resume_model');
 			$data = $this -> resume_model -> find($word);
+
 			if ($data) {
-				echo json_encode($data);
+				$response['status'] = 1;
+				$response['data'] = $data;
 			} else {
-				echo "no data";
+				$response['status'] = 0;
 			}
 
 		} else {
-			echo "no word";
+			$response['status'] = -1;
 		}
+
+		echo json_encode($response);
 	}
 
 }
