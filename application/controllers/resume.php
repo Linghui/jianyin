@@ -44,6 +44,7 @@ class Resume extends CI_Controller {
 				echo "duplicated";
 			} else {
 				// TODO: merge the root;
+				echo "1 resume_id $resume_id";
 			}
 
 		}
