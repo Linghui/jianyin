@@ -10,17 +10,22 @@ function search() {
 	}).done(function(data) {
 		console.log("done");
 		if (data.status > 0) {
-			var resume_list = data.data;
-			for (var index = 0; index < resume_list.length; index++) {
-				console.log(index + " " + resume_list[index].name);
-			}
+			show_resume_list(data.data);
 		} else if (data.status == 0) {
-			console.log("no data found");
+			show_error("no data found");
 		} else {
-			console.log("need search word");
+			show_error("need search word");
 		}
 
 	}).fail(function(data) {
 		console.log("failed " + data);
 	});
+}
+
+function show_resume_list(resume_list) {
+	$("#resume_list").html("found " + resume_list.length + " 个");
+}
+
+function show_error(msg) {
+	$("#resume_list").html(msg);
 }

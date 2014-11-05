@@ -10,6 +10,7 @@
 		<i class="search icon"></i>
 		搜索
 	</div>
+	<div class="ui selection list" id="resume_list"></div>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.min.js"></script>
