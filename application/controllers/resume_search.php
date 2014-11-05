@@ -11,9 +11,14 @@ class Resume_search extends CI_Controller {
 
 		if ($word) {
 			$data = $this -> mongo_db -> find($word);
-			echo json_encode($data);
+			if ($data) {
+				echo json_encode($data);
+			} else {
+				echo "no data";
+			}
+
 		} else {
-			echo "no data";
+			echo "no word";
 		}
 	}
 
