@@ -25,7 +25,19 @@ function search() {
 }
 
 function show_resume_list(resume_list) {
-	$("#resume_list").html("found " + resume_list.length + " 个");
+	var html = "";
+	for (var index = 1; index < resume_list.length; index++) {
+		html += '<div class="item">';
+		html += '<div class="content">';
+		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
+		html += '性别:' + resume_list[index].sex + " ";
+		html += '生日:' + resume_list[index].birth + " ";
+		html += '住址:' + resume_list[index].location + " ";
+		html += '</div>';
+		html += '</div>';
+		html += '</div>';
+	}
+	$("#resume_list").html(html);
 }
 
 function show_error(msg) {
