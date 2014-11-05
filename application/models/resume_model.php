@@ -60,4 +60,15 @@ class Resume_model extends CI_Model {
 		return 0;
 	}
 
+	public function find($word) {
+		$word = $this -> trans($word);
+		$where = array('is_root' => 1, sex => $word);
+		$data = $user = $this -> mongo_db -> get_where('resume', $where);
+		return $data;
+	}
+
+	public function trans($word) {
+		return $word;
+	}
+
 }
