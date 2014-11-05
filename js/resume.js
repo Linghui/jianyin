@@ -5,7 +5,7 @@ $("#search").click(function() {
 function search() {
 
 	$.ajax({
-		url : "index.php/pinyin?words=" + allWords,
+		url : "resume_search/search?w=2",
 		dataType : "json"
 	}).done(function(data) {
 		console.log("done");
