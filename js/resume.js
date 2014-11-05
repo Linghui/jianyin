@@ -1,4 +1,5 @@
 $("#search").click(function() {
+	console.log("init");
 	search();
 });
 
