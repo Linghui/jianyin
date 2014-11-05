@@ -26,7 +26,7 @@ function search() {
 
 function show_resume_list(resume_list) {
 	var html = "";
-	for (var index = 1; index < resume_list.length; index++) {
+	for (var index = 0; index < resume_list.length; index++) {
 		html += '<div class="item">';
 		html += '<div class="content">';
 		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
@@ -37,6 +37,7 @@ function show_resume_list(resume_list) {
 		html += '</div>';
 		html += '</div>';
 	}
+	console.log(html);
 	$("#resume_list").html(html);
 }
 
