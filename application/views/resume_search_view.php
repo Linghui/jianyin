@@ -1,6 +1,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>才库搜索</title>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.min.js"></script>
 	<script type="text/javascript" src="/js/resume.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
