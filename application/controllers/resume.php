@@ -40,7 +40,12 @@ class Resume extends CI_Controller {
 		// found means there is resume(s) added to database before
 		if ($resume_series_id) {
 			$resume_id = $this -> resume_model -> add_by_series_check($resume_series_id, $resume);
-			echo "1 resume_id : $resume_id";
+			if ($resume_id === 0) {
+				echo "duplicated";
+			} else {
+				// TODO: merge the root;
+			}
+
 		}
 		//
 		else {

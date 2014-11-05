@@ -7,6 +7,8 @@ class Resume_model extends CI_Model {
 		$resume_id = uniqid("resume_id_");
 		$resume_series_id = $resume_id;
 
+		$resume['is_root'] = 1;
+
 		$this -> add($resume_id, $resume_id, $resume);
 
 		return $resume_id;
