@@ -4,7 +4,7 @@
 </head>
 <body>
 	<div class="ui input">
-		<input type="text" placeholder="搜索...">
+		<input type="text" placeholder="搜索..." id ="search_wrod">
 	</div>
 	<div id="search" class="ui right labeled icon button">
 		<i class="search icon"></i>

@@ -4,8 +4,10 @@ $("#search").click(function() {
 
 function search() {
 
+	var word = $("#search_wrod").val();
+
 	$.ajax({
-		url : "resume_search/search?w=2",
+		url : "resume_search/search?w=" + word,
 		dataType : "json"
 	}).done(function(data) {
 		console.log("done");
