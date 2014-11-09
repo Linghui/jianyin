@@ -6,7 +6,7 @@ use HTML::Parser ();
 use Data::Dumper qw/Dumper/;
 use URI::Escape;
 use HTTP::Cookies;
-
+use CGI::Carp qw(fatalsToBrowser);
 
 use strict;
 
