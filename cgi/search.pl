@@ -43,7 +43,9 @@ my $to_year = '5';
 my $location = '010100010200';
 my $location_comman = '010100,010200';
 
-$ua->cookie_jar(HTTP::Cookies->new(file => "$ENV{HOME}/51_loggedin_cookies.txt",ignore_discard => 1));
+#my $cookie_base = $ENV{HOME};
+my $cookie_base = "/tmp";
+$ua->cookie_jar(HTTP::Cookies->new(file => "$cookie_base/51_loggedin_cookies.txt",ignore_discard => 1));
 #$ua->cookie_jar->load($ENV{HOME}."/51_loggedin_cookies.txt");
 
 my %cookie = &get_cookie($ua->cookie_jar->as_string);

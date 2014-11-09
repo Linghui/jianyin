@@ -34,7 +34,10 @@ $ua->agent('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.
 #$ua->proxy(['http', 'https'], 'http://127.0.0.1:8888/');
 print "HOME : ".$ENV{HOME};
 print "\n";
-$ua->cookie_jar(HTTP::Cookies->new(file => "$ENV{HOME}/51_cookies.txt", ignore_discard => 1));
+
+#my $cookie_base = $ENV{HOME};
+my $cookie_base = "/tmp";
+$ua->cookie_jar(HTTP::Cookies->new(file => $cookie_base."/51_cookies.txt", ignore_discard => 1));
 
 &get_para();
 
@@ -72,7 +75,7 @@ $response = $ua->get($jump_href);
 $ua->cookie_jar->extract_cookies($response);
 print "cookie : " . $ua->cookie_jar->as_string;
 
-$ua->cookie_jar->save("$ENV{HOME}/51_loggedin_cookies.txt");
+$ua->cookie_jar->save("$cookie_base/51_loggedin_cookies.txt");
 
 #open WRT, ">".$ENV{HOME}."/51_loggedin_cookies.txt" or die "open error";
 #print "#LWP-Cookies-1.0\n";
