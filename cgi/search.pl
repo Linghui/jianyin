@@ -28,7 +28,7 @@ $ua->default_header("Cache-Control" => 'no-cache');
 
 $ua->agent('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E)');
 
-$ua->proxy(['http', 'https'], 'http://127.0.0.1:8888/');
+#$ua->proxy(['http', 'https'], 'http://127.0.0.1:8888/');
 
 my $key_word = 'android';
 my $from_year = '2';
