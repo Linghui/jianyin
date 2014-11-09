@@ -1,5 +1,3 @@
-
-
 var ja = [];
 ja['010000'] = '北京';
 ja['010100'] = '东城区';
@@ -856,37 +854,37 @@ function show_error(msg) {
 function initArea() {
 	console.log("initArea");
 	var html = "";
-	ja.each( function( value, index ){  
-        
-		var cityCode = ja;
-		var cityName = ja;
-		
-		
+	// ja.each( function( value, index ){
+	//
+	// var cityCode = ja;
+	// var cityName = ja;
+	//
+	//
+	// html += '<div class="item" data-value="';
+	// html += cityCode;
+	// html += '">';
+	// html += cityName;
+	// html += '</div>';
+	// });
+
+	for (var key in ja) {
+		var cityCode = key;
+		var cityName = ja[key];
+		if (isMainCity(cityCode)) {
+			continue;
+		}
+
 		html += '<div class="item" data-value="';
 		html += cityCode;
 		html += '">';
 		html += cityName;
 		html += '</div>';
-	});  
-	
-	// for(var key in ja){
-		// var cityCode = ja;
-		// var cityName = ja;
-		// if(isMainCity(cityCode)){
-			// continue;
-		// }
-// 		
-		// html += '<div class="item" data-value="';
-		// html += cityCode;
-		// html += '">';
-		// html += cityName;
-		// html += '</div>';
-	// }
+	}
 	console.log("html " + html);
 	$("#city").html(html);
 }
 
-function isMainCity(){
+function isMainCity() {
 	return true;
 }
 
