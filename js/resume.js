@@ -851,10 +851,8 @@ function show_error(msg) {
 	$("#resume_list").html(msg);
 }
 
-$('#dropdown').dropdown();
-
 function initArea() {
-	
+
 	console.log("initArea");
 	var html = "";
 	// ja.each( function( value, index ){
@@ -872,7 +870,7 @@ function initArea() {
 
 	var index = 0;
 	for (var key in ja) {
-		if(index >= 10){
+		if (index >= 10) {
 			break;
 		}
 		console.log("key " + key);
@@ -891,6 +889,8 @@ function initArea() {
 	}
 	console.log("html " + html);
 	$("#city").html(html);
+
+	$('#dropdown').dropdown();
 }
 
 function isMainCity() {
