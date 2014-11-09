@@ -8,6 +8,7 @@ use URI::Escape;
 use HTTP::Cookies;
 use HTML::TreeBuilder;
 use XML::Simple;
+use JSON;
 
 
 use strict;
@@ -104,12 +105,12 @@ my $response = $ua->post('http://ehire.51job.com/Candidate/SearchResume.aspx', C
 #http://ehire.51job.com/ajax/GlobalVerticalResumeDivAjax.aspx?doType=FetchResumeContent&SeqID=0&UserID=319554951&strKey=5f9aa136b84171a6&strLang=0
 #$ua->cookie_jar->extract_cookies($response);
 
-open WRT, "> search.txt" or die "open error";
-print WRT $response->decoded_content;
-close WRT;
+#open WRT, "> search.txt" or die "open error";
+#print WRT $response->decoded_content;
+#close WRT;
 
 my @resumes = &grab_resume_info($response->decoded_content);
-
+print to_json(\@resumes);
 
 sub get_cookie(){
     my $cookie = shift;
