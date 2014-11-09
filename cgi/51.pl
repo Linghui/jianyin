@@ -68,8 +68,15 @@ print $response->decoded_content."\n";
 
 &parser_jump($response->decoded_content);
 print "$jump_href\n";
+if( $jump_href =~ /UserOffline/){
+    
+    $response = $ua->post($jump_href);
+} else {
+    $response = $ua->get($jump_href);
+}
 
-$response = $ua->get($jump_href);
+print "response\n";
+print $response->decoded_content;
 
 $ua->cookie_jar->extract_cookies($response);
 print "cookie : " . $ua->cookie_jar->as_string;
