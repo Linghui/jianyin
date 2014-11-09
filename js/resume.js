@@ -868,6 +868,7 @@ function initArea() {
 	// });
 
 	for (var key in ja) {
+		console.log("key " + key);
 		var cityCode = key;
 		var cityName = ja[key];
 		if (isMainCity(cityCode)) {
@@ -885,6 +886,6 @@ function initArea() {
 }
 
 function isMainCity() {
-	return true;
+	return false;
 }
 
