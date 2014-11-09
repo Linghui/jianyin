@@ -856,20 +856,33 @@ function show_error(msg) {
 function initArea() {
 	console.log("initArea");
 	var html = "";
-	for(var key in ja){
+	ja.each( function( value, index ){  
+        
 		var cityCode = ja;
 		var cityName = ja;
-		if(isMainCity(cityCode)){
-			continue;
-		}
+		
 		
 		html += '<div class="item" data-value="';
 		html += cityCode;
 		html += '">';
 		html += cityName;
 		html += '</div>';
-	}
-	console.log(html);
+	});  
+	
+	// for(var key in ja){
+		// var cityCode = ja;
+		// var cityName = ja;
+		// if(isMainCity(cityCode)){
+			// continue;
+		// }
+// 		
+		// html += '<div class="item" data-value="';
+		// html += cityCode;
+		// html += '">';
+		// html += cityName;
+		// html += '</div>';
+	// }
+	console.log("html " + html);
 	$("#city").html(html);
 }
 
