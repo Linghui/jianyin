@@ -802,7 +802,7 @@ ja['360000'] = '国外';
 
 var maincity = [[['010000', '020000', '040000', '030200', '070200', '180200', '200200', '080200', '090200', '060000', '050000', '070300', '080300', '120300', '230200', '230300', '030800', '110200', '120200', '150200', '170200', '190200', '220200', '240200', '250200', '070400', '070500']]];
 
-//$().ready(initArea);
+$().ready(initArea);
 
 $("#search").click(function() {
 	search();
@@ -851,7 +851,10 @@ function show_error(msg) {
 	$("#resume_list").html(msg);
 }
 
+$('#dropdown').dropdown();
+
 function initArea() {
+	return;
 	console.log("initArea");
 	var html = "";
 	// ja.each( function( value, index ){

@@ -10,7 +10,7 @@
 		<i class="search icon"></i>
 		搜索
 	</div>
-	<div class="ui selection dropdown">
+	<div class="ui selection dropdown" id='dropdown'>
   <input type="hidden" name="gender">
   <div class="default text">性别</div>
   <i class="dropdown icon"></i>
