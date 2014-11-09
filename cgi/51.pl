@@ -21,7 +21,6 @@ my $ua = LWP::UserAgent->new;
 
 #$ua->default_headers( $headers_obj );
 my $headers_obj = $ua->default_headers;
-print Dumper($headers_obj);
 
 $ua->default_header('Accept'=>'application/x-ms-application, image/jpeg, application/xaml+xml, image/gif, image/pjpeg, application/x-ms-xbap, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*');
 $ua->default_header('Accept-Language' => 'en-US');
