@@ -10,6 +10,15 @@
 		<i class="search icon"></i>
 		搜索
 	</div>
+	<div class="ui selection dropdown">
+		<input type="hidden" name="gender">
+		<div class="default text">
+			城市
+		</div>
+		<i class="dropdown icon"></i>
+		<div class="menu" id='city'></div>
+	</div>
+
 	<div class="ui selection list" id="resume_list"></div>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
