@@ -39,14 +39,15 @@ my $to_year = $q->param('to_year');
 print "Content-type:text/html\n\n";
 
 if(!defined($key_word) || !defined($location_comman) || !defined($from_year) || !defined($to_year) ){
-    print "";
-    return;
+    print "error : no ps";
+    exit;
 } else {
     print "$key_word ";
     print "$location_comman ";
     print "$location ";
     print "$from_year ";
     print "$to_year ";
+    exit;
 }
 
 
