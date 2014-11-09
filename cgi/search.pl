@@ -110,6 +110,9 @@ my $response = $ua->post('http://ehire.51job.com/Candidate/SearchResume.aspx', C
 #close WRT;
 
 my @resumes = &grab_resume_info($response->decoded_content);
+
+print "Content-type:text/html\n\n";
+
 print to_json(\@resumes);
 
 sub get_cookie(){
