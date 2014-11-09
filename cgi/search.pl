@@ -9,6 +9,7 @@ use HTTP::Cookies;
 use HTML::TreeBuilder;
 use XML::Simple;
 use JSON;
+use CGI::Carp qw(fatalsToBrowser);
 
 use utf8;
 binmode(STDIN, ':encoding(utf8)');
