@@ -48,37 +48,37 @@ class Jobs extends CI_Controller {
 		// echo "222 $fksc<br/>";
 		// echo "333 $hidEhireGuid<br/>";
 
-		// $url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
-		// $url = "http://www.jian-yin.com/test";
-		// $ch = curl_init($url);
-// 
-		// $POST_DATA = array("ctmName" => urlencode("中广互联"), "userName" => "zghl863", "password" => "cnjobs2014", "checkCode" => "", "oldAccessKey" => $hidAccessKey, "langtype" => "Lang=&Flag=1", "isRememberMe" => "false", "sc" => $fksc, "ec" => $hidEhireGuid);
-// 
-		// $postfields = http_build_query($POST_DATA);
-		// // curl_setopt($ch, CURLOPT_PORT, 1);
-		// // curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
-// 
-		// curl_setopt($ch, CURLOPT_HTTPHEADER, $this -> get_request_headers());
-// 
-		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		// curl_setopt($ch, CURLOPT_VERBOSE, 1);
-		// curl_setopt($ch, CURLOPT_HEADER, 1);
-		// $cookie_file = tempnam("tmp", "cookie.txt");
-		// // curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
-// 
-		// // $rrr = curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
-		// // if (!$rrr) {
-		// // echo curl_error($ch);
-		// // } else {
-		// $response = curl_exec($ch);
-		// echo $response;
-		// // list($headers, $body) = explode("\r\n\r\n", $response, 2);
-		// // $location = get_header($headers, "Location");
-// 
-		// // echo "Location " . $location;
-		// // }
-// 
-		// curl_close($ch);
+		$url = "https://ehirelogin.51job.com/Member/UserLogin.aspx";
+		$url = "http://www.jian-yin.com/test";
+		$ch = curl_init($url);
+
+		$POST_DATA = array("ctmName" => urlencode("中广互联"), "userName" => "zghl863", "password" => "cnjobs2014", "checkCode" => "", "oldAccessKey" => $hidAccessKey, "langtype" => "Lang=&Flag=1", "isRememberMe" => "false", "sc" => $fksc, "ec" => $hidEhireGuid);
+
+		$postfields = http_build_query($POST_DATA);
+		// curl_setopt($ch, CURLOPT_PORT, 1);
+		// curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
+
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $this -> get_request_headers());
+
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_VERBOSE, 1);
+		curl_setopt($ch, CURLOPT_HEADER, 1);
+		$cookie_file = tempnam("tmp", "cookie.txt");
+		// curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+
+		// $rrr = curl_setopt($ch, CURLOPT_CAINFO, "/usr/share/doc/libssl-doc/demos/cms/cacert.pem");
+		// if (!$rrr) {
+		// echo curl_error($ch);
+		// } else {
+		$response = curl_exec($ch);
+		echo $response;
+		// list($headers, $body) = explode("\r\n\r\n", $response, 2);
+		// $location = get_header($headers, "Location");
+
+		// echo "Location " . $location;
+		// }
+
+		curl_close($ch);
 
 	}
 
