@@ -811,20 +811,28 @@ $("#search").click(function() {
 function search() {
 
 	var word = $("#search_wrod").val();
-
+	var city = $("#dropdown").dropdown('get value');
+	console.log("city " + city);
+	if (word == null || word == "" || city == null || city) {
+		alert("need input");
+		return;
+	}
+	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
+	console.log("url " + url);
 	$.ajax({
-		url : "resume_search/search?w=" + word,
+		url : url,
 		dataType : "json"
 	}).done(function(data) {
-		console.log("done");
-		if (data.status > 0) {
-			show_resume_list(data.data);
-		} else if (data.status == 0) {
-			show_error("no data found");
-		} else {
-			show_error("need search word");
-		}
+		// console.log("done");
+		// if (data.status > 0) {
+			// show_resume_list(data.data);
+		// } else if (data.status == 0) {
+			// show_error("no data found");
+		// } else {
+			// show_error("need search word");
+		// }
 
+		show_resume_list_new(data);
 	}).fail(function(data) {
 		console.log("failed " + data);
 	});
@@ -839,6 +847,32 @@ function show_resume_list(resume_list) {
 		html += '性别:' + resume_list[index].sex + " ";
 		html += '生日:' + resume_list[index].birth + " ";
 		html += '住址:' + resume_list[index].location + " ";
+		html += '</div>';
+		html += '</div>';
+		html += '</div>';
+	}
+	console.log(html);
+	$("#resume_list").html(html);
+}
+
+
+function show_resume_list_new(resume_list) {
+	var html = "";
+	for (var index = 0; index < resume_list.length; index++) {
+		html += '<div class="item">';
+		html += '<div class="content">';
+		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
+		html += '学历:' + resume_list[index].degree + " ";
+		html += '城市:' + resume_list[index].location + " ";
+		html += '性别:' + resume_list[index].sex + " ";
+		html += '年龄:' + resume_list[index].age + " ";
+		html += '工作年限:' + resume_list[index].job_year + " ";
+		html += '简历更新时间:' + resume_list[index].update_date + " ";
+		html += 'id:' + resume_list[index].id + " ";
+		html += '专业:' + resume_list[index].major + " ";
+		html += 'keywords:' + resume_list[index].keywords + " ";
+		html += 'appraise:' + resume_list[index].appraise + " ";
+		html += 'addtype:' + resume_list[index].addtype + " ";
 		html += '</div>';
 		html += '</div>';
 		html += '</div>';
