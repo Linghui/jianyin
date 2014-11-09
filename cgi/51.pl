@@ -36,7 +36,7 @@ print "HOME : ".$ENV{HOME};
 print "\n";
 
 #my $cookie_base = $ENV{HOME};
-my $cookie_base = "/tmp";
+my $cookie_base = "/tmp/51";
 $ua->cookie_jar(HTTP::Cookies->new(file => $cookie_base."/51_cookies.txt", ignore_discard => 1));
 
 &get_para();
