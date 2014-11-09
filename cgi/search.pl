@@ -41,14 +41,15 @@ print "Content-type:text/html\n\n";
 if(!defined($key_word) || !defined($location_comman) || !defined($from_year) || !defined($to_year) ){
     print "error : no ps";
     exit;
-} else {
-    print "$key_word ";
-    print "$location_comman ";
-    print "$location ";
-    print "$from_year ";
-    print "$to_year ";
-    exit;
 }
+#else {
+#    print "$key_word ";
+#    print "$location_comman ";
+#    print "$location ";
+#    print "$from_year ";
+#    print "$to_year ";
+#    exit;
+#}
 
 
 my $ua = LWP::UserAgent->new;
