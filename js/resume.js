@@ -872,9 +872,6 @@ function initArea() {
 
 	var index = 0;
 	for (var key in ja) {
-		if(index >= 10){
-			break;
-		}
 		console.log("key " + key);
 		var cityCode = key;
 		var cityName = ja[key];
