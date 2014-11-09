@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-use strcit;
+use strict;
 use CGI;
 
 print "Content-type:text/html\n\n";
