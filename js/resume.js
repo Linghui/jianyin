@@ -854,7 +854,7 @@ function show_error(msg) {
 $('#dropdown').dropdown();
 
 function initArea() {
-	return;
+	
 	console.log("initArea");
 	var html = "";
 	// ja.each( function( value, index ){
