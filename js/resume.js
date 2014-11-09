@@ -1,3 +1,5 @@
+$().ready(initArea);
+
 $("#search").click(function() {
 	search();
 });
@@ -43,4 +45,9 @@ function show_resume_list(resume_list) {
 
 function show_error(msg) {
 	$("#resume_list").html(msg);
+}
+
+
+function initArea(){
+	console.log("initArea");
 }
