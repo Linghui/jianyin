@@ -16,7 +16,7 @@
 			城市
 		</div>
 		<i class="dropdown icon"></i>
-		<div class="menu" id='city'></div>
+		<div class="menu ui transition hidden" id='city'></div>
 	</div>
 
 	<div class="ui selection list" id="resume_list"></div>
