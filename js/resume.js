@@ -812,8 +812,9 @@ function search() {
 
 	var word = $("#search_wrod").val();
 	var city = $("#dropdown").dropdown('get value');
+	console.log("word " + word);
 	console.log("city " + city);
-	if (word == null || word == "" || city == null || city) {
+	if (word == null || word == "" || city == null || city == "") {
 		alert("need input");
 		return;
 	}
@@ -904,7 +905,6 @@ function initArea() {
 
 	var index = 0;
 	for (var key in ja) {
-		console.log("key " + key);
 		var cityCode = key;
 		var cityName = ja[key];
 		if (isMainCity(cityCode)) {
@@ -918,7 +918,6 @@ function initArea() {
 		html += '</div>';
 		index++;
 	}
-	console.log("html " + html);
 	$("#city").html(html);
 
 	$('#dropdown').dropdown();
