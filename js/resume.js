@@ -844,8 +844,7 @@ function show_resume_list(resume_list) {
 	for (var index = 0; index < resume_list.length; index++) {
 		html += '<div class="item">';
 		html += '<div class="content">';
-		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
-		html += '性别:' + resume_list[index].sex + " ";
+		// html += '<div class="header">姓名:' + resume_list[index].name + '</div>';tml += '性别:' + resume_list[index].sex + " ";
 		html += '生日:' + resume_list[index].birth + " ";
 		html += '住址:' + resume_list[index].location + " ";
 		html += '</div>';
