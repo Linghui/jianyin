@@ -85,46 +85,7 @@ print to_json(\@resumes);
 sub send_search(){
     
     
-    my $ua = LWP::UserAgent->new;
-    
-    $ua->default_header('Accept'=>'application/x-ms-application, image/jpeg, application/xaml+xml, image/gif, image/pjpeg, application/x-ms-xbap, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*');
-    $ua->default_header('Accept-Language' => 'en-US');
-    $ua->default_header('Accept-Encoding'=>'gzip, deflate');
-    $ua->default_header('Connection'=>'Keep-Alive');
-    $ua->default_header("Cache-Control" => 'no-cache');
-    
-    $ua->agent('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E)');
-    
-    #$ua->proxy(['http', 'https'], 'http://127.0.0.1:8888/');
-    
-    #my $key_word = 'android';
-    #my $from_year = '2';
-    #my $to_year = '5';
-    #my $location = '010100010200';
-    #my $location_comman = '010100,010200';
-    
-    #my $cookie_base = $ENV{HOME};
-    my $cookie_base = "/tmp/51";
-    $ua->cookie_jar(HTTP::Cookies->new(file => "$cookie_base/51_loggedin_cookies.txt",ignore_discard => 1));
-    #$ua->cookie_jar->load($ENV{HOME}."/51_loggedin_cookies.txt");
-    
-    my %cookie = &get_cookie($ua->cookie_jar->as_string);
-    $cookie{'guid'} = '14146466859464160050';
-    $cookie{'KWD'} = $key_word;
-    $cookie{'51job'} = 'cenglish%3D0';
-    my $cookie_str = "";
-    my $index = 0 ;
-    for my $key(keys %cookie){
-        if($index == 0 ){
-            $cookie_str .= $key ."=".$cookie{$key};
-        } else {
-            $cookie_str .= "; ".$key ."=".$cookie{$key};
-        }
-        $index++;
-    }
-    #print "$cookie_str\n";
-    $ua->default_header("Cookie" => $cookie_str);
-    
+    my $ua = &new_ua();
     
     my $para = {
         
@@ -294,6 +255,9 @@ sub grab_resume_info(){
 
 sub grab_detail(){
 
+    
+    my $ua = &new_ua();
+    
     my $onclick_content = shift;
     my $id = shift;
     
@@ -313,4 +277,49 @@ sub parse_resume_xml(){
     my $xml = shift;
     my $ref = XMLin($xml);
     return $ref;
+}
+
+sub new_ua(){
+
+    my $ua = LWP::UserAgent->new;
+    
+    $ua->default_header('Accept'=>'application/x-ms-application, image/jpeg, application/xaml+xml, image/gif, image/pjpeg, application/x-ms-xbap, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*');
+    $ua->default_header('Accept-Language' => 'en-US');
+    $ua->default_header('Accept-Encoding'=>'gzip, deflate');
+    $ua->default_header('Connection'=>'Keep-Alive');
+    $ua->default_header("Cache-Control" => 'no-cache');
+    
+    $ua->agent('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E)');
+    
+    #$ua->proxy(['http', 'https'], 'http://127.0.0.1:8888/');
+    
+    #my $key_word = 'android';
+    #my $from_year = '2';
+    #my $to_year = '5';
+    #my $location = '010100010200';
+    #my $location_comman = '010100,010200';
+    
+    #my $cookie_base = $ENV{HOME};
+    my $cookie_base = "/tmp/51";
+    $ua->cookie_jar(HTTP::Cookies->new(file => "$cookie_base/51_loggedin_cookies.txt",ignore_discard => 1));
+    #$ua->cookie_jar->load($ENV{HOME}."/51_loggedin_cookies.txt");
+    
+    my %cookie = &get_cookie($ua->cookie_jar->as_string);
+    $cookie{'guid'} = '14146466859464160050';
+    $cookie{'KWD'} = $key_word;
+    $cookie{'51job'} = 'cenglish%3D0';
+    my $cookie_str = "";
+    my $index = 0 ;
+    for my $key(keys %cookie){
+        if($index == 0 ){
+            $cookie_str .= $key ."=".$cookie{$key};
+        } else {
+            $cookie_str .= "; ".$key ."=".$cookie{$key};
+        }
+        $index++;
+    }
+    #print "$cookie_str\n";
+    $ua->default_header("Cookie" => $cookie_str);
+    
+    return $ua;
 }
