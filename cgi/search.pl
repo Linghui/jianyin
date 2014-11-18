@@ -84,7 +84,6 @@ if( $content =~ /MainLogin/){
 #    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
 #    
 #    my $content = $response->decoded_content;
-    print `pwd`;
     my $cotent = `perl 51.pl`;
     
 #    print $response->decoded_content;
