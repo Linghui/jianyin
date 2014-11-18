@@ -9,7 +9,7 @@ $("#search").click(function() {
 function init() {
 
 	initArea();
-	$("#resume_list").onchange(pchange);
+	$("#resume_list").dropdown("bind intent", pchange);
 }
 
 function pchange() {
