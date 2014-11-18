@@ -142,12 +142,16 @@ function showCity(cityArray) {
 
 	console.log("cityArray");
 	var html = "";
-	var first = 0;
+	var firstc = 0;
+	var firstn = 0;
 	for (var index = 0; index < cityArray.length; index++) {
 		var cityCode = cityArray[index];
+		if (index == 0) {
+			firstc = cityCode;
+		}
 		var cityName = ja[cityCode];
 		if (index == 0) {
-			first = cityName;
+			firstn = cityName;
 		}
 		console.log(cityName);
 		if (isMainCity(cityCode)) {
@@ -163,9 +167,8 @@ function showCity(cityArray) {
 	}
 	$("#city").html(html);
 
-	$('#city_dropdown').dropdown();
-	$('#city_dropdown').dropdown("set selected", "1");
-	$('#city_dropdown').dropdown("set text", first);
+	$('#city_dropdown').dropdown("set text", firstn);
+	$('#city_dropdown').dropdown("set value", firstc);
 
 }
 
