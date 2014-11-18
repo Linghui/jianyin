@@ -28,7 +28,10 @@ my $fksc;
 my $hidEhireGuid;
 
 
+my $cookie_base = "/tmp/51";
+
 my $q = CGI->new;
+
 
 my $key_word  = $q->param('keyword');
 my $location_comman = $q->param('location');
@@ -74,6 +77,8 @@ my $content = &send_search();
 
 
 if( $content =~ /MainLogin/){
+    system("rm -rf $cookie_base/51_loggedin_cookies.txt");
+    system("rm -rf $cookie_base/51_cookies.txt");
     # do log in
     my $newua = LWP::UserAgent->new;
     my $response = $newua->get('http://112.124.51.44/cgi/51.pl');
@@ -315,7 +320,7 @@ sub new_ua(){
     #my $location_comman = '010100,010200';
     
     #my $cookie_base = $ENV{HOME};
-    my $cookie_base = "/tmp/51";
+
     $ua->cookie_jar(HTTP::Cookies->new(file => "$cookie_base/51_loggedin_cookies.txt",ignore_discard => 1));
     #$ua->cookie_jar->load($ENV{HOME}."/51_loggedin_cookies.txt");
     
