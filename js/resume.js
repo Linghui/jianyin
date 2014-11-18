@@ -810,6 +810,8 @@ $("#search").click(function() {
 
 function search() {
 
+	hiddenError();
+	
 	var word = $("#search_wrod").val();
 	var city = $("#dropdown").dropdown('get value');
 	console.log("word " + word);
@@ -818,7 +820,8 @@ function search() {
 		alert("need input");
 		return;
 	}
-	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
+	// var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
+	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99';
 	console.log("url " + url);
 	$.ajax({
 		url : url,
@@ -836,6 +839,7 @@ function search() {
 			show_resume_list_new(data.d);
 		} else {
 			console.log(data.m);
+			showError(data.m);
 		}
 
 	}).fail(function(data) {
@@ -931,6 +935,9 @@ function isMainCity() {
 
 function showError(error) {
 	$('#error').html("Error:" + error);
-	$('#error').css();
+	$('#error').css("visibility","show");
+}
+function hiddenError(){
+	$('#error').css("visibility","hidden");
 }
 
