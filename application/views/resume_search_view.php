@@ -11,10 +11,12 @@
 	</div>
 
 	<div class="ui selection dropdown" id='dropdown'>
-		<input type="hidden" name="gender">
-		<div class="default text">
-			城市
+		<i class="dropdown icon"></i>
+		<div class="menu" id='province'>
 		</div>
+	</div>
+
+	<div class="ui selection dropdown" id='dropdown'>
 		<i class="dropdown icon"></i>
 		<div class="menu" id='city'></div>
 	</div>

@@ -1,3 +1,157 @@
+
+getAreaIDs
+
+$().ready(initArea);
+
+$("#search").click(function() {
+	search();
+});
+
+function search() {
+
+	hiddenError();
+	showLoader();
+
+	var word = $("#search_wrod").val();
+	var city = $("#dropdown").dropdown('get value');
+	console.log("word " + word);
+	console.log("city " + city);
+	if (word == null || word == "" || city == null || city == "") {
+		alert("need input");
+		return;
+	}
+	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
+	// var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99';
+	console.log("url " + url);
+	$.ajax({
+		url : url,
+		dataType : "json"
+	}).done(function(data) {
+		// console.log("done");
+		// if (data.status > 0) {
+		// show_resume_list(data.data);
+		// } else if (data.status == 0) {
+		// show_error("no data found");
+		// } else {
+		// show_error("need search word");
+		// }
+		if (data.c == 0) {
+			show_resume_list_new(data.d);
+		} else {
+			console.log(data.m);
+			showError(data.m);
+		}
+
+	}).fail(function(jqXHR, textStatus, errorThrown) {
+		console.log(textStatus + " " + errorThrown);
+		showError(errorThrown);
+	}).always(function() {
+		hiddenLoader();
+	});
+}
+
+function show_resume_list(resume_list) {
+	var html = "";
+	for (var index = 0; index < resume_list.length; index++) {
+		html += '<div class="item">';
+		html += '<div class="content">';
+		// html += '<div class="header">姓名:' + resume_list[index].name + '</div>';tml += '性别:' + resume_list[index].sex + " ";
+		html += '生日:' + resume_list[index].birth + " ";
+		html += '住址:' + resume_list[index].location + " ";
+		html += '</div>';
+		html += '</div>';
+		html += '</div>';
+	}
+	console.log(html);
+	$("#resume_list").html(html);
+}
+
+function show_resume_list_new(resume_list) {
+	var html = "";
+	for (var index = 0; index < resume_list.length; index++) {
+		html += '<div class="item">';
+		html += '<div class="content">';
+		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
+		html += '学历:' + resume_list[index].degree + " ";
+		html += '城市:' + resume_list[index].location + " ";
+		html += '性别:' + resume_list[index].sex + " ";
+		html += '年龄:' + resume_list[index].age + " ";
+		html += '工作年限:' + resume_list[index].job_year + " ";
+		html += '简历更新时间:' + resume_list[index].update_date + " ";
+		html += 'id:' + resume_list[index].id + " ";
+		html += '专业:' + resume_list[index].major + " ";
+		html += 'keywords:' + resume_list[index].keywords + " ";
+		html += 'appraise:' + resume_list[index].appraise + " ";
+		html += 'addtype:' + resume_list[index].addtype + " ";
+		html += '</div>';
+		html += '</div>';
+		html += '</div>';
+	}
+	console.log(html);
+	$("#resume_list").html(html);
+}
+
+function show_error(msg) {
+	$("#resume_list").html(msg);
+}
+
+function initArea() {
+
+	console.log("initArea");
+	var html = "";
+	// ja.each( function( value, index ){
+	//
+	// var cityCode = ja;
+	// var cityName = ja;
+	//
+	//
+	// html += '<div class="item" data-value="';
+	// html += cityCode;
+	// html += '">';
+	// html += cityName;
+	// html += '</div>';
+	// });
+
+	
+	for (var index = 0;index < maincity.length; index++) {
+		var cityCode = maincity[index];
+		var cityName = ja[cityCode];
+		if (isMainCity(cityCode)) {
+			continue;
+		}
+
+		html += '<div class="item" data-value="';
+		html += cityCode;
+		html += '">';
+		html += cityName;
+		html += '</div>';
+		index++;
+	}
+	$("#province").html(html);
+
+	$('#dropdown').dropdown();
+}
+
+function isMainCity() {
+	return false;
+}
+
+function showError(error) {
+	$('#error').css("visibility", "visible");
+	$('#error').html("Error:" + error);
+}
+
+function hiddenError() {
+	$('#error').css("visibility", "hidden");
+}
+
+function showLoader() {
+	$('#loader').addClass("active");
+}
+
+function hiddenLoader() {
+	$('#loader').removeClass("active");
+}
 var ja = [];
 ja['010000'] = '北京';
 ja['010100'] = '东城区';
@@ -800,156 +954,128 @@ ja['340000'] = '澳门';
 ja['350000'] = '台湾';
 ja['360000'] = '国外';
 
-var maincity = [[['010000', '020000', '040000', '030200', '070200', '180200', '200200', '080200', '090200', '060000', '050000', '070300', '080300', '120300', '230200', '230300', '030800', '110200', '120200', '150200', '170200', '190200', '220200', '240200', '250200', '070400', '070500']]];
+var maincity = new Array('010000', '020000', '040000', '030200', '070200', '180200', '200200', '080200', '090200', '060000', '050000', '070300', '080300', '120300', '230200', '230300', '030800', '110200', '120200', '150200', '170200', '190200', '220200', '240200', '250200', '070400', '070500');
 
-$().ready(initArea);
 
-$("#search").click(function() {
-	search();
-});
-
-function search() {
-
-	hiddenError();
-	showLoader();
-
-	var word = $("#search_wrod").val();
-	var city = $("#dropdown").dropdown('get value');
-	console.log("word " + word);
-	console.log("city " + city);
-	if (word == null || word == "" || city == null || city == "") {
-		alert("need input");
-		return;
+function getAreaIDs(idx){
+	switch(idx){
+		case '010000':
+			return new Array('010000','010100','010200','010300','010400','010500','010600','010700','010800','010900','011000','011100','011200','011300','011400','011500','011600','011700','011800');	    
+		case '020000':
+			return new Array('020000','020100','020200','020300','020400','020500','020600','020700','020800','020900','021000','021100','021200','021300','021400','021500','021600','021800','021900');
+		case '030000':
+			return new Array('030000','030200','040000','030300','030400','030500','030600','030700','030800','031400','031500','031700','031800','031900','032000','032100','032200','032300','032400','032500','032600','032700','032800','032900');
+		case '030200':
+			return new Array('030200','030201','030202','030203','030204','030205','030206','030207','030208','030209','030210','030211','030212');
+        case '030800':// add by linsendu 20140713 新增东莞(030800)分区
+            return new Array('030800', '030801', '030802', '030803', '030804', '030805', '030806', '030807', '030808', '030809', '030810', '030811', '030812', '030813', '030814', '030815', '030816', '030817', '030818', '030819', '030820', '030821', '030822', '030823', '030824', '030825', '030826', '030827', '030828', '030829', '030830', '030831', '030832');
+        case '040000':   // modify by peggy 20130508 增加深圳分区
+			return new Array('040000','040100','040200','040300','040400','040500','040600','040700','040800','040900','041000');
+		case '050000':
+			return new Array('050000','050100','050200','050300','050400','050500','050600','050700','050800','050900','051000','051100','051200','051300','051400','051500','051600');
+		case '060000':
+			return new Array('060000','060100','060200','060300','060400','060600','060700','060800','060900','061000','061100','061200','061300','061400','061500','061600','061700','061900','062000','062100','062200','062300','062400','062500','062600','062700','062800','062900','063000','063100','063200','063300','063400','063500','063600','063700','063800','063900','064000');
+		case '070000':   // modify by peggy 20130508 删除'071700'
+		    return new Array('070000', '070200', '070300', '070400', '070500', '070600', '070700', '070800', '070900', '071000', '071100', '071200', '071300', '071400', '071600', '071800', '071900', '072000', '072100', '072300', '072500'); // delete by linsendu 072400，07150020140713 移至无锡分区内，072200移至常州分区内
+		case '070200':
+		    return new Array('070200','070201','070202','070203','070204','070205','070206','070207','070208','070209','070210','070211','070212','070213');
+		case '070300':   // add by peggy 20130508 新增苏州(070300)分区
+		    return new Array('070300', '070301', '070302', '070303', '070304', '070305', '070306', '070307');
+		case '070400':// add by linsendu 20140713 新增无锡(070400)分区
+		    return new Array('070400', '070401', '070402', '070403', '070404', '070405', '070406', '070407', '070408', '070409');
+        case '070500':// add by linsendu 20140713 新增常州(070500)分区
+		    return new Array('070500', '070501', '070502', '070503', '070504', '070505', '070506', '070507');
+		case '080000':   // modify by peggy 20130508 删除'081300','081500'
+			return new Array('080000','080200','080300','080400','080500','080600','080700','080800','080900','081000','081100','081200','081400','081600');
+		case '080200':
+		    return new Array('080200','080201','080202','080203','080204','080205','080206','080207','080208','080209','080210','080211','080212','080213');
+		case '080300':   // add by peggy 20130508 新增宁波(080300)分区
+		    return new Array('080300','080301','080302','080303','080304','080305','080306','080307','080308','080309','080310','080311');
+		case '090000':
+			return new Array('090000','090200','090300','090400','090500','090600','090700','090800','090900','091000','091100','091200','091300','091400','091500','091600','091700','091800','091900','092000','092100','092200','092300');
+		case '090200':
+		    return new Array('090200','090201','090202','090203','090204','090205','090206','090207','090208','090209','090210','090211','090212','090213','090214','090215','090216','090217','090218','090219','090220');
+		case '100000':// add by linsendu 20140713 海南新加城市
+		    return new Array('100000', '100200', '100300', '100400', '100500', '100600', '100700', '100800', '100900', '101000', '101100', '101200', '101300', '101400', '101500');
+		case '110000':
+			return new Array('110000','110200','110300','110400','110500','110600','110700','110800','110900','111000');
+        case '110200': // add by linsendu 20140713 新增福州(110200)分区
+            return new Array('110200', '110201', '110202', '110203', '110204', '110205', '110206', '110207', '110208', '110209', '110210', '110211', '110212', '110213');
+        case '120000':
+		    return new Array('120000', '120200', '120300', '120400', '120500', '120600', '120700', '120800', '120900', '121000', '121100', '121200', '121300', '121400', '121500', '121600', '121700', '121800');
+		case '120200': // add by linsendu 20140713 新增济南(120200)分区
+		    return new Array('120200', '120201', '120202', '120203', '120204', '120205', '120206', '120207', '120208', '120209', '120210', '120211');
+        case '120300':   // add by peggy 20130508 新增青岛(120300)分区
+			return new Array('120300','120301','120302','120303','120304','120305','120306','120307','120308','120309','120310');
+		case '130000':
+			return new Array('130000','130200','130300','130400','130500','130600','130700','130800','130900','131000','131100','131200');
+		case '140000':
+			return new Array('140000','140200','140300','140400','140500','140600','140700','140800','140900','141000','141100','141200','141300','141400','141500');
+		case '150000':
+		    return new Array('150000', '150200', '150300', '150400', '150500', '150600', '150700', '150800', '150900', '151000', '151100', '151200', '151400', '151500', '151600', '151700', '151800'); // delete by linsendu 151300移至合肥分区内
+		case '150200': // add by linsendu 20140713 新增合肥(150200)分区
+		    return new Array('150200', '150201', '150202', '150203', '150204', '150205', '150206', '150207', '150208', '150209', '150210', '150211');
+        case '160000':   // add by peggy 20130508 新增'161300'
+			return new Array('160000','160200','160300','160400','160500','160600','160700','160800','160900','161000','161100','161200','161300');
+        case '170000': // add by linsendu 20140713 新增邓州
+		    return new Array('170000', '170200', '170300', '170400', '170500', '170600', '170700', '170800', '170900', '171000', '171100', '171200', '171300', '171400', '171500', '171600', '171700', '171800', '171900', '172000');
+		case '170200': // add by linsendu 20140713 新增郑州(170200)分区，新增邓州
+		    return new Array('170200', '170201', '170202', '170203', '170204', '170205', '170206', '170207', '170208', '170209', '170210', '170211', '170212');
+        case '180000':
+			return new Array('180000','180200','180300','180400','180500','180600','180700','180800','180900','181000','181100','181200','181300','181400','181500','181600','181700','181800');
+		case '180200':
+		    return new Array('180200','180201','180202','180203','180204','180205','180206','180207','180208','180209','180210','180211','180212','180213');
+		case '190000':
+			return new Array('190000','190200','190300','190400','190500','190600','190700','190800','190900','191000','191100','191200','191300','191400','191500');
+        case '190200': // add by linsendu 20140713 新增长沙(190200)分区
+            return new Array('190200', '190201', '190202', '190203', '190204', '190205', '190206', '190207', '190208', '190209');
+        case '200000':
+			return new Array('200000','200200','200300','200400','200500','200600','200700','200800','200900','201000','201100','201200');
+        case '200200': // add by linsendu 20140713 西安(200200)增加分区
+            return new Array('200200', '200201', '200202', '200203', '200204', '200205', '200206', '200207', '200208', '200209', '200210', '200211', '200212', '200213', '200214', '200215', '200216', '200217', '200218', '200219');
+        case '210000':
+			return new Array('210000','210200','210300','210400','210500','210600','210700','210800','210900','211000','211100','211200');
+        case '220000': 
+		    return new Array('220000', '220200', '220300', '220400', '220500', '220600', '220700', '220800', '220900', '221000', '221100', '221200', '221300', '221400');
+		case '220200': // add by linsendu 20140713 新增哈尔滨(220200)分区
+		    return new Array('220200', '220201', '220202', '220203', '220204', '220205', '220206', '220207', '220208', '220209', '220210', '220211', '220212', '220213', '220214', '220215', '220216', '220217', '220218');
+        case '230000':
+			return new Array('230000','230200','230300','230400','230500','230600','230700','230800','230900','231000','231100','231200','231300','231400','231500');
+		case '230200':   // add by peggy 20130508 新增沈阳(230200)分区
+			return new Array('230200','230201','230202','230203','230204','230205','230206','230207','230208','230209','230210','230211','230212','230213');
+		case '230300':   // add by peggy 20130508 新增大连(230300)分区
+			return new Array('230300','230301','230302','230303','230304','230305','230306','230307','230308','230309','230310','230311','230312','230313');
+        case '240000': 
+            return new Array('240000','240200', '240300', '240400', '240500', '240600', '240700', '240800', '240900', '241000', '241100');
+        case '240200': // add by linsendu 20140713 新增长春(240200)分区
+            return new Array('240200', '240201', '240202', '240203', '240204', '240205', '240206', '240207', '240208', '240209', '240210', '240211', '240212', '240213', '240214');
+        case '250000':
+            return new Array('250000', '250200', '250300', '250400', '250500', '250600', '251000', '251100', '251200', '251300', '251400', '251500', '251600', '251700', '251800', '251900', '252000');
+		case '250200': // add by linsendu 20140713 新增昆明(250200)分区
+		    return new Array('250200', '250201', '250202', '250203', '250204', '250205', '250206', '250207', '250208', '250209', '250210', '250211', '250212', '250213', '250214');
+        case '260000':
+			return new Array('260000','260200','260300','260400','260500','260600','260700','260800','260900','261000');
+		case '270000':
+			return new Array('270000','270200','270300','270400','270500','270600','270700','270800','270900','271000','271100','271200','271300','271400','271500');
+		case '280000':
+			return new Array('280000','280200','280300','280400','280700','280800','280900','281000','281100','281200','281300','281400','281500');
+		case '290000':
+			return new Array('290000','290200','290300','290400','290500','290600');
+		case '300000':
+			return new Array('300000','300200','300300','300400','300500','300600','300700','300800');
+		case '310000':
+			return new Array('310000','310200','310300','310400','310500','310600','310700','310800','310900','311000','311100','311200','311300','311400','311500','311600','311700','311800','311900');
+		case '320000':
+			return new Array('320000','320200','320300','320400','320500','320600','320700','320800','320900');
+		case '330000':
+			return new Array('330000');
+		case '340000':
+			return new Array('340000');
+		case '350000':
+			return new Array('350000');
+		case '360000':
+			return new Array('360000');
+		default:
+			return new Array();
 	}
-	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
-	// var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99';
-	console.log("url " + url);
-	$.ajax({
-		url : url,
-		dataType : "json"
-	}).done(function(data) {
-		// console.log("done");
-		// if (data.status > 0) {
-		// show_resume_list(data.data);
-		// } else if (data.status == 0) {
-		// show_error("no data found");
-		// } else {
-		// show_error("need search word");
-		// }
-		if (data.c == 0) {
-			show_resume_list_new(data.d);
-		} else {
-			console.log(data.m);
-			showError(data.m);
-		}
-
-	}).fail(function(jqXHR, textStatus, errorThrown) {
-		console.log(textStatus + " " + errorThrown);
-		showError(errorThrown);
-	}).always(function() {
-		hiddenLoader();
-	});
-}
-
-function show_resume_list(resume_list) {
-	var html = "";
-	for (var index = 0; index < resume_list.length; index++) {
-		html += '<div class="item">';
-		html += '<div class="content">';
-		// html += '<div class="header">姓名:' + resume_list[index].name + '</div>';tml += '性别:' + resume_list[index].sex + " ";
-		html += '生日:' + resume_list[index].birth + " ";
-		html += '住址:' + resume_list[index].location + " ";
-		html += '</div>';
-		html += '</div>';
-		html += '</div>';
-	}
-	console.log(html);
-	$("#resume_list").html(html);
-}
-
-function show_resume_list_new(resume_list) {
-	var html = "";
-	for (var index = 0; index < resume_list.length; index++) {
-		html += '<div class="item">';
-		html += '<div class="content">';
-		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
-		html += '学历:' + resume_list[index].degree + " ";
-		html += '城市:' + resume_list[index].location + " ";
-		html += '性别:' + resume_list[index].sex + " ";
-		html += '年龄:' + resume_list[index].age + " ";
-		html += '工作年限:' + resume_list[index].job_year + " ";
-		html += '简历更新时间:' + resume_list[index].update_date + " ";
-		html += 'id:' + resume_list[index].id + " ";
-		html += '专业:' + resume_list[index].major + " ";
-		html += 'keywords:' + resume_list[index].keywords + " ";
-		html += 'appraise:' + resume_list[index].appraise + " ";
-		html += 'addtype:' + resume_list[index].addtype + " ";
-		html += '</div>';
-		html += '</div>';
-		html += '</div>';
-	}
-	console.log(html);
-	$("#resume_list").html(html);
-}
-
-function show_error(msg) {
-	$("#resume_list").html(msg);
-}
-
-function initArea() {
-
-	console.log("initArea");
-	var html = "";
-	// ja.each( function( value, index ){
-	//
-	// var cityCode = ja;
-	// var cityName = ja;
-	//
-	//
-	// html += '<div class="item" data-value="';
-	// html += cityCode;
-	// html += '">';
-	// html += cityName;
-	// html += '</div>';
-	// });
-
-	var index = 0;
-	for (var key in ja) {
-		var cityCode = key;
-		var cityName = ja[key];
-		if (isMainCity(cityCode)) {
-			continue;
-		}
-
-		html += '<div class="item" data-value="';
-		html += cityCode;
-		html += '">';
-		html += cityName;
-		html += '</div>';
-		index++;
-	}
-	$("#city").html(html);
-
-	$('#dropdown').dropdown();
-}
-
-function isMainCity() {
-	return false;
-}
-
-function showError(error) {
-	$('#error').css("visibility", "visible");
-	$('#error').html("Error:" + error);
-}
-
-function hiddenError() {
-	$('#error').css("visibility", "hidden");
-}
-
-function showLoader() {
-	$('#loader').addClass("active");
-}
-
-function hiddenLoader() {
-	$('#loader').removeClass("active");
 }
