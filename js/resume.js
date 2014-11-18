@@ -19,7 +19,8 @@ function init() {
 
 	initArea();
 	$("#province").dropdown("click", pchange);
-	console.log($("#province").dropdown("determine intent", pchange));
+	console.log($("#province_dropdown").dropdown("bind touch events", pchange));
+	console.log($("#province").dropdown("bind touch events", pchange));
 }
 
 function pchange() {
