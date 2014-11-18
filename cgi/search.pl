@@ -12,7 +12,6 @@ use JSON;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI;
 use URI::Escape;
-use Catalyst qw/-Debug StackTrace/;
 
 use utf8;
 #binmode(STDIN, ':encoding(utf8)');
