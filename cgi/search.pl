@@ -12,7 +12,6 @@ use JSON;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI;
 use URI::Escape;
-use CGI::Application::Plugin::DebugScreen;
 
 use utf8;
 #binmode(STDIN, ':encoding(utf8)');
@@ -34,12 +33,12 @@ my $cookie_base = "/tmp/51";
 my $q = CGI->new;
 
 
-my $key_word  = $q->param('keyword');
-my $location_comman = $q->param('location');
+my $key_word  = $q->param('keyword') || 'ios';
+my $location_comman = $q->param('location') || '100000';
 my $location = $location_comman;
 $location =~ s/,//g;
-my $from_year = $q->param('from_year');
-my $to_year = $q->param('to_year');
+my $from_year = $q->param('from_year') || '99';
+my $to_year = $q->param('to_year') || '00';
 
 my $key_code = 'c';
 my $key_message = 'm';
