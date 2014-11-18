@@ -14,9 +14,9 @@ use CGI;
 use URI::Escape;
 
 use utf8;
-binmode(STDIN, ':encoding(utf8)');
-binmode(STDOUT, ':encoding(utf8)');
-binmode(STDERR, ':encoding(utf8)');
+#binmode(STDIN, ':encoding(utf8)');
+#binmode(STDOUT, ':encoding(utf8)');
+#binmode(STDERR, ':encoding(utf8)');
 
 
 use strict;
@@ -62,7 +62,6 @@ if(!defined($key_word) || !defined($location_comman) || !defined($from_year) || 
     print to_json(\%resp);
     exit;
 }
-my $decode_key_word  = uri_unescape($key_word);
 
 #else {
 #    print "$key_word ";
@@ -81,10 +80,10 @@ if( $content =~ /MainLogin/){
     system("rm -rf $cookie_base/51_cookies.txt");
     # do log in
     my $newua = LWP::UserAgent->new;
-    my $response = `curl http://www.jian-yin.com/cgi/51.pl`;
+    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
     
 #    print $response->decoded_content;
-    if( $response =~ /强制下线/){
+    if( $response->decoded_content =~ /强制下线/){
         $resp{$key_code} =$ERROR;
         $resp{$key_message} ='账户已经登陆，请登录51job企业账号强制下线后，再次尝试搜索';
         
@@ -114,7 +113,7 @@ sub send_search(){
         "DpSearchList" => "",
         "WORKFUN1\$Text" => "最多只允许选择3个项目",
         'WORKFUN1$Value' => '',
-        'KEYWORD' => $decode_key_word,
+        'KEYWORD' => $key_word,
         'AREA$Value' => $location_comman,
         'WorkYearFrom' => '0',
         'WorkYearTo' => '99',
@@ -126,8 +125,8 @@ sub send_search(){
         'SEX' => '99',
         'JOBSTATUS' => '99',
         'hidSearchID' => '2,3,6,23,8,1,4,5,25,2,3,6,23,2,3,6,23,2,3,6,23',
-        'hidWhere' => '00#0#0#0|99|20140908|20141108|99|99|'.$from_year.'|'.$to_year.'|99|000000|'.$location.'|99|99|99|0000|99|99|99|00|0000|99|99|99|0000|99|99|00|99|99|99|99|99|99|99|99|99|000000|0|0|0000#%BeginPage%#%EndPage%#'.$decode_key_word,
-        'hidValue' => 'KEYWORDTYPE#0*LASTMODIFYSEL#4*JOBSTATUS#99*WORKYEAR#'.$from_year.'|'.$to_year.'*SEX#99*AREA#'.$location_comman.'*TOPDEGREE#|*WORKINDUSTRY1#*WORKFUN1#*KEYWORD#'.$decode_key_word,
+        'hidWhere' => '00#0#0#0|99|20140908|20141108|99|99|'.$from_year.'|'.$to_year.'|99|000000|'.$location.'|99|99|99|0000|99|99|99|00|0000|99|99|99|0000|99|99|00|99|99|99|99|99|99|99|99|99|000000|0|0|0000#%BeginPage%#%EndPage%#'.$key_word,
+        'hidValue' => 'KEYWORDTYPE#0*LASTMODIFYSEL#4*JOBSTATUS#99*WORKYEAR#'.$from_year.'|'.$to_year.'*SEX#99*AREA#'.$location_comman.'*TOPDEGREE#|*WORKINDUSTRY1#*WORKFUN1#*KEYWORD#'.$key_word,
         'hidTable' => '',
         'hidSearchNameID' => '',
         'hidPostBackFunType' => '',
