@@ -76,7 +76,7 @@ if(!defined($key_word) || !defined($location_comman) || !defined($from_year) || 
 my $content = &send_search();
 
 open WRT, "> search.txt" or die "open error";
-print WRT $response->decoded_content;
+print WRT $content;
 close WRT;
 
 if( $content =~ /MainLogin/){
