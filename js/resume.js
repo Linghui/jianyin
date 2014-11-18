@@ -833,7 +833,7 @@ function search() {
 		// show_error("need search word");
 		// }
 		if (data.c == 0) {
-			show_resume_list_new(data.data);
+			show_resume_list_new(data.d);
 		} else {
 			console.log(data.m);
 		}
