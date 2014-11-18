@@ -11,12 +11,17 @@
 	</div>
 
 	<div class="ui selection dropdown" id='province_dropdown'>
-		<i class="dropdown icon"></i>
-		<div class="menu" id='province'>
+		<div class="text">
+			北京
 		</div>
+		<i class="dropdown icon"></i>
+		<div class="menu" id='province'></div>
 	</div>
 
 	<div class="ui selection dropdown" id='city_dropdown'>
+		<div class="text">
+			城市
+		</div>
 		<i class="dropdown icon"></i>
 		<div class="menu" id='city'></div>
 	</div>
