@@ -141,7 +141,7 @@ function initArea() {
 
 function showCity(cityArray) {
 
-	console.log("cityArray");
+	console.log("cityArray " + cityArray.length);
 	var html = "";
 	var firstc = 0;
 	var firstn = 0;
@@ -151,6 +151,7 @@ function showCity(cityArray) {
 			firstc = cityCode;
 		}
 		var cityName = ja[cityCode];
+		console.log("cityArray " + cityName);
 		if (index == 0) {
 			firstn = cityName;
 		}
