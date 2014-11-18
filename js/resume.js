@@ -16,8 +16,9 @@ function init() {
 	// getAreaIDs
 	initArea();
 	$("#province_dropdown").dropdown({
-		onChange : function(a, b) {
-			console.log(a + "=" + b);
+		onChange : function(code, name) {
+			var cityArray = getAreaIDs(code);
+
 		}
 	});
 }
@@ -118,19 +119,6 @@ function initArea() {
 
 	console.log("initArea");
 	var html = "";
-	// ja.each( function( value, index ){
-	//
-	// var cityCode = ja;
-	// var cityName = ja;
-	//
-	//
-	// html += '<div class="item" data-value="';
-	// html += cityCode;
-	// html += '">';
-	// html += cityName;
-	// html += '</div>';
-	// });
-
 	for (var index = 0; index < maincity.length; index++) {
 		var cityCode = maincity[index];
 		var cityName = ja[cityCode];
@@ -148,6 +136,29 @@ function initArea() {
 	$("#province").html(html);
 
 	$('#province_dropdown').dropdown();
+}
+
+function showCity(cityArray) {
+
+	console.log("cityArray");
+	var html = "";
+	for (var index = 0; index < cityArray.length; index++) {
+		var cityCode = cityArray[index];
+		var cityName = ja[cityCode];
+		if (isMainCity(cityCode)) {
+			continue;
+		}
+
+		html += '<div class="item" data-value="';
+		html += cityCode;
+		html += '">';
+		html += cityName;
+		html += '</div>';
+		index++;
+	}
+	$("#city").html(html);
+
+	$('#city_dropdown').dropdown();
 }
 
 function isMainCity() {
