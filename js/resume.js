@@ -17,6 +17,7 @@ function init() {
 	initArea();
 	$("#province_dropdown").dropdown({
 		onChange : function(code, name) {
+			console.log(code + " " + name);
 			var cityArray = getAreaIDs(code);
 			showCity(cityArray);
 		}
