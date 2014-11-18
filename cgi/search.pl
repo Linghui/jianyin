@@ -54,7 +54,7 @@ print "Content-type:text/html\n\n";
 
 if(!defined($key_word) || !defined($location_comman) || !defined($from_year) || !defined($to_year) ){
     $resp{$key_code} =$ERROR;
-    $resp{$key_message} ='need ps';
+    $resp{$key_message} ='参数不足';
     
     print to_json(\%resp);
     exit;
@@ -77,6 +77,16 @@ if( $content =~ /MainLogin/){
     # do log in
     my $newua = LWP::UserAgent->new;
     my $response = $newua->get('http://112.124.51.44/cgi/51.pl');
+    
+#    print $response->decoded_content;
+    if( $response->decoded_content =~ /强制下线/){
+        $resp{$key_code} =$ERROR;
+        $resp{$key_message} ='账户已经登陆，请登录51job企业账号强制下线后，再次尝试搜索';
+        
+        print to_json(\%resp);
+        exit;
+    }
+    
     
     $content = &send_search();
     
