@@ -81,14 +81,14 @@ close WRT;
 
 
 if( $content =~ /MainLogin/){
-    system("rm -rf $cookie_base/51_loggedin_cookies.txt");
-    system("rm -rf $cookie_base/51_cookies.txt");
+#    system("rm -rf $cookie_base/51_loggedin_cookies.txt");
+#    system("rm -rf $cookie_base/51_cookies.txt");
     # do log in
-    my $newua = LWP::UserAgent->new;
-    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
-    
-    my $content = $response->decoded_content;
-#    my $cotent = `perl 51.pl`;
+#    my $newua = LWP::UserAgent->new;
+#    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
+#    
+#    my $content = $response->decoded_content;
+    my $cotent = `perl 51.pl`;
     
 #    print $response->decoded_content;
     if( $content =~ /error/i){
