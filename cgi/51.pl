@@ -63,23 +63,25 @@ my $response = $ua->post('http://ehire.51job.com/Member/UserLogin.aspx', Content
 $ua->cookie_jar->extract_cookies($response);
 $ua->cookie_jar->save();
 my $jump_href;
-print "1\n";
-print $response->decoded_content."\n";
+#print "1\n";
+#print $response->decoded_content."\n";
 
 &parser_jump($response->decoded_content);
-print "$jump_href\n";
-if( $jump_href =~ /UserOffline/){
+#print "$jump_href\n";
+if( $jump_href =~ /UserPreOffline/){
     
-    $response = $ua->post($jump_href);
+#    $response = $ua->post($jump_href);
+    print "error";
 } else {
     $response = $ua->get($jump_href);
+    print "ok";
 }
 
-print "response\n";
-print $response->decoded_content;
+#print "response\n";
+#print $response->decoded_content;
 
 $ua->cookie_jar->extract_cookies($response);
-print "cookie : " . $ua->cookie_jar->as_string;
+#print "cookie : " . $ua->cookie_jar->as_string;
 
 $ua->cookie_jar->save("$cookie_base/51_loggedin_cookies.txt");
 
@@ -106,7 +108,7 @@ sub parser_jump(){
 sub jump_start()
 {
     my ( $tag, $attr, $dtext, $origtext ) = @_;
-    print "tag $tag\n";
+#    print "tag $tag\n";
     if ( $tag =~ /^a$/ )
     {
         if($attr-> {'href'}){
@@ -135,17 +137,17 @@ sub get_para(){
 
     $p->parse($response->decoded_content);
 
-    print "hidLangType $hidLangType";
-    print "\n";
-
-    print "hidAccessKey $hidAccessKey";
-    print "\n";
-
-    print "fksc $fksc";
-    print "\n";
-
-    print "hidEhireGuid $hidEhireGuid";
-    print "\n";
+#    print "hidLangType $hidLangType";
+#    print "\n";
+#
+#    print "hidAccessKey $hidAccessKey";
+#    print "\n";
+#
+#    print "fksc $fksc";
+#    print "\n";
+#
+#    print "hidEhireGuid $hidEhireGuid";
+#    print "\n";
 }
 
 sub start
