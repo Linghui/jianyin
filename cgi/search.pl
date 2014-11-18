@@ -36,10 +36,26 @@ $location =~ s/,//g;
 my $from_year = $q->param('from_year');
 my $to_year = $q->param('to_year');
 
+my $key_code = 'c';
+my $key_message = 'm';
+my $key_data = 'd';
+
+my $OK = 0;
+my $ERROR = 1;
+
+my %resp = (
+    $key_code => 0,
+    $key_message => '',
+    $key_data => '',
+);
+
 print "Content-type:text/html\n\n";
 
 if(!defined($key_word) || !defined($location_comman) || !defined($from_year) || !defined($to_year) ){
-    print "error : no ps";
+    $resp{$key_code} =$ERROR;
+    $resp{$key_message} ='need ps';
+    
+    print to_json(\%resp);
     exit;
 }
 #else {
@@ -55,32 +71,18 @@ my $content = &send_search();
 
 
 if( $content =~ /MainLogin/){
-    print "not logged in\n";
-
-    print "=====\n";
-    print "=====\n";
-    print "=====\n";
-    print "=====\n";
     # do log in
     my $newua = LWP::UserAgent->new;
     my $response = $newua->get('http://112.124.51.44/cgi/51.pl');
-    print $response->decoded_content;
-
-    print "=====\n";
-    print "=====\n";
-    print "=====\n";
-    print "=====\n";
     
     $content = &send_search();
-    
-    print $content
     
 }
 
 my @resumes = &grab_resume_info($content);
 
-print to_json(\@resumes);
-
+$resp{$key_data} =\@resumes;
+print to_json(\%resp);
 
 sub send_search(){
     
