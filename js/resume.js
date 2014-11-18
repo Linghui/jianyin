@@ -9,7 +9,7 @@ $("#search").click(function() {
 function init() {
 
 	initArea();
-	$("#province_dropdown").dropdown("onclick", pchange);
+	$("#province_dropdown").dropdown("click", pchange);
 	console.log($("#province_dropdown").dropdown("determine intent", pchange));
 }
 
