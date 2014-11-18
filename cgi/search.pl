@@ -83,15 +83,14 @@ if( $content =~ /MainLogin/){
     my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
     
 #    print $response->decoded_content;
-    if( $response->decoded_content =~ /强制下线/){
+    if( $response->decoded_content =~ /error/i){
         $resp{$key_code} =$ERROR;
         $resp{$key_message} ='账户已经登陆，请登录51job企业账号强制下线后，再次尝试搜索';
         
         print to_json(\%resp);
         exit;
     }
-    
-    
+
     $content = &send_search();
     
 }
