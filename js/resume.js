@@ -18,7 +18,7 @@ function init() {
 	$("#province_dropdown").dropdown({
 		onChange : function(code, name) {
 			var cityArray = getAreaIDs(code);
-
+			showCity(cityArray);
 		}
 	});
 }
