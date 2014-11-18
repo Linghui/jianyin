@@ -818,8 +818,7 @@ function search() {
 		alert("need input");
 		return;
 	}
-	// var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
-	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99';
+	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
 	console.log("url " + url);
 	$.ajax({
 		url : url,
