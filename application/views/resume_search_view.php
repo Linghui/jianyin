@@ -20,7 +20,7 @@
 		<i class="search icon"></i>
 		搜索
 	</div>
-	<h4 class="ui red header"> Error: </div></h4>
+	<h4 class="ui red header" id ="error"> Error: </div></h4>
 
 	<div class="ui selection list" id="resume_list"></div>
 
