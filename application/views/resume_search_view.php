@@ -4,12 +4,9 @@
 </head>
 <body>
 	<div class="ui input">
-		<input type="text" placeholder="搜索..." id ="search_wrod">
+		<input type="text" placeholder="关键字..." id ="search_wrod">
 	</div>
-	<div id="search" class="ui right labeled icon button">
-		<i class="search icon"></i>
-		搜索
-	</div>
+
 	<div class="ui selection dropdown" id='dropdown'>
 		<input type="hidden" name="gender">
 		<div class="default text">
@@ -20,6 +17,13 @@
 	</div>
 
 	<div class="ui selection list" id="resume_list"></div>
+
+	<div id="search" class="ui right labeled icon button">
+		<i class="search icon"></i>
+		搜索
+	</div>
+	<h4 class="ui red header"> Error:
+	</div></h4>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.min.js"></script>
