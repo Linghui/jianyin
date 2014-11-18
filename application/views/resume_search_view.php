@@ -23,7 +23,7 @@
 	<h4 class="ui red header" id ="error" style="visibility: hidden;" > Error: </div> </h4>
 
 	<div class="ui selection list" id="resume_list">
-		<div class="ui active dimmer" id="loader">
+		<div class="ui dimmer" id="loader">
 			<div class="ui loader"></div>
 		</div>
 	</div>
