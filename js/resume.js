@@ -1,11 +1,8 @@
-getAreaIDs
-
 $().ready(init);
 
 $("#search").click(function() {
 	search();
 });
-
 
 $("#province_dropdown").change(function() {
 	pchange();
@@ -16,11 +13,13 @@ $("#province").change(function() {
 });
 
 function init() {
-
+	// getAreaIDs
 	initArea();
-	$("#province").dropdown("click", pchange);
-	console.log($("#province_dropdown").dropdown("bind touch events", pchange));
-	console.log($("#province").dropdown("bind touch events", pchange));
+	$("#province_dropdown").dropdown({
+		onChange : function(a, b) {
+			console.log(a + "=" + b);
+		}
+	});
 }
 
 function pchange() {
