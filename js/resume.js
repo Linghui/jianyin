@@ -158,8 +158,8 @@ function showCity(cityArray) {
 	}
 	$("#city").html(html);
 
-	$('#city_dropdown').dropdown();
-	$('#city_dropdown').dropdown("set selected", 0);
+	// $('#city_dropdown').dropdown();
+	$('#city_dropdown').dropdown("set selected", 1);
 
 }
 
