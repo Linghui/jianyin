@@ -75,16 +75,19 @@ if(!defined($key_word) || !defined($location_comman) || !defined($from_year) || 
 
 my $content = &send_search();
 
+open WRT, "> search.txt" or die "open error";
+print WRT $response->decoded_content;
+close WRT;
 
 if( $content =~ /MainLogin/){
     system("rm -rf $cookie_base/51_loggedin_cookies.txt");
     system("rm -rf $cookie_base/51_cookies.txt");
     # do log in
     my $newua = LWP::UserAgent->new;
-#    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
-#    
-#    my $content = $response->decoded_content;
-    my $cotent = `perl 51.pl`;
+    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
+    
+    my $content = $response->decoded_content;
+#    my $cotent = `perl 51.pl`;
     
 #    print $response->decoded_content;
     if( $content =~ /error/i){
@@ -155,10 +158,6 @@ sub send_search(){
     #my $response = $ua->post('http://www.kuaidot.com/d', Content => $para);
     #http://ehire.51job.com/ajax/GlobalVerticalResumeDivAjax.aspx?doType=FetchResumeContent&SeqID=0&UserID=319554951&strKey=5f9aa136b84171a6&strLang=0
     #$ua->cookie_jar->extract_cookies($response);
-    
-    #open WRT, "> search.txt" or die "open error";
-    #print WRT $response->decoded_content;
-    #close WRT;
     
     return $response->decoded_content;
 
