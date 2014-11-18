@@ -934,7 +934,7 @@ function isMainCity() {
 }
 
 function showError(error) {
-	$('#error').css("visibility","show");
+	$('#error').css("visibility","visible");
 	$('#error').html("Error:" + error);
 }
 function hiddenError(){
