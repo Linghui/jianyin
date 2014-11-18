@@ -6,6 +6,12 @@ $("#search").click(function() {
 	search();
 });
 
+
+$("#province_dropdown").change(function() {
+	pchange();
+});
+
+
 function init() {
 
 	initArea();
