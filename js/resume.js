@@ -145,6 +145,7 @@ function showCity(cityArray) {
 	for (var index = 0; index < cityArray.length; index++) {
 		var cityCode = cityArray[index];
 		var cityName = ja[cityCode];
+		console.log(cityName);
 		if (isMainCity(cityCode)) {
 			continue;
 		}
