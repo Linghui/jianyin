@@ -12,6 +12,7 @@ use JSON;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI;
 use URI::Escape;
+use CGI::Application::Plugin::DebugScreen;
 
 use utf8;
 #binmode(STDIN, ':encoding(utf8)');
