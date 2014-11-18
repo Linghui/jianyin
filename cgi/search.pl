@@ -81,10 +81,10 @@ if( $content =~ /MainLogin/){
     system("rm -rf $cookie_base/51_cookies.txt");
     # do log in
     my $newua = LWP::UserAgent->new;
-    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
+    my $response = `curl http://www.jian-yin.com/cgi/51.pl`;
     
 #    print $response->decoded_content;
-    if( $response->decoded_content =~ /强制下线/){
+    if( $response =~ /强制下线/){
         $resp{$key_code} =$ERROR;
         $resp{$key_message} ='账户已经登陆，请登录51job企业账号强制下线后，再次尝试搜索';
         
