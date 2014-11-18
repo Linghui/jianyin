@@ -5,6 +5,9 @@
 <body>
 	<div class="ui input">
 		<input type="text" placeholder="关键字..." id ="search_wrod">
+		<div class="ui dimmer" id="loader">
+			<div class="ui loader"></div>
+		</div>
 	</div>
 
 	<div class="ui selection dropdown" id='dropdown'>
@@ -22,11 +25,7 @@
 	</div>
 	<h4 class="ui red header" id ="error" style="visibility: hidden;" > Error: </div> </h4>
 
-	<div class="ui selection list" id="resume_list">
-		<div class="ui dimmer" id="loader">
-			<div class="ui loader"></div>
-		</div>
-	</div>
+	<div class="ui selection list" id="resume_list"></div>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.min.js"></script>
