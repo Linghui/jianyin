@@ -142,9 +142,13 @@ function showCity(cityArray) {
 
 	console.log("cityArray");
 	var html = "";
+	var first = 0;
 	for (var index = 0; index < cityArray.length; index++) {
 		var cityCode = cityArray[index];
 		var cityName = ja[cityCode];
+		if (index == 0) {
+			first = cityName;
+		}
 		console.log(cityName);
 		if (isMainCity(cityCode)) {
 			continue;
@@ -160,7 +164,8 @@ function showCity(cityArray) {
 	$("#city").html(html);
 
 	$('#city_dropdown').dropdown();
-	$('#city_dropdown').dropdown("set selected","1");
+	$('#city_dropdown').dropdown("set selected", "1");
+	$('#city_dropdown').dropdown("set text", first);
 
 }
 
