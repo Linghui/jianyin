@@ -63,7 +63,7 @@ if( $content =~ /MainLogin/){
     print "=====\n";
     # do log in
     my $newua = LWP::UserAgent->new;
-    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
+    my $response = $newua->get('http://112.124.51.44/cgi/51.pl');
     print $response->decoded_content;
 
     print "=====\n";
