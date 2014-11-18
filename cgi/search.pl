@@ -145,12 +145,21 @@ my $response = $ua->post('http://ehire.51job.com/Candidate/SearchResume.aspx', C
 #close WRT;
 
 if( $response->decoded_content =~ /MainLogin/){
-#    print "not logged in\n";
+    print "not logged in\n";
     # do log in
     my $newua = LWP::UserAgent->new;
-    $newua->get('http://www.jian-yin.com/cgi/51.pl');
+    $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
+    print $response->decoded_content;
 
+    print "=====\n";
+    print "=====\n";
+    print "=====\n";
+    print "=====\n";
+    
     $response = $ua->post('http://ehire.51job.com/Candidate/SearchResume.aspx', Content => $para);
+    
+    print $response->decoded_content;
+    
 }
 
 my @resumes = &grab_resume_info($response->decoded_content);
