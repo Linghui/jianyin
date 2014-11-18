@@ -10,13 +10,13 @@
 		</div>
 	</div>
 
-	<div class="ui selection dropdown" id='dropdown'>
+	<div class="ui selection dropdown" id='province_dropdown'>
 		<i class="dropdown icon"></i>
 		<div class="menu" id='province'>
 		</div>
 	</div>
 
-	<div class="ui selection dropdown" id='dropdown'>
+	<div class="ui selection dropdown" id='city_dropdown'>
 		<i class="dropdown icon"></i>
 		<div class="menu" id='city'></div>
 	</div>

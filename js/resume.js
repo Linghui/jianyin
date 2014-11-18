@@ -129,7 +129,7 @@ function initArea() {
 	}
 	$("#province").html(html);
 
-	$('#dropdown').dropdown();
+	$('#province_dropdown').dropdown();
 }
 
 function isMainCity() {
