@@ -144,6 +144,13 @@ my $response = $ua->post('http://ehire.51job.com/Candidate/SearchResume.aspx', C
 #print WRT $response->decoded_content;
 #close WRT;
 
+if( $response->decoded_content =~ /MainLogin/){
+    print "not logged in\n";
+    # do log in
+    $response = $ua->get('http://www.jian-yin.com/cgi/51.pl');
+    
+}
+
 my @resumes = &grab_resume_info($response->decoded_content);
 
 print to_json(\@resumes);
