@@ -33,7 +33,7 @@ my $cookie_base = "/tmp/51";
 my $q = CGI->new;
 
 
-my $key_word  = $q->param('keyword') || 'ios';
+my $key_word  = $q->param('keyword') || '测试';
 my $location_comman = $q->param('location') || '100000';
 my $location = $location_comman;
 $location =~ s/,//g;
