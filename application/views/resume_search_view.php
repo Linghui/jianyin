@@ -16,14 +16,13 @@
 		<div class="menu" id='city'></div>
 	</div>
 
-	<div class="ui selection list" id="resume_list"></div>
-
 	<div id="search" class="ui right labeled icon button">
 		<i class="search icon"></i>
 		搜索
 	</div>
-	<h4 class="ui red header"> Error:
-	</div></h4>
+	<h4 class="ui red header"> Error: </div></h4>
+
+	<div class="ui selection list" id="resume_list"></div>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.min.js"></script>
