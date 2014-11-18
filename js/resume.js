@@ -818,7 +818,8 @@ function search() {
 		alert("need input");
 		return;
 	}
-	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
+	// var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
+	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99';
 	console.log("url " + url);
 	$.ajax({
 		url : url,
@@ -826,14 +827,18 @@ function search() {
 	}).done(function(data) {
 		// console.log("done");
 		// if (data.status > 0) {
-			// show_resume_list(data.data);
+		// show_resume_list(data.data);
 		// } else if (data.status == 0) {
-			// show_error("no data found");
+		// show_error("no data found");
 		// } else {
-			// show_error("need search word");
+		// show_error("need search word");
 		// }
+		if (data.c == 0) {
+			show_resume_list_new(data.data);
+		} else {
+			console.log(data.m);
+		}
 
-		show_resume_list_new(data);
 	}).fail(function(data) {
 		console.log("failed " + data);
 	});
@@ -854,7 +859,6 @@ function show_resume_list(resume_list) {
 	console.log(html);
 	$("#resume_list").html(html);
 }
-
 
 function show_resume_list_new(resume_list) {
 	var html = "";
