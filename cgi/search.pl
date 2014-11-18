@@ -79,6 +79,7 @@ open WRT, "> search.txt" or die "open error";
 print WRT $content;
 close WRT;
 
+
 if( $content =~ /MainLogin/){
     system("rm -rf $cookie_base/51_loggedin_cookies.txt");
     system("rm -rf $cookie_base/51_cookies.txt");
