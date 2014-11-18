@@ -11,12 +11,15 @@ $("#province_dropdown").change(function() {
 	pchange();
 });
 
+$("#province").change(function() {
+	pchange();
+});
 
 function init() {
 
 	initArea();
-	$("#province_dropdown").dropdown("click", pchange);
-	console.log($("#province_dropdown").dropdown("determine intent", pchange));
+	$("#province").dropdown("click", pchange);
+	console.log($("#province").dropdown("determine intent", pchange));
 }
 
 function pchange() {
