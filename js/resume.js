@@ -9,7 +9,7 @@ $("#search").click(function() {
 function init() {
 
 	initArea();
-	$("#province_dropdown").dropdown("mouse events", pchange);
+	$("#province_dropdown").dropdown("click", pchange);
 }
 
 function pchange() {
