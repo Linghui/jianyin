@@ -33,7 +33,7 @@ function search() {
 	showLoader();
 
 	var word = $("#search_wrod").val();
-	var city = $("#dropdown").dropdown('get value');
+	var city = $("#city_dropdown").dropdown('get value');
 	console.log("word " + word);
 	console.log("city " + city);
 	if (word == null || word == "" || city == null || city == "") {
