@@ -330,7 +330,7 @@ sub new_ua(){
     
     my %cookie = &get_cookie($ua->cookie_jar->as_string);
     $cookie{'guid'} = '14146466859464160050';
-    $cookie{'KWD'} = uri_escape($key_word);
+    $cookie{'KWD'} = uri_escape_utf8($key_word);
     $cookie{'51job'} = 'cenglish%3D0';
     my $cookie_str = "";
     my $index = 0 ;
