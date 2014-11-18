@@ -79,6 +79,7 @@ open WRT, "> search.txt" or die "open error";
 print WRT $content;
 close WRT;
 
+print STDERR "content - $content\n";
 
 if( $content =~ /MainLogin/){
 #    system("rm -rf $cookie_base/51_loggedin_cookies.txt");
@@ -88,7 +89,8 @@ if( $content =~ /MainLogin/){
 #    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
 #    
 #    my $content = $response->decoded_content;
-    my $cotent = `perl 51.pl`;
+    $cotent = `perl 51.pl`;
+    print STDERR "1 == content - $content\n";
     
 #    print $response->decoded_content;
     if( $content =~ /error/i){
@@ -100,6 +102,7 @@ if( $content =~ /MainLogin/){
     }
 
     $content = &send_search();
+    print STDERR "2 == content - $content\n";
     
 }
 
