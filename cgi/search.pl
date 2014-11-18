@@ -89,7 +89,7 @@ if( $content =~ /MainLogin/){
 #    my $response = $newua->get('http://www.jian-yin.com/cgi/51.pl');
 #    
 #    my $content = $response->decoded_content;
-    $cotent = `perl 51.pl`;
+    $content = `perl 51.pl`;
     print STDERR "1 == content - $content\n";
     
 #    print $response->decoded_content;
