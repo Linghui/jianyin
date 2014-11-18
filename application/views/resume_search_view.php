@@ -11,6 +11,7 @@
 	</div>
 
 	<div class="ui selection dropdown" id='province_dropdown'>
+		<input type="hidden" name="province">
 		<div class="text">
 			北京
 		</div>
@@ -19,6 +20,7 @@
 	</div>
 
 	<div class="ui selection dropdown" id='city_dropdown'>
+		<input type="hidden" name="city">
 		<div class="text">
 			城市
 		</div>
