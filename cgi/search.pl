@@ -225,7 +225,15 @@ sub grab_resume_info(){
                     }
                 } elsif ($index == 8){
                     
-                    $info_hash{'degree'} = $td->content->[0];
+                    if(defined($td->content)){
+                        
+                        $info_hash{'degree'} = $td->content->[0];
+                    } else {
+                        
+                        $info_hash{'major'} = "";
+                    }
+                    
+
                 } elsif ($index == 9){
                     
                     $info_hash{'update_date'} = $td->content->[0];
