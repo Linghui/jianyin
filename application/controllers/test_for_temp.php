@@ -19,9 +19,9 @@ class Test_for_temp extends CI_Controller {
 		fclose($handle);
 		//$content = file_get_contents($form->file->getTempName());
 		//echo $content; exit;
-		$ext = '.' . $this -> resume_ext;
-		$username = self::USERNAME;
-		$pwd = self::PASSWORD;
+		$ext = '.html';
+		$username = 'u100046';
+		$pwd = "MlsrtP/BEy0=";
 
 		switch ($ext) {
 			case '.txt' :
