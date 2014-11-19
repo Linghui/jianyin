@@ -4,34 +4,52 @@ if (!defined('BASEPATH'))
 
 class Test_for_temp extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index() {
-		
-		$rand_messages = array('rand message' , 'ok', 'not ok', 'cool');
-		
-		$index = rand(0, count($rand_messages) - 1);
-		
+		$this -> load -> library("Nusoap_lib");
 
-		$protocol = array('p' => '1', 'c' => '0', 't' => $rand_messages[$index]);
-		$message = array();
-		array_push($message, $protocol);
+		$client = new nusoap_client('http://service.ygys.net/resumeservice.asmx?wsdl', 'wsdl', '', '', '', '');
+		$client -> soap_defencoding = 'utf-8';
+		$client -> decode_utf8 = FALSE;
+		$client -> xml_encoding = 'utf-8';
 
-		echo json_encode($message);
+		$file_full_name = "test.php";
+		//echo 'analyze filename:'.$file_full_name;
+		$handle = fopen($file_full_name, "r");
+		$content = fread($handle, filesize($file_full_name));
+		fclose($handle);
+		//$content = file_get_contents($form->file->getTempName());
+		//echo $content; exit;
+		$ext = '.' . $this -> resume_ext;
+		$username = self::USERNAME;
+		$pwd = self::PASSWORD;
 
+		switch ($ext) {
+			case '.txt' :
+			case '.html' :
+			case '.htm' :
+				$params = array('username' => $username, 'pwd' => $pwd, 'original' => $content);
+				$result = $client -> call('TransResume', array('parameters' => $params));
+				break;
+
+			default :
+				$params = array('username' => $username, 'pwd' => $pwd, 'content' => base64_encode($content), 'ext' => $ext);
+				$result = $client -> call('TransResumeForFileBase64', array('parameters' => $params));
+				break;
+		}
+
+		var_dump($result);
+
+		if ($client -> fault) {
+			$this -> errors = "发生了严重错误,请稍后再试";
+			return FALSE;
+		} else {
+			// Check for errors
+			$error = $client -> getError();
+			if ($error) {
+				$this -> errors = '解析发生错误，请重试或换一份简历';
+				return FALSE;
+			}
+		}
 	}
 
 }
