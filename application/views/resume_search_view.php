@@ -34,7 +34,7 @@
 			工作年限
 		</div>
 		<i class="dropdown icon"></i>
-		<div class="menu" id='city'>
+		<div class="menu">
 
 			<div class="item" data-value="99">
 				不限
