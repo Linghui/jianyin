@@ -37,7 +37,8 @@ class Test_for_temp extends CI_Controller {
 				break;
 		}
 
-		json_decode($result);
+		json_encode($result);
+		var_dump($result);
 
 		if ($client -> fault) {
 			$this -> errors = "发生了严重错误,请稍后再试";
