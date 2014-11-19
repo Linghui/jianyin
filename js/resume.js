@@ -4,14 +4,6 @@ $("#search").click(function() {
 	search();
 });
 
-$("#province_dropdown").change(function() {
-	pchange();
-});
-
-$("#province").change(function() {
-	pchange();
-});
-
 function init() {
 	// getAreaIDs
 	initArea();
@@ -169,6 +161,7 @@ function showCity(cityArray) {
 	}
 	$("#city").html(html);
 
+	$('#city_dropdown').dropdown();
 	$('#city_dropdown').dropdown("set text", firstn);
 	$('#city_dropdown').dropdown("set value", firstc);
 
