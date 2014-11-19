@@ -54,6 +54,32 @@
 		</div>
 	</div>
 
+	<div class="ui selection dropdown" id='to_dropdown'>
+		<input type="hidden" name="to" value＝"99">
+		<div class="text">
+			工作年限
+		</div>
+		<i class="dropdown icon"></i>
+		<div class="menu">
+
+			<div class="item" data-value="99">
+				不限
+			</div>
+			<div class="item " data-value="1">
+				一年
+			</div>
+			<div class="item " data-value="2">
+				三年
+			</div>
+			<div class="item " data-value="3">
+				五年
+			</div>
+			<div class="item " data-value="4">
+				八年
+			</div>
+		</div>
+	</div>
+
 	<div id="search" class="ui right labeled icon button">
 		<i class="search icon"></i>
 		搜索

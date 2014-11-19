@@ -14,10 +14,10 @@ function init() {
 			showCity(cityArray);
 		}
 	});
-}
+	
+	$('#from_dropdown').dropdown();
+	$('#to_dropdown').dropdown();
 
-function pchange() {
-	console.log("pchange");
 }
 
 function search() {
