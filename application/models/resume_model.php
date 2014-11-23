@@ -21,7 +21,7 @@ class Resume_model extends CI_Model {
 		// $job_history = $this -> getp("job_history");
 
 		// get resume series unique id
-		$resume_series_id = $this -> caiku_redis_model -> get_resume_series_id($resume['Name'], $resume['Sex'], $resume['Brith'], $resume['IDNO'], $phone, $email);
+		$resume_series_id = $this -> caiku_redis_model -> get_resume_series_id($resume['Name'], $resume['Sex'], $resume['Brith'], $resume['IDNO'], $resume['Mobile'], $resume['Email']);
 
 		// found means there is resume(s) added to database before
 		if ($resume_series_id) {

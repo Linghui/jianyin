@@ -50,7 +50,6 @@ class Test_for_temp extends CI_Controller {
 		}
 
 		echo $result['TransResumeResult']['Name'];
-		echo $result -> TransResumeResult -> Name;
 
 		$this -> load -> model('resume_model');
 
