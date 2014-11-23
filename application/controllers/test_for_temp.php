@@ -48,8 +48,9 @@ class Test_for_temp extends CI_Controller {
 				return FALSE;
 			}
 		}
-		
-		echo json_encode($result);
+
+		echo $result['Name'];
+		echo $result -> Name;
 
 		$this -> load -> model('resume_model');
 
