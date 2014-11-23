@@ -49,12 +49,12 @@ class Test_for_temp extends CI_Controller {
 			}
 		}
 
-		echo $result['Name'];
-		echo $result -> Name;
+		echo $result['TransResumeResult']['Name'];
+		echo $result -> TransResumeResult -> Name;
 
 		$this -> load -> model('resume_model');
 
-		$res = $this -> resume_model -> addResume($result);
+		$res = $this -> resume_model -> addResume($result['TransResumeResult']);
 
 		echo $res;
 
