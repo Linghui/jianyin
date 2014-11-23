@@ -18,10 +18,17 @@ class Resume_model extends CI_Model {
 			return 4;
 		}
 
+		$name = $resume['Name'];
+		$sex = $resume['Sex'];
+		$birth = $resume['Brith'];
+		$card_id = $resume['IDNO'];
+		$phone = $resume['Mobile'];
+		$email = $resume['Email'];
+
 		// $job_history = $this -> getp("job_history");
 
 		// get resume series unique id
-		$resume_series_id = $this -> caiku_redis_model -> get_resume_series_id($resume['Name'], $resume['Sex'], $resume['Brith'], $resume['IDNO'], $resume['Mobile'], $resume['Email']);
+		$resume_series_id = $this -> caiku_redis_model -> get_resume_series_id($name, $sex, $birth, $card_id, $phone, $email);
 
 		// found means there is resume(s) added to database before
 		if ($resume_series_id) {
