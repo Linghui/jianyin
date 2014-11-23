@@ -37,9 +37,6 @@ class Test_for_temp extends CI_Controller {
 				break;
 		}
 
-		echo json_encode($result);
-		// echo $result;
-		// var_dump();
 		if ($client -> fault) {
 			$this -> errors = "发生了严重错误,请稍后再试";
 			return FALSE;
@@ -51,6 +48,16 @@ class Test_for_temp extends CI_Controller {
 				return FALSE;
 			}
 		}
+
+		$this -> load -> model('resume_model');
+
+		$res = $this -> resume_model -> addResume($result);
+
+		echo $res;
+
+		// echo json_encode($result);
+		// echo $result;
+		// var_dump();
 	}
 
 }

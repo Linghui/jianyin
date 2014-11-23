@@ -2,6 +2,62 @@
 
 class Resume_model extends CI_Model {
 
+	public function addResume($resume) {
+
+		if (!isset($resume['Name']) || !isset($resume['Sex']) || !isset($resume['Brith']) || (!isset($resume['IDNO']) && !isset($resume['Email']) && !isset($resume['Mobile']))) {
+			return 1;
+		}
+
+		// $job_history = $this -> getp("job_history");
+
+		// get resume series unique id
+		$resume_series_id = $this -> caiku_redis_model -> get_resume_series_id($resume['Name'], $resume['Sex'], $resume['Brith'], $resume['IDNO'], $phone, $email);
+
+
+		// found means there is resume(s) added to database before
+		if ($resume_series_id) {
+			$resume_id = $this -> add_by_series_check($resume_series_id, $resume);
+			if ($resume_id === 0) {
+				// echo "duplicated";
+				return 2;
+			} else {
+				// TODO: merge the root;
+				// echo "1 resume_id $resume_id";
+			}
+
+		}
+		//
+		else {
+
+			// the first one is root one, and always will be the latest merged one.
+			$resume_series_id = $this -> add_very_new($resume);
+			// echo "1 resume_series_id : $resume_series_id ";
+
+			if ($resume_series_id) {
+
+				// save again for back up
+				$resume_id = $this -> add_by_series_no_check($resume_series_id, $resume);
+				// echo "2 resume_id : $resume_id";
+
+				$this -> caiku_redis_model -> add_resume_series_id($name, $sex, $birth, $card_id, $phone, $email, $resume_series_id);
+			}
+		}
+
+		return 0;
+
+	}
+
+	private function getp($p_name) {
+
+		$p = $this -> input -> get_post($p_name);
+		if (!$p) {
+			echo "$p_name not valid";
+			exit ;
+		}
+
+		return $p;
+	}
+
 	// for adding a person's very first resume, its resume_id and series_id is the same;
 	public function add_very_new($resume) {
 		$resume_id = uniqid("resume_id_");
