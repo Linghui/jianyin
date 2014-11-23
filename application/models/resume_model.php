@@ -4,8 +4,18 @@ class Resume_model extends CI_Model {
 
 	public function addResume($resume) {
 
-		if (!isset($resume['Name']) || !isset($resume['Sex']) || !isset($resume['Brith']) || (!isset($resume['IDNO']) && !isset($resume['Email']) && !isset($resume['Mobile']))) {
+		if (!isset($resume['Name'])) {
 			return 1;
+		}
+
+		if (!isset($resume['Sex'])) {
+			return 2;
+		}
+		if (!isset($resume['Brith'])) {
+			return 3;
+		}
+		if (!isset($resume['IDNO']) && !isset($resume['Email']) && !isset($resume['Mobile'])) {
+			return 4;
 		}
 
 		// $job_history = $this -> getp("job_history");
@@ -13,13 +23,12 @@ class Resume_model extends CI_Model {
 		// get resume series unique id
 		$resume_series_id = $this -> caiku_redis_model -> get_resume_series_id($resume['Name'], $resume['Sex'], $resume['Brith'], $resume['IDNO'], $phone, $email);
 
-
 		// found means there is resume(s) added to database before
 		if ($resume_series_id) {
 			$resume_id = $this -> add_by_series_check($resume_series_id, $resume);
 			if ($resume_id === 0) {
 				// echo "duplicated";
-				return 2;
+				return 5;
 			} else {
 				// TODO: merge the root;
 				// echo "1 resume_id $resume_id";
