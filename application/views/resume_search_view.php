@@ -95,6 +95,7 @@
 		<div class="ui pointing secondary menu">
 			<a class="item" data-tab="first">First</a>
 			<a class="item active" data-tab="second">Second</a>
+			<a class="item" data-tab="third">Third</a>
 		</div>
 		<div class="ui tab segment" data-tab="first">
 			<div class="ui top attached tabular menu">
@@ -126,6 +127,22 @@
 			</div>
 			<div class="ui bottom attached tab segment active" data-tab="second/c">
 				2C
+			</div>
+		</div>
+		<div class="ui tab segment" data-tab="third">
+			<div class="ui top attached tabular menu">
+				<a class="item" data-tab="third/a">3A</a>
+				<a class="item" data-tab="third/b">3B</a>
+				<a class="item" data-tab="third/c">3C</a>
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="third/a">
+				3A
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="third/b">
+				3B
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="third/c">
+				3C
 			</div>
 		</div>
 	</div>
