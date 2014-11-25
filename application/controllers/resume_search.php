@@ -15,10 +15,10 @@ class Resume_search extends CI_Controller {
 			$data = $this -> resume_model -> find($word);
 
 			if ($data) {
-				$response['status'] = 1;
-				$response['data'] = $data;
+				$response['c'] = 0;
+				$response['d'] = $data;
 			} else {
-				$response['status'] = 0;
+				$response['c'] = 1;
 			}
 
 		} else {

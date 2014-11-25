@@ -2,6 +2,7 @@ $().ready(init);
 
 $("#search").click(function() {
 	search_51();
+	search_self();
 });
 
 var tag_names = new Array('self_resume_list', '51_resume_list');
@@ -57,7 +58,7 @@ function search_51() {
 		alert("need input");
 		return;
 	}
-	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99&to_year=99';
+	var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + encodeURI(word) + '&location=' + city + '&from_year=99&to_year=99';
 	// var url = 'http://www.jian-yin.com/cgi/search.pl?keyword=' + word + '&location=' + city + '&from_year=99';
 	console.log("url " + url);
 	$.ajax({
@@ -74,6 +75,42 @@ function search_51() {
 		// }
 		if (data.c == 0) {
 			show_resume_list_new(data.d);
+		} else {
+			console.log(data.m);
+			showError(data.m);
+		}
+
+	}).fail(function(jqXHR, textStatus, errorThrown) {
+		console.log(textStatus + " " + errorThrown);
+		showError(errorThrown);
+	}).always(function() {
+		hiddenLoader();
+	});
+}
+
+function search_self() {
+
+	var word = $("#search_wrod").val();
+	if (word == null || word == "") {
+		alert("need input");
+		return;
+	}
+	var url = 'www.jian-yin.com/resume_search/search?w=' + encodeURI(word);
+	console.log("url " + url);
+	$.ajax({
+		url : url,
+		dataType : "json"
+	}).done(function(data) {
+		// console.log("done");
+		// if (data.status > 0) {
+		// show_resume_list(data.data);
+		// } else if (data.status == 0) {
+		// show_error("no data found");
+		// } else {
+		// show_error("need search word");
+		// }
+		if (status.c == 0) {
+			show_resume_list_self(data.d);
 		} else {
 			console.log(data.m);
 			showError(data.m);
@@ -126,6 +163,27 @@ function show_resume_list_new(resume_list) {
 	}
 	console.log(html);
 	$("#51_resume_list").html(html);
+}
+
+function show_resume_list_self(resume_list) {
+	var html = "";
+	for (var index = 0; index < resume_list.length; index++) {
+
+		html += '<div class="item">';
+		html += '<div class="content">';
+		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
+		html += '城市:' + resume_list[index].local + " ";
+		html += '性别:' + resume_list[index].sex + " ";
+		html += '年龄:' + resume_list[index].Age + " ";
+		html += 'id:' + resume_list[index].IDNO + " ";
+		html += 'keywords:' + resume_list[index].keywords + " ";
+		html += 'appraise:' + resume_list[index].appraise + " ";
+		html += 'addtype:' + resume_list[index].addtype + " ";
+		html += '</div>';
+		html += '</div>';
+		html += '</div>';
+	}
+	$("#self_resume_list").html(html);
 }
 
 function show_error(msg) {
