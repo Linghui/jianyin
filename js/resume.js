@@ -1,7 +1,7 @@
 $().ready(init);
 
 $("#search").click(function() {
-	// search_51();
+	search_51();
 	search_self();
 });
 
@@ -109,7 +109,7 @@ function search_self() {
 		// } else {
 		// show_error("need search word");
 		// }
-		if (status.c == 0) {
+		if (data.c == 0) {
 			show_resume_list_self(data.d);
 		} else {
 			console.log(data.m);
