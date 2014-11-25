@@ -148,6 +148,7 @@ function show_resume_list(resume_list) {
 
 function show_resume_list_new(resume_list) {
 	var html = "";
+	$("#51_title").html("51 (" + resume_list.length + ")");
 	for (var index = 0; index < resume_list.length; index++) {
 		html += '<div class="item">';
 		html += '<div class="content">';
@@ -173,6 +174,7 @@ function show_resume_list_new(resume_list) {
 
 function show_resume_list_self(resume_list) {
 	console.log("show_resume_list_self" + resume_list.length);
+	$("#self_title").html("才库 (" + resume_list.length + ")");
 	var html = "";
 	for (var index = 0; index < resume_list.length; index++) {
 
