@@ -24,7 +24,7 @@ function hide_all_tag() {
 }
 
 function show_tag(name) {
-	$('#name').css("display", "inline");
+	$('#' + name).css("display", "inline");
 }
 
 function init() {
