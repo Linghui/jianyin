@@ -75,6 +75,8 @@ class Test_for_temp extends CI_Controller {
 
 		$this -> load -> model('resume_model');
 
+		echo gettype($result);
+		echo "<br/>";
 		$res = -1;
 		if (isset($result) && gettype($result) == "array" && array_key_exists('TransResumeResult', $result)) {
 			$res = $this -> resume_model -> addResume($result['TransResumeResult']);
