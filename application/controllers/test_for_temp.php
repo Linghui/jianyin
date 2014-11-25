@@ -68,10 +68,10 @@ class Test_for_temp extends CI_Controller {
 		}
 
 		// echo $result['TransResumeResult']['Name'];
-		echo '<meta http-equiv="Content-Type" content="text/html" charset="utf-8">';
-		echo "<p>";
-		echo json_encode($result);
-		echo "</p>";
+		// echo '<meta http-equiv="Content-Type" content="text/html" charset="utf-8">';
+		// echo "<p>";
+		// echo json_encode($result);
+		// echo "</p>";
 
 		$this -> load -> model('resume_model');
 
