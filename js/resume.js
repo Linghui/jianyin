@@ -46,12 +46,6 @@ function init() {
 		}
 	});
 
-	$('#from_dropdown').dropdown();
-	$('#to_dropdown').dropdown();
-
-	$('#context1 .menu .item').tab({
-		context : $('#context1')
-	});
 }
 
 function search_51() {
