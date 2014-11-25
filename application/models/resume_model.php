@@ -139,9 +139,11 @@ class Resume_model extends CI_Model {
 		$this -> mongo_db -> where($where);
 		$data = $this -> mongo_db -> get('resume');
 
-		echo "type : ";
-		echo gettype($data);
-		echo "<br/>";
+		if ($data) {
+			foreach ($data as $one) {
+				unset($one[Original]);
+			}
+		}
 
 		return $data;
 	}
