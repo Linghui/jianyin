@@ -78,7 +78,10 @@ class Test_for_temp extends CI_Controller {
 		echo gettype($result);
 		echo "<br/>";
 		$res = -1;
-		if (isset($result) && gettype($result) == "array" && array_key_exists('TransResumeResult', $result)) {
+		if (gettype($result) == "string") {
+			echo $result;
+			echo "<br/>";
+		} else if (gettype($result) == "array" && array_key_exists('TransResumeResult', $result)) {
 			$res = $this -> resume_model -> addResume($result['TransResumeResult']);
 		}
 
