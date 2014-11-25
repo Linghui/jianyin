@@ -1,11 +1,17 @@
 $().ready(init);
 
+var processing = 0;
+var tag_names = new Array('self_resume_list', '51_resume_list');
+
 $("#search").click(function() {
+	if (processing > 0) {
+		alert("searching, try later...");
+	}
+	processing = tag_names.length;
 	search_51();
 	search_self();
 });
 
-var tag_names = new Array('self_resume_list', '51_resume_list');
 function watch_self() {
 	console.log("watch_self");
 	hide_all_tag();
@@ -265,7 +271,11 @@ function showLoader() {
 }
 
 function hiddenLoader() {
-	$('#loader').removeClass("active");
+	processing--;
+	if (processing == 0) {
+		$('#loader').removeClass("active");
+	}
+
 }
 
 var ja = [];
