@@ -12,12 +12,12 @@ class Test_for_temp extends CI_Controller {
 			if ($file == '.' || $file == '..') {
 				continue;
 			}
-			echo 'File in Directory ' . $path . ': ' . $file . '<br>';
+
 		}
 
 	}
 
-	public function index() {
+	public function insert($file_full_name) {
 		$this -> load -> library("Nusoap_lib");
 
 		$client = new nusoap_client('http://service.ygys.net/resumeservice.asmx?wsdl', 'wsdl', '', '', '', '');
@@ -25,8 +25,7 @@ class Test_for_temp extends CI_Controller {
 		$client -> decode_utf8 = FALSE;
 		$client -> xml_encoding = 'utf-8';
 
-		$file_full_name = "js/财务经理-liweimin.docx44511.htm";
-		//echo 'analyze filename:'.$file_full_name;
+		// $file_full_name = "js/财务经理-liweimin.docx44511.htm";o 'analyze filename:'.$file_full_name;
 		$handle = fopen($file_full_name, "r");
 		$content = fread($handle, filesize($file_full_name));
 		fclose($handle);
