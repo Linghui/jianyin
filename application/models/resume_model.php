@@ -139,7 +139,7 @@ class Resume_model extends CI_Model {
 		$this -> mongo_db -> where($where);
 		$data = $this -> mongo_db -> get('resume');
 		if ($data) {
-			unset($data['Original']);
+			$data['Original'] = null;
 		}
 		return $data;
 	}
