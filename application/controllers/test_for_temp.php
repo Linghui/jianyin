@@ -12,7 +12,7 @@ class Test_for_temp extends CI_Controller {
 			if ($file == '.' || $file == '..') {
 				continue;
 			}
-
+			insert($sub_dir);
 		}
 
 	}
