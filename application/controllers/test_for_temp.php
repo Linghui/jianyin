@@ -50,7 +50,7 @@ class Test_for_temp extends CI_Controller {
 		}
 
 		// echo $result['TransResumeResult']['Name'];
-		echo json_encode($resume);
+		echo json_encode($result);
 
 		$this -> load -> model('resume_model');
 
