@@ -46,6 +46,12 @@ function init() {
 		}
 	});
 
+	$('#context1 .menu .item').tab({
+		context : $('#context1')
+	});
+	$('#context2 .menu .item').tab({
+		context : $('#context2')
+	});
 }
 
 function search_51() {
