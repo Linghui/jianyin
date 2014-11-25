@@ -4,14 +4,14 @@ class Resume_model extends CI_Model {
 
 	public function addResume($resume) {
 
-		if (!isset($resume['Name']) || trim($resume['Name']) != "") {
+		if (!isset($resume['Name']) || trim($resume['Name']) == "") {
 			return 1;
 		}
 
-		if (!isset($resume['Sex']) || trim($resume['Sex']) != "") {
+		if (!isset($resume['Sex']) || trim($resume['Sex']) == "") {
 			return 2;
 		}
-		if (!isset($resume['Brith']) || trim($resume['Brith']) != "") {
+		if (!isset($resume['Brith']) || trim($resume['Brith']) == "") {
 			return 3;
 		}
 		if (!isset($resume['IDNO']) && !isset($resume['Email']) && !isset($resume['Mobile'])) {
