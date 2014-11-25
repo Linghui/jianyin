@@ -90,7 +90,6 @@
 		<a class="active item" onclick="watch_self()" id="self_title"> 才库 (0) </a>
 		<a class="item" onclick="watch_51()" id="51_title"> 51 (0)</a>
 	</div>
-
 	<div id="context1">
 		<div class="ui pointing secondary menu">
 			<a class="item" data-tab="first">First</a>
@@ -200,14 +199,15 @@
 				6C
 			</div>
 		</div>
-		<div class="ui selection list" id="self_resume_list"></div>
-		<div class="ui selection list" id="51_resume_list" style="display:none"></div>
+	</div>
+	<div class="ui selection list" id="self_resume_list"></div>
+	<div class="ui selection list" id="51_resume_list" style="display:none"></div>
 
-		<script type="text/javascript" src="/js/jquery.min.js"></script>
-		<script type="text/javascript" src="/js/jquery.address.js"></script>
-		<script type="text/javascript" src="/javascript/semantic.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.address.js"></script>
+	<script type="text/javascript" src="/javascript/semantic.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
-		<script type="text/javascript" src="/js/resume.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
+	<script type="text/javascript" src="/js/resume.js"></script>
 
 </body>
