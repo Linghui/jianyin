@@ -166,6 +166,7 @@ function show_resume_list_new(resume_list) {
 }
 
 function show_resume_list_self(resume_list) {
+	console.log("show_resume_list_self");
 	var html = "";
 	for (var index = 0; index < resume_list.length; index++) {
 
