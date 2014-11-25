@@ -12,7 +12,7 @@ class Test_for_temp extends CI_Controller {
 		$client -> decode_utf8 = FALSE;
 		$client -> xml_encoding = 'utf-8';
 
-		$file_full_name = "js/[HuiZhang]简历_智联招聘.html";
+		$file_full_name = "js/才春海简历_智联招聘 重复.html";
 		//echo 'analyze filename:'.$file_full_name;
 		$handle = fopen($file_full_name, "r");
 		$content = fread($handle, filesize($file_full_name));
