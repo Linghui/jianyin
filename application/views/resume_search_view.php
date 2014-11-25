@@ -86,7 +86,7 @@
 	</div>
 	<h4 class="ui red header" id ="error" style="visibility: hidden;" > Error: </div> </h4>
 
-	<div class="ui tabular menu">
+	<div class="ui tabular menu" id="title_tab">
 		<a class="active item" onclick="watch_self()" id="self_title"> 才库 (0) </a>
 		<a class="item" onclick="watch_51()" id="51_title"> 51 (0)</a>
 	</div>
@@ -94,18 +94,6 @@
 	<div class="ui selection list" id="self_resume_list"></div>
 	<div class="ui selection list" id="51_resume_list" style="display:none"></div>
 
-	<div class="ui menu">
-		<a class="active item"> <i class="home icon"></i> Home </a>
-		<a class="item"> <i class="mail icon"></i> Messages </a>
-		<div class="right menu">
-			<div class="item">
-				<div class="ui transparent icon input">
-					<input type="text" placeholder="Search...">
-					<i class="search link icon"></i>
-				</div>
-			</div>
-		</div>
-	</div>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
