@@ -1,7 +1,7 @@
 $().ready(init);
 
 $("#search").click(function() {
-	search();
+	search_51();
 });
 
 function init() {
@@ -20,7 +20,7 @@ function init() {
 
 }
 
-function search() {
+function search_51() {
 
 	hiddenError();
 	showLoader();
@@ -76,7 +76,7 @@ function show_resume_list(resume_list) {
 		html += '</div>';
 	}
 	console.log(html);
-	$("#resume_list").html(html);
+	$("#51_resume_list").html(html);
 }
 
 function show_resume_list_new(resume_list) {

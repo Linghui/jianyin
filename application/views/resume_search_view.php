@@ -86,7 +86,9 @@
 	</div>
 	<h4 class="ui red header" id ="error" style="visibility: hidden;" > Error: </div> </h4>
 
-	<div class="ui selection list" id="resume_list"></div>
+	<div class="ui selection list" id="51_resume_list" style="display:none"></div>
+	<br />
+	<div class="ui selection list" id="self_resume_list"></div>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.js"></script>
