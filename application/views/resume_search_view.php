@@ -95,6 +95,7 @@
 	<div class="ui selection list" id="51_resume_list" style="display:none"></div>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.address.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
