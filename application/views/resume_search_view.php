@@ -86,25 +86,20 @@
 	</div>
 	<h4 class="ui red header" id ="error" style="visibility: hidden;" > Error: </div> </h4>
 
-	<div class="ui tabular menu" id="title_tab">
-		<a class="active item" onclick="watch_self()" id="self_title"> 才库 (0) </a>
-		<a class="item" onclick="watch_51()" id="51_title"> 51 (0)</a>
-	</div>
 	<div id="context2">
 		<div class="ui pointing secondary menu">
-			<a class="item" data-tab="fourth">Fourth</a>
-			<a class="item active" data-tab="fifth">Fifth</a>
+			<a class="item" data-tab="fourth" onclick="watch_self()" id="self_title">才库 (0)</a>
+			<a class="item active" data-tab="fifth" onclick="watch_51()" id="51_title">51 (0)</a>
 		</div>
 		<div class="ui tab segment" data-tab="fourth">
-11
+
+			<div class="ui selection list" id="self_resume_list"></div>
 		</div>
 		<div class="ui tab segment active" data-tab="fifth">
-22
+			<div class="ui selection list" id="51_resume_list" style="display:none"></div>
 		</div>
 
 	</div>
-	<div class="ui selection list" id="self_resume_list"></div>
-	<div class="ui selection list" id="51_resume_list" style="display:none"></div>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.address.js"></script>
