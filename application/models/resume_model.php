@@ -138,9 +138,11 @@ class Resume_model extends CI_Model {
 		$this -> mongo_db -> like('Original', $word);
 		$this -> mongo_db -> where($where);
 		$data = $this -> mongo_db -> get('resume');
-		if ($data) {
-			$data['Original'] = null;
-		}
+
+		echo "type : ";
+		echo gettype($data);
+		echo "<br/>";
+
 		return $data;
 	}
 
