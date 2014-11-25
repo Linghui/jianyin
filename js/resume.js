@@ -156,17 +156,24 @@ function show_resume_list_new(resume_list) {
 		html += '<div class="item">';
 		html += '<div class="content">';
 		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
+		html += '<br/>';
 		html += '学历:' + resume_list[index].degree + " ";
 		html += '城市:' + resume_list[index].location + " ";
 		html += '性别:' + resume_list[index].sex + " ";
 		html += '年龄:' + resume_list[index].age + " ";
+		html += '<br/>';
 		html += '工作年限:' + resume_list[index].job_year + " ";
 		html += '简历更新时间:' + resume_list[index].update_date + " ";
-		html += 'id:' + resume_list[index].id + " ";
+		html += '身份证:' + resume_list[index].id + " ";
 		html += '专业:' + resume_list[index].major + " ";
-		html += 'keywords:' + resume_list[index].keywords + " ";
-		html += 'appraise:' + resume_list[index].appraise + " ";
-		html += 'addtype:' + resume_list[index].addtype + " ";
+		html += '<br/>';
+		html += '关键字:' + resume_list[index].keywords + " ";
+		html += '<br/>';
+
+		// html += 'appraise:' + resume_list[index].appraise + " ";
+		// html += '<br/>';
+		// html += 'addtype:' + resume_list[index].addtype + " ";
+
 		html += '</div>';
 		html += '</div>';
 		html += '</div>';
@@ -194,7 +201,8 @@ function show_resume_list_self(resume_list) {
 		html += '<br/>';
 		html += '关键字:' + resume_list[index].ForwardVocation + " ";
 		html += '<br/>';
-		html += '个人简介:' + resume_list[index].Personal + " ";
+		html += '个人简介:';
+		html += "  " = resume_list[index].Personal + " ";
 		html += '</div>';
 		html += '</div>';
 		html += '</div>';
