@@ -151,7 +151,7 @@ function show_resume_list(resume_list) {
 
 function show_resume_list_new(resume_list) {
 	var html = "";
-	$("#51_title").html("51 (" + resume_list.length + ")");
+	$("#51_title").html("51 Job (" + resume_list.length + ")");
 	for (var index = 0; index < resume_list.length; index++) {
 		html += '<div class="item">';
 		html += '<div class="content">';
@@ -202,6 +202,7 @@ function show_resume_list_self(resume_list) {
 		html += '关键字:' + resume_list[index].ForwardVocation + " ";
 		html += '<br/>';
 		html += '个人简介:';
+		html += '<br/>';
 		html += "  " + resume_list[index].Personal + " ";
 		html += '</div>';
 		html += '</div>';

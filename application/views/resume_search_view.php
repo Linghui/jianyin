@@ -89,7 +89,7 @@
 	<div id="context2">
 		<div class="ui pointing secondary menu">
 			<a class="item" data-tab="fourth" onclick="watch_self()" id="self_title">才库 (0)</a>
-			<a class="item active" data-tab="fifth" onclick="watch_51()" id="51_title">51 (0)</a>
+			<a class="item active" data-tab="fifth" onclick="watch_51()" id="51_title">51 Job (0)</a>
 		</div>
 		<div class="ui tab segment" data-tab="fourth">
 
