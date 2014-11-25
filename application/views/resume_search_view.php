@@ -86,9 +86,12 @@
 	</div>
 	<h4 class="ui red header" id ="error" style="visibility: hidden;" > Error: </div> </h4>
 
-	<div class="ui tabular menu">
-		<a class="active item" > 自有 </a>
-		<a class="item" > 51 </a>
+	<div class="ui top attached tabular menu">
+		<a class="active item"> Bio </a>
+		<a class="item"> Pics </a>
+	</div>
+	<div class="ui bottom attached segment">
+		This is the content of the tab.
 	</div>
 
 	<div class="ui selection list" id="self_resume_list"></div>
