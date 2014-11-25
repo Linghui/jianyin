@@ -193,6 +193,7 @@ function show_resume_list_self(resume_list) {
 		html += '专业:' + resume_list[index].Speciality + " ";
 		html += '<br/>';
 		html += '关键字:' + resume_list[index].ForwardVocation + " ";
+		html += '<br/>';
 		html += '个人简介:' + resume_list[index].Personal + " ";
 		html += '</div>';
 		html += '</div>';
