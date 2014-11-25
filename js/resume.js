@@ -125,7 +125,7 @@ function show_resume_list_new(resume_list) {
 		html += '</div>';
 	}
 	console.log(html);
-	$("#resume_list").html(html);
+	$("#51_resume_list").html(html);
 }
 
 function show_error(msg) {

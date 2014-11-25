@@ -134,8 +134,10 @@ class Resume_model extends CI_Model {
 
 	public function find($word) {
 		$word = $this -> trans($word);
-		$where = array('is_root' => 1, 'Original' => $word);
-		$data = $this -> mongo_db -> get_where('resume', $where);
+		$where = array('is_root' => 1);
+		$this -> mongo_db -> like('Original', $word);
+		$this -> mongo_db -> where($where);
+		$data = $this -> mongo_db -> get('resume');
 		if ($data) {
 			unset($data['Original']);
 		}
