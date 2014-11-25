@@ -95,7 +95,7 @@ function search_self() {
 		alert("need input");
 		return;
 	}
-	var url = 'www.jian-yin.com/resume_search/search?w=' + encodeURI(word);
+	var url = 'http://www.jian-yin.com/resume_search/search?w=' + encodeURI(word);
 	console.log("url " + url);
 	$.ajax({
 		url : url,
