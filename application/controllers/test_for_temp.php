@@ -4,6 +4,18 @@ if (!defined('BASEPATH'))
 
 class Test_for_temp extends CI_Controller {
 
+	public function search_r() {
+		$current_dir = opendir("js");
+		while (($file = readdir($current_dir)) !== false) {
+			$sub_dir = "js" . DIRECTORY_SEPARATOR . $file;
+			if ($file == '.' || $file == '..') {
+				continue;
+			}
+			echo 'File in Directory ' . $path . ': ' . $file . '<br>';
+		}
+
+	}
+
 	public function index() {
 		$this -> load -> library("Nusoap_lib");
 
