@@ -217,6 +217,7 @@
 
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/js/jquery.address.js"></script>
+		<script type="text/javascript" src="/js/menu.js"></script>
 		<script type="text/javascript" src="/javascript/semantic.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
