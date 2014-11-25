@@ -48,7 +48,7 @@ function init() {
 
 	$('#from_dropdown').dropdown();
 	$('#to_dropdown').dropdown();
-	$('#title_tab').menu();
+	$('#title_tab').ready();
 
 }
 
