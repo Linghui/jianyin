@@ -172,14 +172,11 @@ function show_resume_list_self(resume_list) {
 
 		html += '<div class="item">';
 		html += '<div class="content">';
-		html += '<div class="header">姓名:' + resume_list[index].name + '</div>';
-		html += '城市:' + resume_list[index].local + " ";
-		html += '性别:' + resume_list[index].sex + " ";
+		html += '<div class="header">姓名:' + resume_list[index].Name + '</div>';
+		html += '城市:' + resume_list[index].Local + " ";
+		html += '性别:' + resume_list[index].Sex + " ";
 		html += '年龄:' + resume_list[index].Age + " ";
 		html += 'id:' + resume_list[index].IDNO + " ";
-		html += 'keywords:' + resume_list[index].keywords + " ";
-		html += 'appraise:' + resume_list[index].appraise + " ";
-		html += 'addtype:' + resume_list[index].addtype + " ";
 		html += '</div>';
 		html += '</div>';
 		html += '</div>';
