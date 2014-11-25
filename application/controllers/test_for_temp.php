@@ -5,9 +5,10 @@ if (!defined('BASEPATH'))
 class Test_for_temp extends CI_Controller {
 
 	public function search_r() {
-		$current_dir = opendir("js");
+		$path = "js";
+		$current_dir = opendir($path);
 		while (($file = readdir($current_dir)) !== false) {
-			$sub_dir = "js" . DIRECTORY_SEPARATOR . $file;
+			$sub_dir = $path . DIRECTORY_SEPARATOR . $file;
 			if ($file == '.' || $file == '..') {
 				continue;
 			}
