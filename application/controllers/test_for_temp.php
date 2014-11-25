@@ -50,7 +50,7 @@ class Test_for_temp extends CI_Controller {
 		}
 
 		// echo $result['TransResumeResult']['Name'];
-		echo "<meta charset='utf-8'/>";
+		echo '<meta http-equiv="Content-Type" content="text/html" charset="utf-8">';
 		echo "<p>";
 		echo var_dump($result);
 		echo "</p>";
