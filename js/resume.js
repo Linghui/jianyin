@@ -7,14 +7,14 @@ $("#search").click(function() {
 var tag_names = new Array('self_resume_list', '51_resume_list');
 function watch_self() {
 	console.log("watch_self");
-	// hide_all_tag();
-	show_tag('watch_self');
+	hide_all_tag();
+	show_tag('self_resume_list');
 }
 
 function watch_51() {
 	console.log("watch_51");
-	// hide_all_tag();
-	show_tag('watch_51');
+	hide_all_tag();
+	show_tag('51_resume_list');
 }
 
 function hide_all_tag() {
