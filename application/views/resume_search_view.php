@@ -91,8 +91,8 @@
 		<a class="item" onclick="watch_51()"> 51 </a>
 	</div>
 
-	<div class="ui selection list" id="self_resume_list"></div>
-	<div class="ui selection list" id="51_resume_list" style="display:none"></div>
+	<div class="ui selection list" id="self_resume_list">111</div>
+	<div class="ui selection list" id="51_resume_list" style="display:none">222</div>
 
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascript/semantic.js"></script>
