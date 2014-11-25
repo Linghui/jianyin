@@ -1,0 +1,166 @@
+简历  
+ 
+  
+ID： 547311 姓名：  晁岳攀 
+性别：  男  出生日期： 1977年03月 02日  
+居 住 地： 北京市  工作年限： 五年以上  
+户口：  江苏  
+目前年薪： 10-15万人民币  
+电子邮件： smallnest@gmail.com 
+移动电话： 13240382062 
+公司电话： 086- 010- 82399188 -91947 
+个人主页： http://smallnest.googlepages.com/ 
+
+--------------------------------------------------------------------------------
+ 
+离职通知： 二周  
+基本工资： 12万元/年  补贴/津贴： 0万元/年  
+年度奖金/佣金： 1万元/年  股票：  0 
+自 我 评 价  
+  
+将近7年的开发经历，具有丰富的J2EE开发经验，长期开发中间件产品，分别参与或负责Portal、Workflow、CMS中间件、GIS产品的开发，曾参与国家863项目,在公司开发商业产品的同时，也关注开源产品的开发，先后开发了多个开源产品，发表多篇技术文章。 
+求 职 意 向  
+  
+工作性质： 全职  
+希望行业： 计算机软件  
+目标地点： 北京市  
+期望工资： 10000-14999 /月 
+目标职能： 高级软件工程师，技术总监/经理  
+工 作 经 验  
+2003 /01--至今：清华同方 
+所属行业： 计算机软件  
+软件股份  项目组长  
+加入清华同方初基于Portal开发同方智能楼宇控制软件，负责其中的短信模块、视频监控模块、报警模块的设计开发工作，此软件是同方数字城市部门的基础软件，应用在南京奥林匹克体育中心、中央电视台（新）等众多的建筑中。鉴于出色的工作能力，同年被评为本部门唯一的优秀员工称号。 之后在同方ezONE部门作为参与开发了多个中间件产品，比如同方的工作流产品、同方的内容管理系统，2006年负责设计开发同方的统一GIS构件:ezGIS，提前并出色的完成了开发任务，同年应用到浙江省消防项目中以及奥运场馆的系统原型中。2007年参加多个院校、公司、研究单位承担的国家十一五计划的某课题。 
+
+--------------------------------------------------------------------------------
+ 
+2000 /09--2002 /12：北京方菱 
+所属行业： 计算机软件  
+研发部  软件工程师  
+主要开发警务方面的软件，包括治安、刑事、人口、特种行业、公共场所、危爆物品、旅馆、办公等业务软件的开发工作。负责其中的B/S结构的服务器端的开发，获得公安部科技进步三等奖。 
+ 
+项 目 经 验  
+2006 /12--至今：国家863某项目 
+项目描述： 此为国家层次的某项目，涉及到保密问题，不详细说明。 
+责任描述： 负责其中一个系统的设计与开发 
+
+--------------------------------------------------------------------------------
+ 
+2006 /07--2006 /11：浙江省消防项目 
+软件环境： JAVA+MS SQL Server 
+开发工具： Eclipse 
+项目描述： 此项目为同方数字城市承接的项目，对整个浙江省的消防单位进行实时的监控管理。 
+责任描述： 我负责其中GIS相关的软件部分的开发，包括整个浙江省的地图的标准以及消防单位的平面图的标准与管理。 
+
+--------------------------------------------------------------------------------
+ 
+2006 /01--2006 /07：ezGIS统一GIS平台 
+软件环境： J2EE/TOMCAT/mysql/Oracle/MS SQL Server 
+开发工具： Eclipse 
+项目描述： 基于OGC标准的统一GIS平台，提供统一的GIS开发接口，非常方便的进行WEBGIS开发。 
+责任描述： 负责组织设计开发GIS产品，开发迅速，效果非常好，已经集成到eONE的十几个模块中 
+
+--------------------------------------------------------------------------------
+ 
+2005 /01--2005 /12：ezCMS 
+软件环境： J2EE/TOMCAT/Weblogic/WSebsphere/mysql/Oracle/MS SQL Server 
+开发工具： Eclipse 
+项目描述： 同方ezONE产品的一部分：内容管理系统，已经应用于多个政府网站。 
+责任描述： 负责其中的接口和后台管理的设计开发。 
+
+--------------------------------------------------------------------------------
+ 
+2004 /03--2004 /12：ezWorkflow 
+软件环境： J2EE/TOMCAT/Weblogic/WSebsphere/mysql/Oracle/MS SQL Server 
+开发工具： Eclipse 
+项目描述： ezWorkflow:符合wfwc联盟标准的工作流产品。这是一套完整的工作流系统，遵循标准，开发方便，流程灵活，并附带流程设计工具。 
+责任描述： 负责基于WFMC标准的Workflow引擎接口的设计开发以及web界面层的部分开发任务 
+
+--------------------------------------------------------------------------------
+ 
+2003 /07--2004 /01：ezIBS 
+软件环境： J2EE/TOMCAT/Weblogic/WSebsphere/mysql/Oracle/MS SQL Server 
+开发工具： Eclipse 
+项目描述： 基于Portal的基础上开发同方智能建筑套件。 
+责任描述： 负责四个模块中的两个模块：使用规则引擎进行报警信息的处理，并通过短信、邮件的方式发送给相应的人；集成基于IP的视频监控模块（CCTV）。 
+
+--------------------------------------------------------------------------------
+ 
+2003 /02--2003 /06：e-builder3框架 
+软件环境： windows/linux,java 
+项目描述： 基于开放源代码ofbiz的框架开发 
+责任描述： 参与其中的研究开发。 
+
+--------------------------------------------------------------------------------
+ 
+2000 /09--2002 /12：公安系列软件 
+项目描述： 1.治安案件、刑事案件、人口信息、特种行业、公共场所管理信息系统 2.旅馆业治安管理信息系统 3.e-office办公平台 4.网上考核系统 
+责任描述： 以上系统负责B/S结构的服务器端开发，e-office和治安方面的软件获公安部科技进步三等奖 
+ 
+教 育 经 历  
+1995 /09--2000 /07：  中国科技大学 计算机科学与技术  本科  
+1.获得中国科技大学力学系材料强度与材料设计专业理学学士学位 2.获得中国科技大学电子科学与技术系计算机应用专业工学学士学位 
+ 
+语 言 能 力  
+英语  良好  
+ 
+附 加 信 息  
+javaresearch.org专栏作家:http://www.javaresearch.org/expert.jsp?expert=smallnest&expertid=20686
+
+CSDN:http://blog.csdn.net/smallnest
+
+博客园:http://smallnest.cnblogs.com 
+
+
+
+
+Resume  
+ 
+  
+ID: 547311 Name: yuepanchao 
+Gender: MALE  Date of Birth: 1977/03/02 
+Residency: BEIJING  Work Experience: >5 years  
+Hukou: JIANGSU PROVINCE  
+Current Salary: 100,000-150,000 RMB /Year 
+Email: smallnest@gmail.com 
+Mobile: 13240382062 
+Personal Home Page: http://smallnest.googlepages.com/ 
+
+--------------------------------------------------------------------------------
+ 
+Availability: Two weeks  
+Base Salary:￥ 12 10K/Year Annual Bonus: 0 10K/Year 
+Bonus: 1 10K/Year Stocks: 0 
+Self Assessment  
+  
+A position as a computer developer and researcher which will provide challenge and freedom where I can bring my initiative and creativity into full play. 
+Career Objective  
+  
+Type of Employment: Full-time  
+Desired Industry: Computers, Software  
+Desired Location: BEIJING  
+Desired Salary:￥ 10,000-14,999 /Month 
+Desired Position: Senior Software Engineer ,Technical Director/Manager  
+Work Experience  
+2003/03--Present：Tsinghua Tongfang 
+Industry: Computers, Software  
+ezONE Research Center  Senior Software Engineer  
+Developed ezIBS that is one of advance intellective building softwares and won many prizes. Elected as the only Excellent Employee of Tongfang in our department in that year . Developed workflow system and content manage system as the basis of ezONE of Tsinghua Tongfang . Developed ezGIS that filled the blank of the GIS software in ezONE and was applied at Zhejiang Project. 
+
+--------------------------------------------------------------------------------
+ 
+2000/10--2002/12：Beijing Fangling 
+Industry: Computers, Software  
+software  Senior Software Engineer  
+Developed some software used by the police. Those software were sold to many provinces including Shandong、Hebei、Anhui、Neimeng and won the third-class prize of the Ministry of Public Security. 
+ 
+Education  
+1995/09--2000/07： USTC Mechanics  Bachelor  
+
+--------------------------------------------------------------------------------
+ 
+1995/09--2000/07： USTC Computer Science And Technology  Bachelor  
+ 
+Language Skills  
+English  GOOD  
+ 

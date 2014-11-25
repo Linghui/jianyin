@@ -1,7 +1,7 @@
 $().ready(init);
 
 $("#search").click(function() {
-	// search_51();
+	search_51();
 	search_self();
 });
 

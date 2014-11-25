@@ -13,7 +13,9 @@ class Test_for_temp extends CI_Controller {
 				continue;
 			}
 			echo "$sub_dir <br/>";
-			$this -> insert($sub_dir);
+			$res = $this -> insert($sub_dir);
+			echo $res;
+			echo "<br/>";
 		}
 
 	}
@@ -32,14 +34,17 @@ class Test_for_temp extends CI_Controller {
 		fclose($handle);
 		//$content = file_get_contents($form->file->getTempName());
 		//echo $content; exit;
-		$ext = '.html';
+		$pieces = explode(".", $file_full_name);
+
+		$ext = $pieces[1];
 		$username = 'u100046';
 		$pwd = "MlsrtP/BEy0=";
 
 		switch ($ext) {
-			case '.txt' :
-			case '.html' :
-			case '.htm' :
+			case 'txt' :
+			case 'html' :
+			case 'htm' :
+			case 'Html' :
 				$params = array('username' => $username, 'pwd' => $pwd, 'original' => $content);
 				$result = $client -> call('TransResume', array('parameters' => $params));
 				break;
@@ -72,7 +77,7 @@ class Test_for_temp extends CI_Controller {
 
 		$res = $this -> resume_model -> addResume($result['TransResumeResult']);
 
-		echo $res;
+		return $res;
 
 		// echo json_encode($result);
 		// echo $result;
