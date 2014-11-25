@@ -4,6 +4,29 @@ $("#search").click(function() {
 	search_51();
 });
 
+var tag_names = new Array('self_resume_list', '51_resume_list');
+function watch_self() {
+	console.log("watch_self");
+	hide_all_tag();
+	show_tag('watch_self');
+}
+
+function watch_51() {
+	console.log("watch_51");
+	hide_all_tag();
+	show_tag('watch_51');
+}
+
+function hide_all_tag() {
+	for (var index = 0; index < tag_names.length; index++) {
+		$('#' + tag_names[index]).css("display", "none");
+	}
+}
+
+function show_tag(name) {
+	$('#name').css("display", "inline");
+}
+
 function init() {
 	// getAreaIDs
 	initArea();
@@ -14,7 +37,7 @@ function init() {
 			showCity(cityArray);
 		}
 	});
-	
+
 	$('#from_dropdown').dropdown();
 	$('#to_dropdown').dropdown();
 
