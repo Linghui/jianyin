@@ -141,7 +141,7 @@ class Resume_model extends CI_Model {
 
 		if ($data) {
 			foreach ($data as $one) {
-				$one[Original] = null;
+				unset($one['Original']);
 			}
 		}
 
