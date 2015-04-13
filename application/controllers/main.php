@@ -39,6 +39,8 @@ class Main extends CI_Controller {
 			$data["pinyin"] = $pinyin;
 			$data["words"]  = $allWrods;
 			$this -> load -> view( $load_view_name, $data);
+			echo json_encode($data);
+			echo "ok";
 		}
 
 	}
