@@ -26,9 +26,9 @@ class Main extends CI_Controller {
 		
 		$deviceType = ($this->mobile_detect->isMobile() ? ($this->mobile_detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 		$load_view_name = "main_view";
-		if( $deviceType == 'phone' ){
-			$load_view_name = "mobile_view";
-		}
+//		if( $deviceType == 'phone' ){
+//			$load_view_name = "mobile_view";
+//		}
 		if ($pinyin) {
 			$allWrods = $this->getWords($pinyin);
 			
@@ -39,9 +39,9 @@ class Main extends CI_Controller {
 			$data["pinyin"] = $pinyin;
 			$data["words"]  = $allWrods;
 			$this -> load -> view( $load_view_name, $data);
-			echo json_encode($data);
-			echo "ok";
-			echo "$load_view_name";
+			// echo json_encode($data);
+			// echo "ok";
+			// echo "$load_view_name";
 		}
 
 	}
