@@ -25,9 +25,9 @@ class Help extends CI_Controller {
 		
 		$deviceType = ($this->mobile_detect->isMobile() ? ($this->mobile_detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 		$load_view_name = "help_view";
-		if( $deviceType == 'phone' ){
-			$load_view_name = "mobile_help_view";
-		}
+		// if( $deviceType == 'phone' ){
+			// $load_view_name = "mobile_help_view";
+		// }
 		$this -> output -> cache(60000);
 		$this -> load -> view($load_view_name);
 	}
