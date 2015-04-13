@@ -41,6 +41,7 @@ class Main extends CI_Controller {
 			$this -> load -> view( $load_view_name, $data);
 			echo json_encode($data);
 			echo "ok";
+			echo "$load_view_name";
 		}
 
 	}
