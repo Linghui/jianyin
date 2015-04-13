@@ -39,10 +39,6 @@ class Main extends CI_Controller {
 			$data["pinyin"] = $pinyin;
 			$data["words"]  = $allWrods;
 			$this -> load -> view( $load_view_name, $data);
-		} 
-		else {
-			$this -> output -> cache(60000);
-			$this -> load -> view("main_view1");
 		}
 
 	}
