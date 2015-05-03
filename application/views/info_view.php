@@ -44,6 +44,8 @@
 			<h3>&bull;<a href='/img/ninjiago-android.apk' >本地下载</a></h3>
 			<h2>4.HTML5 小游戏 Esgret练手</h2>
 			<h3>&bull;<a href='http://www.jian-yin.com/ck/launcher/release.html' >建议用微信玩儿</a></h3>
+			<h2>5.flappy bird unity 复刻</h2>
+			<h3>&bull;<a href='/img/flappybird.apk' >本地下载</a></h3>
 			<br/>
 			<h1 id="title">个人宠物</h1>
 			<img src='/img/when_its_little_2.jpg' width="30%" height="30%"/>

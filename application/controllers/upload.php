@@ -30,7 +30,10 @@ class Upload extends CI_Controller {
 			$file_path = $file_data['file_path'];
 			$orig_name = $file_data['orig_name'];
 
-			$this -> deal_with_zip($file_name, $file_path, $orig_name);
+			if ($file_name) {
+				$this -> deal_with_zip($file_name, $file_path, $orig_name);
+			}
+
 			// $data = array('message' => $this -> message);
 
 			// $this -> load -> view('upload_result', $data);
@@ -47,7 +50,7 @@ class Upload extends CI_Controller {
 
 			$this -> load -> helper('download');
 			$file_name = preg_replace("/png/", "apk", $file_name);
-			force_download($file_name , $pieces[1]);
+			force_download($file_name, $pieces[1]);
 		}
 
 		// echo count($pieces);
