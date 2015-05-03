@@ -49,8 +49,6 @@
 		<br/>
 		<hr/>
 		<br/>
-		<h2>或者您可以给我们提供一些经济上的援助，帮助我们提供更好的服务。</h2>
-		<h2>捐助链接: <a href="https://me.alipay.com/kevinlinghui" target="_blank" id="rmb"><img src="/img/rmb_32.png" /></a></h2>
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/js/main.js"></script>
 		
