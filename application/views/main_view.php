@@ -48,20 +48,19 @@
 			}
 		?></textarea>
 			<textarea id="t2" rows="10" disabled="true">
-<?php 
-if ( $words ){
-	if( count($words) > 0 ){
-		
-		for( $index = 0; $index < count($words); $index++ ){
-			echo ($index + 1) . ". " .$words[$index];
+<?php
+if ($words) {
+	if (count($words) > 0) {
+
+		for ($index = 0; $index < count($words); $index++) {
+			echo($index + 1) . ". " . $words[$index];
 			echo "\n";
 		}
 	}
 } else {
 	echo "RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。";
 }
-
-?>
+			?>
 </textarea>
 		</div>
 		<div id="btnLine1" align="left">
@@ -88,7 +87,17 @@ if ( $words ){
 		<br/>
 		<br/>
 		<br/>
-
+		<div id="box" id="google">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- jy -->
+			<ins class="adsbygoogle"
+			style="display:inline-block;width:336px;height:280px"
+			data-ad-client="ca-pub-1246566438770912"
+			data-ad-slot="8591423980"></ins>
+			<script>
+				( adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
 		<div id="box">
 
 			<div id="leaveword" style="top:290px;" onmouseover="clear_to(this,1);" onmouseout="clear_to(this,0);">
