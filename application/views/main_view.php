@@ -87,7 +87,7 @@ if ($words) {
 		<br/>
 		<br/>
 		<br/>
-		<div id="box" id="google">
+		<div id="google">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- jy -->
 			<ins class="adsbygoogle"
