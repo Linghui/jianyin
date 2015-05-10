@@ -10,25 +10,25 @@
 	</head>
 	<body>
 		<script>
-		(function(i, s, o, g, r, a, m) {
-		i['GoogleAnalyticsObject'] = r;
-		i[r] = i[r] ||
-		function() {
-		(i[r].q = i[r].q || []).push(arguments)
-		}, i[r].l = 1 * new Date();
-		a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-		a.async = 1;
-		a.src = g;
-		m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-		ga('create', 'UA-42687248-1', 'jian-yin.com');
-		ga('send', 'pageview');
+			ga('create', 'UA-42687248-1', 'jian-yin.com');
+			ga('send', 'pageview');
 
 		</script>
 
 		<?php
-		$this->load->view('head_view');
+		$this -> load -> view('head_view');
 		?>
 
 		<div id="container">
@@ -60,13 +60,25 @@
 		<br/>
 		<br/>
 		<br/>
-		
+
 		<br/>
 		<br/>
 		<br/>
-		
+
+		<div id="box" id="google">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- jy -->
+			<ins class="adsbygoogle"
+			style="display:inline-block;width:336px;height:280px"
+			data-ad-client="ca-pub-1246566438770912"
+			data-ad-slot="8591423980"></ins>
+			<script>
+				( adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+
 		<div id="box" >
-			
+
 			<div id="leaveword" style="top:290px;" onmouseover="clear_to(this,1);" onmouseout="clear_to(this,0);" >
 				<hr/>
 				<div class="div_title"   >
@@ -74,12 +86,12 @@
 				</div>
 				<div class="div_content">
 
-				<h3>功能1: 翻译简化词或者拼音缩写短语，例: <a href="/index.php?pinyin=7456" target="_blank">7456</a>, <a href="/index.php?pinyin=PPMM" target="_blank">PPMM</a></h3>
-				<h3>功能2: 把输入的文字转换成首字母，可以通过 <a id="share" class="shareto_button" href="http://shareto.com.cn/share.html">
-				<input type="button" value="F X" class="blue_button" id="btn3">
-				</a>按钮分享简化内容；或者直接分享可以跳转到翻译页面的短链接。扩展使用方式请自行联想:)。</h3>
+					<h3>功能1: 翻译简化词或者拼音缩写短语，例: <a href="/index.php?pinyin=7456" target="_blank">7456</a>, <a href="/index.php?pinyin=PPMM" target="_blank">PPMM</a></h3>
+					<h3>功能2: 把输入的文字转换成首字母，可以通过 <a id="share" class="shareto_button" href="http://shareto.com.cn/share.html">
+					<input type="button" value="F X" class="blue_button" id="btn3">
+					</a>按钮分享简化内容；或者直接分享可以跳转到翻译页面的短链接。扩展使用方式请自行联想:)。</h3>
 
-				<h3>功能3: 通过<a href="/index.php/help" target="_blank">HELP US</a>页添加功能，添加您自己的流行词汇 :)。</h3>
+					<h3>功能3: 通过<a href="/index.php/help" target="_blank">HELP US</a>页添加功能，添加您自己的流行词汇 :)。</h3>
 				</div>
 			</div>
 		</div>
