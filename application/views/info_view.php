@@ -42,11 +42,13 @@
 			<h3>&bull;<a href='/img/bearcat-android.apk' target="_BLANK">本地下载</a></h3>
 			<h2>3.忍者GO DEMO - 2013</h2>
 			<h3>&bull;<a href='/img/ninjiago-android.apk' >本地下载</a></h3>
-			<h2>4.HTML5 小游戏 Esgret练手 - 2014</h2>
+			<h2>4.HTML5 小游戏 Egret练手 - 2014</h2>
 			<h3>&bull;<a href='http://www.jian-yin.com/ck/launcher/release.html' >建议用微信玩儿</a></h3>
-			<h2>5.flappy bird unity 复刻 - 2015</h2>
+			<h2>6.末日之颠(三消 依然) - 2014</h2>
+			<h3>&bull;<a href='/img/Peakednessofdoomsday.apk' >本地下载</a></h3>
+			<h2>7.Flappy Bird Unity 复刻 - 2015</h2>
 			<h3>&bull;<a href='/img/flappybird.apk' >本地下载</a></h3>
-			<h2>6.unity 塔防demo - 2015</h2>
+			<h2>8.Unity 塔防 DEMO - 2015</h2>
 			<h3>&bull;<a href='/img/EnchanterDefence.apk' >本地下载</a></h3>
 			<br/>
 			<h1 id="title">个人宠物</h1>
