@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>简音</title>
 		<link rel="stylesheet" type="text/css" href="/css/view.css">
 		<link rel="stylesheet" type="text/css" href="/css/header.css">
@@ -44,7 +45,7 @@
 			<h3>&bull;<a href='/img/ninjiago-android.apk' >本地下载</a></h3>
 			<h2>4.HTML5 小游戏 Egret练手 - 2014</h2>
 			<h3>&bull;<a href='http://www.jian-yin.com/ck/launcher/release.html' >建议用微信玩儿</a></h3>
-			<h2>6.末日之颠(三消 依然) - 2014</h2>
+			<h2>6.末日之颠(三消 完善中) - 2014</h2>
 			<h3>&bull;<a href='/img/Peakednessofdoomsday.apk' >本地下载</a></h3>
 			<h2>7.Flappy Bird Unity 复刻 - 2015</h2>
 			<h3>&bull;<a href='/img/flappybird.apk' >本地下载</a></h3>
