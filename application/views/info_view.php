@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=0.9,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
 		<title>简音</title>
 		<link rel="stylesheet" type="text/css" href="/css/view.css">
 		<link rel="stylesheet" type="text/css" href="/css/header.css">
