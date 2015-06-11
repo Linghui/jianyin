@@ -31,6 +31,10 @@ class Api extends CI_Controller {
 		$this -> output -> cache(60000);
 		$this -> load -> view($load_view_name);
 	}
+	
+	public function test(){
+		echo "heloo world";
+	}
 
 }
 
