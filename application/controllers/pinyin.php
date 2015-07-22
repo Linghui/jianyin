@@ -105,7 +105,7 @@ class Pinyin extends CI_Controller {
 			$url_req = 'http://api.weibo.com/2/short_url/shorten.json?';
 			$url_req .= "source=2839883399&url_long=";
 			$url_req .= urlencode($url);
-			$json_rep = json_decode(file_get_contents($url_req));
+			$json_rep = json_decode($this->curl_model->curl_get($url_req));
 
 			if (array_key_exists("error_code", $json_rep)) {
 				$data['status'] = 2;
