@@ -106,7 +106,7 @@ class Pinyin extends CI_Controller {
 			$url_req .= "source=2839883399&url_long=";
 			$url_req .= urlencode($url);
 			$json_rep = json_decode($this->curl_model->curl_get($url_req));
-
+			echo $json_rep;
 			if (array_key_exists("error_code", $json_rep)) {
 				$data['status'] = 2;
 			} else {
