@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>简音</title>
+		<meta property="wb:webmaster" content="3e509ce18330a703" />
 		<link rel="stylesheet" type="text/css" href="/css/main1.css">
 		<link rel="stylesheet" type="text/css" href="/css/header.css">
 		<link rel="stylesheet" type="text/css" href="/css/common.css">
