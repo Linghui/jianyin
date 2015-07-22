@@ -103,7 +103,7 @@ class Pinyin extends CI_Controller {
 		if ($url) {
 
 			$url_req = 'https://api.weibo.com/2/short_url/shorten.json?';
-			$url_req .= "source=2839883399&access_token=2.00Ksxj4B0zUw4O2840ebcee2hefroC&url_long=";
+			$url_req .= "source=2839883399&url_long=";
 			$url_req .= urlencode($url);
 			$json_rep = json_decode(file_get_contents($url_req));
 
