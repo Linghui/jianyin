@@ -30,7 +30,7 @@ require_once("lib/alipay_submit.class.php");
         $payment_type = "1";
         //必填，不能修改
         //服务器异步通知页面路径
-        $notify_url = "http://alipay.watao.me/notify_url.php";
+        //$notify_url = "http://alipay.watao.me/notify_url.php";
         //需http://格式的完整路径，不能加?id=123这类自定义参数
         //页面跳转同步通知页面路径
         $return_url = "http://alipay.watao.me/return_url.php";
