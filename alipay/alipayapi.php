@@ -30,10 +30,10 @@ require_once("lib/alipay_submit.class.php");
         $payment_type = "1";
         //必填，不能修改
         //服务器异步通知页面路径
-        //$notify_url = "http://alipay.watao.me/notify_url.php";
+        //$notify_url = "http://watao-test.jian-yin.com/index.php/webservices/pay_h5_order";
         //需http://格式的完整路径，不能加?id=123这类自定义参数
         //页面跳转同步通知页面路径
-        $return_url = "http://alipay.watao.me/return_url.php";
+        $return_url = "http://watao.me/done.html";
         //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
         //商户订单号
         $out_trade_no = $_POST['WIDout_trade_no'];
@@ -45,7 +45,7 @@ require_once("lib/alipay_submit.class.php");
         $total_fee = $_POST['WIDtotal_fee'];
         //必填
         //商品展示地址
-        $show_url = "http://alipay.watao.me/order.html";
+        $show_url = "http://watao.me/order.html";
         //必填，需以http://开头的完整路径，例如：http://www.商户网址.com/myorder.html
         //订单描述
         $body = $_POST['WIDbody'];
