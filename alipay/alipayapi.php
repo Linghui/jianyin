@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>支付宝手机网站支付接口接口</title>
@@ -31,28 +32,35 @@ require_once("lib/alipay_submit.class.php");
         //必填，不能修改
         //服务器异步通知页面路径
         $notify_url = "http://watao-test.jian-yin.com/index.php/webservices/pay_h5_order";
-        //需http://格式的完整路径，不能加?id=123这类自定义参数
+        //需http://格式的完整路径，不能加?id=123这类自定义参数
+
         //页面跳转同步通知页面路径
         $return_url = "http://www.watao.me/done.html";
-        //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
+        //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
+
         //商户订单号
-        $out_trade_no = $_POST['WIDout_trade_no'];
-        //商户网站订单系统中唯一订单号，必填
+        $out_trade_no = $_GET['order_id'];
+        //商户网站订单系统中唯一订单号，必填
+
         //订单名称
-        $subject = $_POST['WIDsubject'];
-        //必填
+        $subject = "哇陶秘密花园";
+        //必填
+
         //付款金额
-        $total_fee = $_POST['WIDtotal_fee'];
-        //必填
+        $total_fee = $_GET['price'];
+        //必填
+
         //商品展示地址
         $show_url = "http://www.watao.me/order.html";
-        //必填，需以http://开头的完整路径，例如：http://www.商户网址.com/myorder.html
+
         //订单描述
         $body = $_POST['WIDbody'];
-        //选填
+        //选填
+
         //超时时间
         $it_b_pay = $_POST['WIDit_b_pay'];
-        //选填
+        //选填
+
         //钱包token
         $extern_token = $_POST['WIDextern_token'];
         //选填
@@ -84,5 +92,6 @@ $html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
 echo $html_text;
 
 ?>
-</body>
+	</body>
+
 </html>
