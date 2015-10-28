@@ -13,7 +13,7 @@ class WxPayApi
 	 * @throws WxPayException
 	 * @return 成功时返回，其他抛异常
 	 */
-	public static function unifiedOrder($inputObj, $timeOut = 15)
+	public static function unifiedOrder($inputObj, $timeOut = 20)
 	{
 		$url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 		//检测必填参数
@@ -541,7 +541,7 @@ echo "unifiedOrder 888<br/>";
 			return $data;
 		} else {
 			$error = curl_errno($ch);
-			echo "error $error";
+			echo "curl出错，错误码: $error";
 			curl_close($ch);
 			throw new WxPayException("curl出错，错误码:$error");
 		}
