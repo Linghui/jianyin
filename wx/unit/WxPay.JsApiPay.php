@@ -18,7 +18,7 @@ class JsApiPay
 			return $openid;
 		}
 	}
-	
+
 	public function GetJsApiParameters($UnifiedOrderResult)
 	{
 		if(!array_key_exists("appid", $UnifiedOrderResult)
@@ -38,10 +38,11 @@ class JsApiPay
 		$parameters = json_encode($jsapi->GetValues());
 		return $parameters;
 	}
-	
+
 	public function GetOpenidFromMp($code)
 	{
 		$url = $this->__CreateOauthUrlForOpenid($code);
+		echo "url $url<br/>";
 		//初始化curl
 		$ch = curl_init();
 		//设置超时
@@ -51,7 +52,7 @@ class JsApiPay
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		if(WxPayConfig::CURL_PROXY_HOST != "0.0.0.0" 
+		if(WxPayConfig::CURL_PROXY_HOST != "0.0.0.0"
 			&& WxPayConfig::CURL_PROXY_PORT != 0){
 			curl_setopt($ch,CURLOPT_PROXY, WxPayConfig::CURL_PROXY_HOST);
 			curl_setopt($ch,CURLOPT_PROXYPORT, WxPayConfig::CURL_PROXY_PORT);
@@ -60,11 +61,12 @@ class JsApiPay
 		$res = curl_exec($ch);
 		curl_close($ch);
 		//取出openid
+		echo "res $res<br/>";
 		$data = json_decode($res,true);
 		$openid = $data['openid'];
 		return $openid;
 	}
-	
+
 	private function ToUrlParams($urlObj)
 	{
 		$buff = "";
@@ -74,11 +76,11 @@ class JsApiPay
 				$buff .= $k . "=" . $v . "&";
 			}
 		}
-		
+
 		$buff = trim($buff, "&");
 		return $buff;
 	}
-	
+
 	private function __CreateOauthUrlForCode($redirectUrl)
 	{
 		$urlObj["appid"] = WxPayConfig::APPID;
@@ -89,7 +91,7 @@ class JsApiPay
 		$bizString = $this->ToUrlParams($urlObj);
 		return "https://open.weixin.qq.com/connect/oauth2/authorize?".$bizString;
 	}
-	
+
 	private function __CreateOauthUrlForOpenid($code)
 	{
 		$urlObj["appid"] = WxPayConfig::APPID;
