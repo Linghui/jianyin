@@ -37,10 +37,10 @@ class WxPayConfig
      *
      * @var unknown_type
      */
-    // const CURL_PROXY_HOST = "10.152.18.220";
-    // const CURL_PROXY_PORT = 8080;
-    const CURL_PROXY_HOST = '0.0.0.0';
-    const CURL_PROXY_PORT = 0;
+    const CURL_PROXY_HOST = "10.152.18.220";
+    const CURL_PROXY_PORT = 8080;
+    // const CURL_PROXY_HOST = '0.0.0.0';
+    // const CURL_PROXY_PORT = 0;
     //=======【上报信息配置】===================================
     /**
      * 上报等级，0.关闭上报; 1.仅错误出错上报; 2.全量上报.

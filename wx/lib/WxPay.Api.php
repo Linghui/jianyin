@@ -507,6 +507,7 @@ echo "unifiedOrder 888<br/>";
 	 */
 	private static function postXmlCurl($xml, $url, $useCert = false, $second = 30)
 	{
+		echo "post $url<br/>";
         //初始化curl
        	$ch = curl_init();
 		//设置超时
