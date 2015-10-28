@@ -16,8 +16,8 @@ class WxPayConfig
      *
      * @var string
      */
-    const APPID = 'wxb0c0661ea8eaea12';
-    const MCHID = '1225312702';
+    const APPID = 'wx81e50bcb4f9785f1';
+    const MCHID = '1232545202';
     const KEY = 'e10adc3949ba59abbe56e057f20f883e';
     const APPSECRET = '85f9ec401d9f7eb92b9ea87837459572';
 
