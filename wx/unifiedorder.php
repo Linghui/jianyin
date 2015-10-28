@@ -20,7 +20,7 @@ function printf_info($data)
 //获取用户openid
 $tools = new JsApiPay();
 $openId = $tools->GetOpenid();
-// echo "openId $openId";
+echo "openId $openId<br/>";
 //统一下单
 $input = new WxPayUnifiedOrder();
 $input->SetBody("test");
@@ -33,11 +33,15 @@ $input->SetGoods_tag("test");
 $input->SetNotify_url("http://wxpay.wowtao.me/notify.php");
 $input->SetTrade_type("JSAPI");
 $input->SetOpenid($openId);
+echo "1111<br/>";
 $order = WxPayApi::unifiedOrder($input);
-// echo '<font color="#f00"><b>统一下单支付单信息</b></font><br/>';
-// printf_info($order);
+echo "2222<br/>";
+echo '<font color="#f00"><b>统一下单支付单信息</b></font><br/>';
+printf_info($order);
+echo "3333<br/>";
 $jsApiParameters = $tools->GetJsApiParameters($order);
-// echo $jsApiParameters;
+echo "4444<br/>";
+echo $jsApiParameters;
 ?>
 
 <html>
