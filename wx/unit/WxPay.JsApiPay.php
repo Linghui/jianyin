@@ -42,7 +42,6 @@ class JsApiPay
 	public function GetOpenidFromMp($code)
 	{
 		$url = $this->__CreateOauthUrlForOpenid($code);
-		echo "url $url<br/>";
 		//初始化curl
 		$ch = curl_init();
 		//设置超时
@@ -61,7 +60,6 @@ class JsApiPay
 		$res = curl_exec($ch);
 		curl_close($ch);
 		//取出openid
-		echo "res $res<br/>";
 		$data = json_decode($res,true);
 		$openid = $data['openid'];
 		return $openid;

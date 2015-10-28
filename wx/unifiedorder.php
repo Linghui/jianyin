@@ -1,6 +1,4 @@
 <?php
-echo hello;
-echo $_GET['code'];
 
 ini_set('date.timezone','Asia/Shanghai');
 //error_reporting(E_ERROR);
@@ -22,6 +20,7 @@ function printf_info($data)
 //获取用户openid
 $tools = new JsApiPay();
 $openId = $tools->GetOpenid();
+echo "openId $openId";
 //统一下单
 $input = new WxPayUnifiedOrder();
 $input->SetBody("test");
