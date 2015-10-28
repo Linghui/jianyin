@@ -541,7 +541,7 @@ echo "unifiedOrder 888<br/>";
 			return $data;
 		} else {
 			$error = curl_errno($ch);
-			echo "curl出错，错误码: $error";
+			echo "curl error: $error";
 			curl_close($ch);
 			throw new WxPayException("curl出错，错误码:$error");
 		}
