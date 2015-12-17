@@ -505,6 +505,7 @@ echo "unifiedOrder 888<br/>";
         //初始化curl
        	$ch = curl_init();
 		//设置超时
+		curl_setopt($ch, CURLOPT_NOSIGNAL, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, $second);
 
         //如果有配置代理这里就设置代理
