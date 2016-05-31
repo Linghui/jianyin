@@ -51,8 +51,6 @@
 			<h2>8.Unity 塔防 DEMO - 2015</h2>
 			<h3>&bull;<a href='/img/EnchanterDefence.apk' >本地下载</a></h3>
 			<br/>
-			<h1 id="title">个人宠物</h1>
-			<img src='/img/when_its_little_2.jpg' width="30%" height="30%"/>
 		</div>
 	</body>
 </html>
