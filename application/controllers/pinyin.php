@@ -102,21 +102,34 @@ class Pinyin extends CI_Controller
     {
         $url = $this->input->get('url');
 
-        $data['status'] = 0;
-        if ($url) {
-            $url_req = 'http://api.weibo.com/2/short_url/shorten.json?';
-            $url_req .= 'source=2839883399&url_long=';
-            $url_req .= urlencode($url);
-            $resp_str = $this->curl_model->curl_get($url_req);
-            $json_rep = json_decode($resp_str);
+        // $data['status'] = 0;
+        // if ($url) {
+        //     $url_req = 'http://api.weibo.com/2/short_url/shorten.json?';
+        //     $url_req .= 'source=2839883399&url_long=';
+        //     $url_req .= urlencode($url);
+        //     $resp_str = $this->curl_model->curl_get($url_req);
+        //     $json_rep = json_decode($resp_str);
+        //
+        //     if (array_key_exists('error_code', $json_rep)) {
+        //         $data['status'] = 2;
+        //     } else {
+        //         $data['short_url'] = $json_rep->urls[0]->url_short;
+        //     }
+        // } else {
+        //     $data['status'] = 1;
+        // }
 
-            if (array_key_exists('error_code', $json_rep)) {
-                $data['status'] = 2;
-            } else {
-                $data['short_url'] = $json_rep->urls[0]->url_short;
-            }
+        $data = array();
+
+        $this->load->model('short_url_model');
+        $short_url = $this->short_url_model->get_by_long_url($url);
+        if ($short_url) {
+            $data['status'] = 0;
+            $data['short_url'] = 'http://jian-yin.com/s/'.$short_url->$short_url_id;
         } else {
-            $data['status'] = 1;
+            $short_url_id = $this->short_url_model->add_long_url($url);
+            $data['status'] = 0;
+            $data['short_url'] = 'http://jian-yin.com/s/'.$short_url->$short_url_id;
         }
 
         echo json_encode($data);
