@@ -2,7 +2,7 @@
 
 class Short_url_model extends CI_Model
 {
-    public $short_url = '';
+    public $short_url_id;
     public $long_url;
 
     public function get_by_long_url($long_url)
