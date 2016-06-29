@@ -29,35 +29,44 @@
 		</script>
 
 		<?php
-		$this -> load -> view('head_view');
-		?>
+        $this->load->view('head_view');
+        ?>
 
 		<div id="container">
 			<h1 id="title">JY - PYZCDSJ</h1>
 		</div>
 
-		<div align="left">
-			<textarea id="t1" rows="10">如果您第一次来到这里，不知道如何使用，请阅读页面下方的说明。</textarea>
-			<textarea id="t2" rows="10" disabled="true">RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。</textarea>
-		</div>
-		<div id="btnLine1" align="left">
-			<input type="button" value="F Y" class="blue_button" id="btn">
-		</div>
-		<div id="btnLine2" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="t1" rows="10">如果您第一次来到这里，不知道如何使用，请阅读页面下方的说明。</textarea>
+                    <div id="btnLine1" align="left">
+            			<input type="button" value="F Y" class="blue_button" id="btn">
+            		</div>
+                </div>
+                <div class="col-md-6">
 
-			<div id="facebookG">
-				<div id="blockG_1" class="facebook_blockG"></div>
-				<div id="blockG_2" class="facebook_blockG"></div>
-				<div id="blockG_3" class="facebook_blockG"></div>
-			</div>
+                    			<textarea id="t2" rows="10" disabled="true">RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。</textarea>
 
-			<a id="share" class="shareto_button" href="http://shareto.com.cn/share.html">
-			<input type="button" value="F X" class="blue_button" id="btn2">
-			</a>
+                    		<div id="btnLine2" >
 
-            <!-- http://t.cn/zQ6WJrt -->
-			<a href="http://jian-yin.com/s?u=1" id="href" target="_blank">http://jian-yin.com/s?u=1</a>
-		</div>
+                    			<div id="facebookG">
+                    				<div id="blockG_1" class="facebook_blockG"></div>
+                    				<div id="blockG_2" class="facebook_blockG"></div>
+                    				<div id="blockG_3" class="facebook_blockG"></div>
+                    			</div>
+
+                    			<a id="share" class="shareto_button" href="http://shareto.com.cn/share.html">
+                    			<input type="button" value="F X" class="blue_button" id="btn2">
+                    			</a>
+
+                                <!-- http://t.cn/zQ6WJrt -->
+                    			<a href="http://jian-yin.com/s?u=1" id="href" target="_blank">http://jian-yin.com/s?u=1</a>
+                    		</div>
+                </div>
+            </div>
+        </div>
+
 
 		<br/>
 		<br/>

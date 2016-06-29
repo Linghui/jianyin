@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 		<link rel="stylesheet" type="text/css" href="/css/header.css">
 		<link rel="stylesheet" type="text/css" href="/css/common.css">
+        <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
@@ -33,53 +34,65 @@
 		</script>
 
 		<?php
-		$this -> load -> view('head_view');
-		?>
+        $this->load->view('head_view');
+        ?>
 
 		<div id="container">
 			<h1 id="title">JY - PYZCDSJ</h1>
 		</div>
 
 		<div align="left">
-			<textarea id="t1" rows="10"><?php
-			if ($pinyin) {
-				echo $pinyin;
-			} else {
-				echo "如果您第一次来到这里，不知道如何使用，请阅读页面下放的说明。";
-			}
-		?></textarea>
-			<textarea id="t2" rows="10" disabled="true">
-<?php
-if ($words) {
-	if (count($words) > 0) {
 
-		for ($index = 0; $index < count($words); $index++) {
-			echo($index + 1) . ". " . $words[$index];
-			echo "\n";
-		}
-	}
-} else {
-	echo "RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。";
-}
-			?>
-</textarea>
-		</div>
-		<div id="btnLine1" align="left">
-			<input type="button" value="F Y" class="blue_button" id="btn">
-		</div>
-		<div id="btnLine2" >
+        <div class="container">
 
-			<div id="facebookG">
-				<div id="blockG_1" class="facebook_blockG"></div>
-				<div id="blockG_2" class="facebook_blockG"></div>
-				<div id="blockG_3" class="facebook_blockG"></div>
-			</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <textarea id="t1" rows="10"><?php
+                    if ($pinyin) {
+                        echo $pinyin;
+                    } else {
+                        echo '如果您第一次来到这里，不知道如何使用，请阅读页面下放的说明。';
+                    }
+                    ?></textarea>
 
-			<a id="share" class="shareto_button" href="http://shareto.com.cn/share.html">
-			<input type="button" value="F X" class="blue_button" id="btn2">
-			</a>
+            		<div id="btnLine1" align="left">
+            			<input type="button" value="F Y" class="blue_button" id="btn">
+            		</div>
+                </div>
+                <div class="col-md-6">
+                    <textarea id="t2" rows="10" disabled="true">
+                    <?php
+                    if ($words) {
+                        if (count($words) > 0) {
+                            for ($index = 0; $index < count($words); ++$index) {
+                                echo($index + 1).'. '.$words[$index];
+                                echo "\n";
+                            }
+                        }
+                    } else {
+                        echo 'RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。';
+                    }
+                    ?>
+                    </textarea>
 
-			<a href="http://jian-yin.com/s?u=1" id="href" target="_blank">http://jian-yin.com/s?u=1</a>
+            		<div id="btnLine2" >
+
+            			<div id="facebookG">
+            				<div id="blockG_1" class="facebook_blockG"></div>
+            				<div id="blockG_2" class="facebook_blockG"></div>
+            				<div id="blockG_3" class="facebook_blockG"></div>
+            			</div>
+
+            			<a id="share" class="shareto_button" href="http://shareto.com.cn/share.html">
+            			<input type="button" value="F X" class="blue_button" id="btn2">
+            			</a>
+
+            			<a href="http://jian-yin.com/s?u=1" id="href" target="_blank">http://jian-yin.com/s?u=1</a>
+            		</div>
+                </div>
+            </div>
+        </div>
+
 		</div>
 
 		<br/>
@@ -120,7 +133,8 @@ if ($words) {
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-
+        <script src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+        <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/shareto_button.js" charset="utf-8"></script>
 		<!-- ShareTo Button END -->
 
