@@ -79,7 +79,7 @@ if ($words) {
 			<input type="button" value="F X" class="blue_button" id="btn2">
 			</a>
 
-			<a href="http://t.cn/zQ6WJrt" id="href" target="_blank">http://t.cn/zQ6WJrt</a>
+			<a href="http://jian-yin.com/s?u=1" id="href" target="_blank">http://jian-yin.com/s?u=1</a>
 		</div>
 
 		<br/>
