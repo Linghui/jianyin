@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/header.css">
 		<link rel="stylesheet" type="text/css" href="/css/common.css">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<script>
@@ -43,9 +44,7 @@
 
                 </div>
                 <div class="col-md-6">
-
-                    			<textarea id="t2" rows="10" disabled="true">RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。</textarea>
-
+                    <textarea id="t2" rows="10" disabled="true">RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。</textarea>
                 </div>
             </div>
             <div class="row">
@@ -117,5 +116,7 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/shareto_button.js" charset="utf-8"></script><!-- ShareTo Button END -->
+        <script src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+        <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</body>
 </html>
