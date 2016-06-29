@@ -44,7 +44,7 @@
                 <div class="col-md-6">
                     <textarea id="t1" rows="8">如果您第一次来到这里，不知道如何使用，请阅读页面下方的说明。</textarea>
 
-                        <div id="btnLine1" align="left">
+                        <div id="btnLine1">
                             <input type="button" value="F Y" class="blue_button" id="btn">
                         </div>
                 </div>
