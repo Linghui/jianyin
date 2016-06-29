@@ -33,11 +33,12 @@
         $this->load->view('head_view');
         ?>
 
-		<div id="container">
-			<h1 id="title">JY - PYZCDSJ</h1>
-		</div>
 
         <div class="container">
+
+    		<div id="container">
+    			<h1 id="title">JY - PYZCDSJ</h1>
+    		</div>
             <div class="row">
                 <div class="col-md-6">
                     <textarea id="t1" rows="10">如果您第一次来到这里，不知道如何使用，请阅读页面下方的说明。</textarea>
