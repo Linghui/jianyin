@@ -34,7 +34,7 @@
         ?>
 
 
-        <div class="container">
+        <div class="container" style="100%">
 
     		<div id="container">
     			<h1 id="title">JY - PYZCDSJ</h1>

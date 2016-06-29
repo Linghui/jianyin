@@ -37,13 +37,13 @@
         $this->load->view('head_view');
         ?>
 
-		<div id="container">
-			<h1 id="title">JY - PYZCDSJ</h1>
-		</div>
-
 		<div align="left">
 
-        <div class="container">
+        <div class="container" style="100%">
+
+            		<div id="container">
+            			<h1 id="title">JY - PYZCDSJ</h1>
+            		</div>
 
             <div class="row">
                 <div class="col-md-6">
