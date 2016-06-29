@@ -1,15 +1,13 @@
 #t1 {
 	border: 1px solid #d9d9d9;
 	border-top: 1px solid #c0c0c0;
-	width: 45%;
-	position: relative;
+	width: 100%;
 	right: 10px;
 	left: 20px;
 }
 
 #t2 {
-	width: 45%;
-	position: relative;
+	width: 100%;
 	left: 20px;
 	border: 1px solid whitesmoke;
 	background: whitesmoke;
@@ -171,4 +169,3 @@ transform:scale(0.7);
 opacity:0.1}
 
 }
-
