@@ -98,7 +98,7 @@
 			</script>
 		</div>
 
-		<div id="box" >
+		<!-- <div id="box" >
 
 			<div id="leaveword" style="top:290px;" onmouseover="clear_to(this,1);" onmouseout="clear_to(this,0);" >
 				<hr/>
@@ -115,7 +115,7 @@
 					<h3>功能3: 通过<a href="/index.php/help" target="_blank">HELP US</a>页添加功能，添加您自己的流行词汇 :)。</h3>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/shareto_button.js" charset="utf-8"></script><!-- ShareTo Button END -->
