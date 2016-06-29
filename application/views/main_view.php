@@ -39,7 +39,7 @@
 
 		<div align="left">
 
-        <div class="container" style="100%">
+        <div class="container" style="width:100%">
 
             		<div id="container">
             			<h1 id="title">JY - PYZCDSJ</h1>
