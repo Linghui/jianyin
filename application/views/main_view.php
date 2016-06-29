@@ -56,7 +56,7 @@
                     }
                     ?></textarea>
 
-                                                    		<div id="btnLine1" align="left">
+                                                    		<div id="btnLine1">
                                                     			<input type="button" value="F Y" class="blue_button" id="btn">
                                                     		</div>
                 </div>
