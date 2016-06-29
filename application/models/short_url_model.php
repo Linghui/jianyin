@@ -10,9 +10,11 @@ class Short_url_model extends CI_Model
         $this->db->where('long_url', $long_url);
         $query = $this->db->get('short_url');
         if ($query->num_rows() > 0) {
-            $query->row();
+            foreach ($query->result() as $row) {
+				return $row;
+			}
         } else {
-            return;
+            return false;
         }
     }
 
