@@ -48,7 +48,7 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <textarea id="t1" rows="10"><?php
+                    <textarea id="t1" rows="8"><?php
                     if ($pinyin) {
                         echo $pinyin;
                     } else {
@@ -61,7 +61,7 @@
                                                     		</div>
                 </div>
                 <div class="col-md-6">
-                    <textarea id="t2" rows="10" disabled="true">
+                    <textarea id="t2" rows="8" disabled="true">
                     <?php
                     if ($words) {
                         if (count($words) > 0) {

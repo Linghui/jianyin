@@ -42,14 +42,14 @@
     		</div>
             <div class="row">
                 <div class="col-md-6">
-                    <textarea id="t1" rows="10">如果您第一次来到这里，不知道如何使用，请阅读页面下方的说明。</textarea>
+                    <textarea id="t1" rows="8">如果您第一次来到这里，不知道如何使用，请阅读页面下方的说明。</textarea>
 
                         <div id="btnLine1" align="left">
                             <input type="button" value="F Y" class="blue_button" id="btn">
                         </div>
                 </div>
                 <div class="col-md-6">
-                    <textarea id="t2" rows="10" disabled="true">RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。</textarea>
+                    <textarea id="t2" rows="8" disabled="true">RGNDYCLDZL，BZDRHSY，QYDYMXFDYM。</textarea>
                     <div id="btnLine2" >
 
                         <div id="facebookG">
