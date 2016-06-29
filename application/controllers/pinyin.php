@@ -123,7 +123,6 @@ class Pinyin extends CI_Controller
 
         $this->load->model('short_url_model');
         $short_url = $this->short_url_model->get_by_long_url($url);
-        echo json_encode($short_url);
         if ($short_url) {
             $data['status'] = 0;
             $data['short_url'] = 'http://jian-yin.com/s/'.$short_url->short_url_id;
